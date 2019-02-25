@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+<style>
+body{
+	font-family: tempus sans itc;
+	color: #660066;
+}
+h1{
+	background-color: #66CC99;
+	text-align: center;
+}
+
+h4{
+	text-align: center;
+}
+
+img{
+	height: 150px;
+	width: 150px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+h3{
+	text-align: center;
+	text-decoration: underline;
+}
+li {
+    list-style-type: none;
+}
+
+table, th{
+	position:relative;
+	border: 1px solid black;
+	border-collapse: collapse;
+	width:20%;
+	margin-right:0px;
+	margin-left:auto
+}
+th, td {
+  text-align: center;
+}
+
+.sidebar{
+	padding:120px 0 0;
+	z-index:-1;
+	position:absolute;
+	top:0;
+	bottom:auto;
+	left:auto;
+	right: auto;
+	
+}
+
+.image{
+	z-index:-1;
+	position:relative;
+	
+}
+
+</style>
+
+
+	<head lang = "en">
+	<meta charset = "UTF-8"/>
+		<title>
+			{% block title_block %}
+				Rate My Meal
+			{% endblock %}
+		</title>
+	</head>
+	
+	<body>
+		<div>
+		<a href = "index.html"><input type = "image" src = "images/home.png" name = "home" height = 100 width = 100 ></a>
+		</div>
+		
+		<div>
+		<table id = "1">
+			
+			
+			<tr>
+				<th>Your Account</th>
+			</tr>
+			{% if user.is_authenticated %}
+			<tr>
+				<td><a href = "logout.html">Log Out</a></td>
+			</tr>
+			
+			<tr>
+				<td><a href = "add_recipe.html">Add New Meal</a></td>
+			</tr>
+			{% else %}
+			<tr>
+				<td><a href = "login.html">Log In</a></td>
+			</tr>
+			
+			<tr>
+				<td><a href = "signup.html">Sign Up</a></td>
+			</tr>
+			{% endif %}
+		</table></br>
+		</div>
+		
+		<div>
+		<table id = "2">
+			<tr>
+				<th>About</th>
+			</tr>
+			
+			<tr>
+				<td>Hi! Our names are Catriona, Ryan, Chris and Jamie and we've created the website Rate My Meal for food enthusiasts everywhere to share their favourite foods and rate others. Create an account to comment on peoples' food and to post your very own recipes. Find out about real qualified chefs and use their recipes at home!</td>
+			</tr>
+			
+			
+		</table>
+		</div>
+		
+		</br>
+		<div class = "sidebar">
+			<h4><p align = "left"> Categories </p></h4>
+			<nav>
+			<ul>
+				{% for category in categories %}
+				<li>
+				<a href="{% url 'show_category' category.slug %}">{{category.name}}</a>
+				</li>
+				{% endfor %}
+				<li> <a href = "trending.html">Trending</a></li>
+			</ul>
+			</nav>
+		</div>
+		
+		<div>
+			{% block body_block %}
+			{% endblock %}
+		</div>
