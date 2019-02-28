@@ -10,7 +10,10 @@ from django.contrib.auth.models import Permission
 
 from django.http import HttpResponse
 
-
+def index(request):
+	return render(request, 'meal/register.html', {})
+	
+	
 def register(request):
     return render(request, 'meal/register.html', {})
 
