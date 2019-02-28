@@ -132,4 +132,4 @@ USE_TZ = True
 LOGIN_URL = '/meal/login/'
 
 STATICFILES_DIRS = [STATIC_DIR,]
-STATIC_URL = '/static/
+STATIC_URL = '/static/'
