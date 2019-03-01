@@ -28,7 +28,7 @@ class Recipe(models.Model):
     image = models.ImageField(upload_to = 'recipe_images', blank = False)
 
     def __str__(self):
-        return self.title
+        return self.recipe_name
 
 class Chef(AbstractUser):
     username = models.CharField(max_length=128, null= True, unique=True)
