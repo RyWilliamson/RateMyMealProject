@@ -1,0 +1,20 @@
+{% extends 'meal/base.html' %}
+{% load staticfiles %}
+
+<!DOCTYPE html>
+
+{% block body_block %}
+	<input id="search" value="Search..." />
+	<input id="submitButton" type="submit" />
+	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("p").append("Dave!");
+			$("#submitButton").click(function() {
+				var searchTerm = $("#search").val();
+				$("#search").val("Search...");
+				$("p").append("<div>"+searchTerm+"</div>");
+			});
+		});
+	</script>
+{% endblock %}
