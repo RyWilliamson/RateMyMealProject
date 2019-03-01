@@ -25,7 +25,7 @@ class Recipe(models.Model):
     recipe_name = models.CharField(max_length = 128)
     views = models.IntegerField(default = 0)
     recipe_data = models.TextField()
-    image = models.ImageField(upload_to = 'recipe_images/' + category.slug, blank = False)
+    image = models.ImageField(upload_to = 'recipe_images/', blank = False)
 
     def __str__(self):
         return self.recipe_name

@@ -47,16 +47,6 @@ th, td {
   text-align: center;
 }
 
-.sidebar{
-	padding:120px 0 0;
-	z-index:-1;
-	position:absolute;
-	top:0;
-	bottom:auto;
-	left:auto;
-	right: auto;
-}
-
 .image{
 	z-index:-1;
 	position:relative;
@@ -65,11 +55,22 @@ th, td {
 </style>
 
 	<head lang = "en">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
 	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<meta charset = "UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+	
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+	
+	
 		<title>
 			{% block title_block %}
 				Rate My Meal
@@ -80,9 +81,7 @@ th, td {
 	<body>
 	{% block body_block %}
 		<h1> Rate My Meal </h1>
-		<div>
-			<a href = "index.html"><input type = "image" src = "{% static 'images/home.png' %S}" name = "home" height = 100 width = 100 ></a>
-		</div>
+		
 		   
 		   <div class="container">
 
@@ -166,19 +165,19 @@ th, td {
 			</tr>
 			{% if user.is_authenticated %}
 			<tr>
-				<td><a href = "logout.html">Log Out</a></td>
+				<td><a href = "{% url 'logout' %}">Log Out</a></td>
 			</tr>
 			
 			<tr>
-				<td><a href = "add_recipe.html">Add New Meal</a></td>
+				<td><a href = "{% url 'add_recipe' %}">Add New Meal</a></td>
 			</tr>
 			{% else %}
 			<tr>
-				<td><a href = "login.html">Log In</a></td>
+				<td><a href = "{% url 'login' %}">Log In</a></td>
 			</tr>
 			
 			<tr>
-				<td><a href = "signup.html">Sign Up</a></td>
+				<td><a href = "{% url 'signup' %}">Sign Up</a></td>
 			</tr>
 			{% endif %}
 		</table></br>
@@ -199,26 +198,67 @@ th, td {
 		</div>
 		
 		</br>
-		<div class = "sidebar">
-			<h4><p align = "left"> Categories </p></h4>
-			<nav>
-			<ul>
-				{% for category in categories %}
-				<li>
-				<a href="{% url 'show_category' category.slug %}">{{category.name}}</a>
-				</li>
-				{% endfor %}
-				<li> <a href = "{% url 'trending' %}">Trending</a></li>
-			</ul>
-			</nav>
-		</div>
-		<div><a href = "{% url 'trending' %}">Trending</a></div>
-
 		
+			
+		
+		<div>
+			<a href = "{% url 'base' %}"><input type = "image" src = "{% static 'images/home.png' %}" name = "home" height = 100 width = 100 ></a>
+		</div>
+		
+		
+		
+		
+		
+		<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Categories</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                {% for category in categories %}
+				<li>
+                    <a href="{% url 'show_category' category.slug %}">{{category.name}}</a>
+                </li>
+				{% endfor %}
+                
+                <li>
+                    <a href="{% url 'trending' %}">Trending</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Categories</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+         </div>
+    </div>
+
+    
+		
+	
 		
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+		<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+		</script>
 	</body>
 </head>
 </html>

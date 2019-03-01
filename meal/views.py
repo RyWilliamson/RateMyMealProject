@@ -10,6 +10,11 @@ from django.contrib.auth.models import Permission
 
 from django.http import HttpResponse
 
+def base(request):
+	
+	return render(request, 'meal/base.html', {})
+
+
 def trending(request):
 	return render(request, 'meal/trending.html', {})
 
@@ -22,6 +27,10 @@ def search(request):
 def register(request):
     return render(request, 'meal/register.html', {})
 
+def signUp(request):
+	return render(request, 'meal/signup.html', {})
+	
+	
 def registerRegular(request):
     registered = False
 
