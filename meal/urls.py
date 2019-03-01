@@ -10,4 +10,5 @@ urlpatterns=[
     url(r'^registerChef/$', views.registerChef, name='registerChef'),
     url(r'^registerRegular/$', views.registerRegular, name='registerRegular'),
     url(r'^search/$', views.search, name='search'),
+	url(r'^trending/$', views.trending, name = 'trending'),
 ]
