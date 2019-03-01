@@ -10,6 +10,9 @@ from django.contrib.auth.models import Permission
 
 from django.http import HttpResponse
 
+def trending(request):
+	return render(request, 'meal/trending.html', {})
+
 def index(request):
 	return render(request, 'meal/index.html', {})
 
