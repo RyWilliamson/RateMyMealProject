@@ -6,13 +6,11 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Register for Rango</h1>
+    <h1>Sign Up as a Verified Chef</h1>
     {% if registered %}
-        Rango says: <strong>thank you for registering!</strong>
         <a href="{% url 'index' %}">Return to the homepage.</a><br />
 
         {% else %}
-        Rango says: <strong>register here Chef!</strong><br />
         <form id="user_formChef" method="post" action="{% url 'registerChef' %}"enctype="multipart/form-data">
 
         {% csrf_token %}

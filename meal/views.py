@@ -11,7 +11,6 @@ from django.contrib.auth.models import Permission
 from django.http import HttpResponse
 
 def base(request):
-	
 	return render(request, 'meal/base.html', {})
 
 
