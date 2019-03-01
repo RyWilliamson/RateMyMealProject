@@ -1,6 +1,13 @@
 {% extends 'meal/base.html' %}
 {% load staticfiles %}
 
+{% block title_block %}
+        Register
+{% endblock %}
+
 {% block body_block %}
-<h1> Log In! </h1>
+  <h2>Sign up for a free account</h2>
+  <p class="lead">Select the type of account you want to create</p>
+  <a href="{% url 'registerRegular' %}" >I'm a Casual Cook</a>
+  <a href="{% url 'registerChef' %}" >I'm a Chef</a>
 {% endblock %}
