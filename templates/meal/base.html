@@ -79,6 +79,14 @@ th, td {
 	</head>
 	
 	<body>
+	
+		<div>
+			<a href = "{% url 'base' %}"><input type = "image" src = "{% static 'images/home.png' %}" name = "home" height = 100 width = 100 ></a>
+		</div>
+		
+		
+	
+	
 	{% block body_block %}
 		<h1> Rate My Meal </h1>
 		
@@ -158,7 +166,8 @@ th, td {
 {% endblock %}
 		
 		
-		<div>
+		<div class="container">
+		<div class="table-responsive">
 		<table id = "1">
 			<tr>
 				<th>Your Account</th>
@@ -182,8 +191,11 @@ th, td {
 			{% endif %}
 		</table></br>
 		</div>
+		</div>
 		
-		<div>
+		<div class = "container">
+		<div class="active">
+		<div class="table-responsive">
 		<table id = "2">
 			<tr>
 				<th>About</th>
@@ -196,17 +208,9 @@ th, td {
 			
 		</table>
 		</div>
-		
-		</br>
-		
-			
-		
-		<div>
-			<a href = "{% url 'base' %}"><input type = "image" src = "{% static 'images/home.png' %}" name = "home" height = 100 width = 100 ></a>
 		</div>
-		
-		
-		
+		</div>
+		</br>
 		
 		
 		<div class="wrapper">

@@ -1,4 +1,4 @@
-{% extends 'rango/base.html' %}
+{% extends 'meal/base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -6,11 +6,11 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>Sign Up!</h1>
+    <h1>Sign Up as a Home Cook!</h1>
     {% if registered %}
         Rango says: <strong>thank you for registering!</strong>
 
-        {% else %}
+    {% else %}
         <form id="user_form" method="post" action="{% url 'registerRegular' %}"enctype="multipart/form-data">
 
         {% csrf_token %}

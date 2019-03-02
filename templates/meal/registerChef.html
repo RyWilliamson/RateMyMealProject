@@ -1,4 +1,4 @@
-{% extends 'rango/base.html' %}
+{% extends 'meal/base.html' %}
 {% load staticfiles %}
 
 {% block title_block %}
@@ -10,7 +10,7 @@
     {% if registered %}
         <a href="{% url 'index' %}">Return to the homepage.</a><br />
 
-        {% else %}
+    {% else %}
         <form id="user_formChef" method="post" action="{% url 'registerChef' %}"enctype="multipart/form-data">
 
         {% csrf_token %}
