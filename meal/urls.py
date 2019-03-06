@@ -14,4 +14,8 @@ urlpatterns=[
 	url(r'^base/$', views.base, name = 'base'),
 	url(r'^signup/$', views.signUp, name = 'signup'),
 	url(r'^about/$', views.about, name = 'about'),
+	url(r'^italian/$', views.italian, name = 'italian'),
+	url(r'^add_recipe/$', views.addRecipe, name = 'addRecipe'),
+	url(r'^categories/$', views.categories, name = 'categories'),
+	
 ]

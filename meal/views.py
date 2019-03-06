@@ -10,6 +10,14 @@ from django.contrib.auth.models import Permission
 
 from django.http import HttpResponse
 
+def categories(request):
+	return render(request, 'meal/categories.html', {})
+	
+def addRecipe(request):
+	return render(request, 'meal/add_recipe.html', {})
+
+def italian(request):
+	return render(request, 'meal/italian.html', {})
 
 def about(request):
 	return render(request, 'meal/about.html', {})

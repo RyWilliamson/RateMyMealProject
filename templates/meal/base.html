@@ -81,34 +81,54 @@ th, td {
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Rate My Meal</a>
+  <a class="navbar-brand" href="{% url 'base' %}">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'base' %}">Home <span class="sr-only">(current)</span></a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'about' %}">About</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="{% url 'categories' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 		  
-			{% for category in categories %}
-				<li>
-                    <a class ="dropdown-item" href="{% url 'show_category' category.slug %}">{{category.name}}</a>
-                </li>
-			{% endfor %}
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="{% url 'italian' %}">Italian</a>
+				<a class="dropdown-item" href="{% url 'trending' %}">Another action</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+          <div class="dropdown-divider"></div>
         </div>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'trending' %}">Trending</a>
+      </li>
+	  
+	  {% if user.is_authenticated %}
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'add_recipe' %}">Add Recipe</a>
+      </li>
+	  {% else %}
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+      </li>
+	  {% endif %}
+	  
+	  
+	  
+	  
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -1,0 +1,46 @@
+{% extends 'meal/base.html' %}
+{% load staticfiles %}
+
+{% block body_block %}
+<h1>Categories</h1>
+
+	<div id="column1" style="float:left; margin:0; width:33%;">
+		<!-- New line -->
+		<IMG SRC="{% static 'images/italian.jpg' %}" ALT="Italian" >
+		<h4>Italian Food</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/mexican.jpg' %}" ALT="Mexican" >
+		<h4>Mexican Food</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/vegan.png' %}" ALT="Vegan/Vegetarian" >
+		<h4>Vegan/Vegetarian Meals</h4><br>
+    </div>
+	
+	<div id="column1" style="float:left; margin:0; width:33%;">
+		<!-- New line -->
+		<IMG SRC="{% static 'images/comfort.jpg' %}" ALT="Comfort Food" >
+		<h4>Comfort Food</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/health.jpg' %}" ALT="Healthy Food" >
+		<h4>Healthy Food</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/glutenfree.png' %}" ALT="Gluten Free Food" >
+		<h4>Gluten Free</h4><br>
+    </div>
+	
+	<div id="column1" style="float:left; margin:0; width:33%;">
+		<!-- New line -->
+		<IMG SRC="{% static 'images/kid_friendly.png' %}" ALT="Kid Friendly" >
+		<h4>Kid Friendly</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/dairyfree.jpg' %}" ALT="Dairy Free" >
+		<h4>Dairy Free</h4><br>
+		<!-- New line -->
+		<IMG SRC="{% static 'images/brunch.jpg' %}" ALT="Brunch" >
+		<h4>Brunch</h4><br>
+    </div>
+
+
+
+
+{% endblock %}
