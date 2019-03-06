@@ -116,34 +116,516 @@
 	]},
 
 	{"healthy": [
+		{
+			"recipe_name": "Roasted Chickpea Wraps",
+			"ingredients": [
+				"3 cups chickpeas drained and rinsed",
+				"1/4 cup hot sauce",
+				"1/4 teaspoon salt",
+				"1/2 teaspoon oregano",
+				"1/4 teaspoon paprika",
+				"1/8 teaspoon garlic powder",
+				"1 tablespoon olive oil",
+				"1/4 cup minced cilantro leaves",
+				"6 large tortillas (any flavor you prefer)",
+				"6 teaspoons Green Habanero Sauce or any hot sauce",
+				"2 cups purple kale chopped",
+				"2 avocados sliced",
+				"3 radishes sliced",
+				"3 scallions chopped",
+				"1 lemon"
+			],
+			"directions": "Preheat the oven to 425 degrees. In a large bowl add all the chickpea ingredients except for the cilantro. Toss well to coat and spread the chickpeas in a single layer on a baking sheet (lined with parchment paper). Roast the chickpeas for 25 minutes (stirring frequently to make sure they roast evenly). Once the chickpeas are done, allow them to cool slightly before starting the wraps. Place a tortilla on a flat surface and spread with the hot sauce, add the kale along the centre of the tortilla. Pile the remaining toppings over the kale along the centre of the tortilla too, leaving an inch clearance on the both sides. gently fold the sides of the tortillas over the filling before you tart rolling (that way the filling doesn�t fall off the wrap), and then start rolling the tortillas. Slice each wrap in half and serve! Enjoy :)"
+		},
 
+		{
+			"recipe_name": "Roast Pepper Pesto Pasta",
+			"ingredients": [
+				"16 ounce jar roasted red peppers (or use 3-4 fresh roasted peppers)",
+				"1/4 cup packed fresh basil leaves (10-15 leaves)",
+				"2 cloves garlic, peeled",
+				"1/2 cup parmesan cheese",
+				"1/2 cup finely chopped walnuts",
+				"1/4 cup olive oil",
+				"16 ounce package DaLallo Organic Whole Grain Pasta, any variety",
+				"Salt and pepper"
+			],
+			"directions": "Bring a large pot of salted water to a boil. Boil the pasta according to the DeLallo package instructions, approximately 10-12 minutes. Drain the pasta and pour back in the pot. While the pasta is cooking, chop the walnuts in a food processor. Pour the walnuts into a small bowl then add the roasted red peppers, fresh basil, and garlic to the food processor. Pulse until finely chopped. Add the parmesan cheese, chopped walnuts, olive oil, and 1/2 tsp. salt to the food processor, Pulse to combine. Salt and Pepper to taste. Pour the pesto over the cooked and drained pasta and toss to coat. Serve warm."
+		},
+
+		{
+			"recipe_name": "Veggie Wholewheat Pot Noodle",
+			"ingredients": [
+				"100g dried wholewheat noodles",
+				"2 tsp groundnut oil",
+				"1 red pepper, cut into fine strips",
+				"large courgette, cut into matchsticks",
+				"50g frozen shelled edamame beans",
+				"25g beansprouts",
+				"1 carrot, peeled and cut into matchsticks",
+				"handful baby spinach",
+				"2-4 tbsp crispy onions from a tub",
+				"2 tbsp roughly chopped coriander",
+				"1 tbsp sesame oil",
+				"2 tbsp Yuzu juice (or 2 limes, juiced)",
+				"1 garlic clove, finely chopped",
+				"1 red chilli, deseeded and finely chopped",
+				"1 tsp grated ginger"
+			],
+			"directions": "Fill a large saucepan with water and bring to the boil. Add the noodles and cook for 3-5 mins or until tender. Drain and leave to cool. Place a large non-stick pan (or wok) over a medium-high heat and add the groundnut oil. When hot, add the red pepper and cook for 2-3 mins until slightly softened. Add the courgette and edamame, and cook for a further 1-2 mins. Remove from the heat, transfer to a bowl and allow to cool. Whisk together the dressing ingredients in a small bowl, or 2 jars if taking to work, then season. Divide the noodles between 2 jars or plastic containers and top with the cooled vegetables, beansprouts, carrot, spinach, crispy onions and coriander. Add the dressing just before eating."
+		},
+
+		{
+			"recipe_name": "Lean Turkey Burger",
+			"ingredients": [
+				"2 lb organic lean ground turkey",
+				"1/3 cup bell pepper any color, diced",
+				"1/3 cup red or yellow onion diced",
+				"2 tbsp green onion chopped",
+				"1 cup chopped spinach",
+				"1/4 cup sundried tomato chopped",
+				"1/4 cup organic crumbled feta cheese",
+				"1-2 tbsp fennel seed",
+				"2 tbsp oregano tomato basil or Italian seasoning",
+				"Sea salt/pepper to taste",
+				"1/2 tbsp minced garlic",
+				"2 tbsp olive oil",
+				"2 tbsp low sodium chicken broth"
+			],
+			"directions": "(Can choose to saute chopped bell peppers, onion and sundried tomato in 1 tsp olive oil prior to mixing with rest of ingredients for added flavor). Mix all ingredients together (excluding oil and chicken broth) in large bowl and form into patties. Place patties on a flat top, grill or in a skillet with olive oil on medium heat. Let cook until they have browned on either side (about 4-5 minutes). *If patties are thick and taking longer to cook then add chicken broth to pan and cover with lid to let steam on lower heat, OR put in the oven at 350 degrees F for about 5 minutes. Store in an air-tight container and refrigerate up to 5 days or store in freezer for later use."
+		},
+
+		{
+			"recipe_name": "Thai Prawn and Ginger Noodles",
+			"ingredients": [
+				"100g folded rice noodles (sen lek)",
+				"zest and juice 1 small orange",
+				"1-2 tbsp red curry paste",
+				"1-2 tsp fish sauce",
+				"2 tsp light brown soft sugar",
+				"1 tbsp sunflower oil",
+				"25g ginger, scraped and shredded",
+				"2 large garlic cloves, sliced",
+				"1 red pepper, deseeded and sliced",
+				"85g sugar snap peas, halved lengthways",
+				"140g beansprouts",
+				"175g pack raw king prawns",
+				"handful chopped basil",
+				"handful chopped coriander"
+			],
+			"directions": "Put the noodles in a bowl and pour over boiling water to cover them. Set aside to soak for 10 mins. Stir together the orange juice and zest, curry paste, fish sauce, sugar and 3 tbsp water to make a sauce. Heat the oil in a large wok and add half the ginger and the garlic. Cook, stirring, for 1 min. Add the pepper and stir-fry for 3 mins more. Toss in the sugar snaps, cook briefly, then pour in the curry sauce. Add the beansprouts and prawns, and continue cooking until the prawns just turn pink. Drain the noodles, then toss these into the pan with the herbs and remaining ginger. Mix until the noodles are well coated in the sauce, then serve."
+		},
+
+		{
+			"recipe_name": "Overnight Oats",
+			"ingredients": [
+				"1 cup Almond Breeze Vanilla almondmilk",
+				"1/2 mashed banana",
+				"1/2 cup rolled oats",
+				"1 tablespoon chia seeds"
+			],
+			"directions": "In pint jar with lid, place all ingredients and shake. Cover; refrigerate at least 8 hours or overnight."
+		}
 	]},
 
 	{"brunch": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"mexican": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"italian": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"gluten-free": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"comfort": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"dairy-free": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]},
 
 	{"kid-friendly": [
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
 
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		},
+
+		{
+			"recipe_name": "",
+			"ingredients": [
+				"",
+				""
+			],
+			"directions": ""
+		}
 	]}
 ]}
