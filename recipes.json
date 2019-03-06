@@ -697,57 +697,121 @@
 
 	{"comfort": [
 		{
-			"recipe_name": "",
+			"recipe_name": "Beef Wellington",
 			"ingredients": [
-				"",
-				""
+				"2 1/2 pounds beef tenderloin",
+				"2 tablespoons butter, softened",
+				"2 tablespoons butter",
+				"1 onion, chopped",
+				"1/2 cup sliced fresh mushrooms",
+				"2 ounces liver pate",
+				"2 tablespoons butter, softened",
+				"salt and pepper to taste",
+				"1 (17.5 ounce) package frozen puff pastry, thawed",
+				"1 egg yolk, beaten",
+				"1 (10.5 ounce) can beef broth",
+				"2 tablespoons red wine"
 			],
-			"directions": ""
+			"directions": "Preheat oven to 425 degrees F (220 degrees C). Place beef in a small baking dish, and spread with 2 tablespoons softened butter. Bake for 10 to 15 minutes, or until browned. Remove from pan, and allow to cool completely. Reserve pan juices. Melt 2 tablespoons butter in a skillet over medium heat. Saute onion and mushrooms in butter for 5 minutes. Remove from heat, and let cool. Mix together pate and 2 tablespoons softened butter, and season with salt and pepper. Spread pate over beef. Top with onion and mushroom mixture. Roll out the puff pastry dough, and place beef in the center. Fold up, and seal all the edges, making sure the seams are not too thick. Place beef in a 9x13 inch baking dish, cut a few slits in the top of the dough, and brush with egg yolk. Bake at 450 degrees F (230 degrees C) for 10 minutes, then reduce heat to 425 degrees F (220 degrees C) for 10 to 15 more minutes, or until pastry is a rich, golden brown. Set aside, and keep warm. Place all reserved juices in a small saucepan over high heat. Stir in beef stock and red wine; boil for 10 to 15 minutes, or until slightly reduced. Strain, and serve with beef."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Shepherd's Pie",
 			"ingredients": [
-				"",
-				""
+				"1 tablespoon olive oil",
+				"1 tablespoon butter",
+				"1 onion, diced",
+				"2 pounds lean ground lamb",
+				"1/3 cup all-purpose flour",
+				"salt and ground black pepper to taste",
+				"2 teaspoons minced fresh rosemary",
+				"1 teaspoon paprika",
+				"1/8 teaspoon ground cinnamon",
+				"1 tablespoon ketchup",
+				"3 cloves garlic, minced",
+				"2 1/2 cups water, or as needed",
+				"1 (12 ounce) package frozen peas and carrots, thawed",
+				"2 1/2 pounds Yukon Gold potatoes, peeled and halved",
+				"1 tablespoon butter",
+				"1 pinch ground cayenne pepper",
+				"1/4 cup cream cheese",
+				"1/4 pound Irish cheese (such as Dubliner(R)), shredded",
+				"salt and ground black pepper to taste",
+				"1 egg yolk",
+				"2 tablespoons milk"
 			],
-			"directions": ""
+			"directions": "Preheat the oven to 375 degrees F (190 degrees C). Place olive oil and butter in Dutch oven over medium heat. Stir in onion and ground lamb; brown the meat, breaking it up into small crumbles as it cooks, about 10 minutes. Stir in flour until incorporated, then mix in salt, black pepper, rosemary, paprika, cinnamon, ketchup, and garlic; cook and stir until garlic is fragrant, 2 to 3 minutes. Stir in water and scrape up any brown bits from the bottom of the Dutch oven. Reduce heat to medium-low and bring mixture to a simmer; cook and stir until thick, about 5-6 minutes. Remove lamb mixture from heat and stir in peas and carrots until combined. Spread lamb mixture into the bottom of a 9x13-inch baking dish and set aside. Place potatoes into a large pan of salted water. Bring to a boil, reduce heat to medium, and cook until tender, about 15 minutes. Drain well and return potatoes to pan. Mash butter, cayenne pepper, cream cheese, and Irish cheese into the potatoes. Mash until combined and potatoes are smooth. Season to taste with salt and black pepper. Whisk together egg yolk and milk in a small bowl; stir into the mashed potato mixture. Top the lamb mixture in the baking dish with the mashed potatoes and spread evenly to cover. Bake in the preheated oven until the top is golden brown and sauce is bubbling up around the edges, 25 to 30 minutes."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Chocolate Fudge Cake",
 			"ingredients": [
-				"",
-				""
+				"1 (18.25 ounce) package devil's food cake mix",
+				"1 (3.9 ounce) package instant chocolate pudding mix",
+				"1 teaspoon ground cinnamon",
+				"1/2 cup water",
+				"1/2 cup vegetable oil",
+				"4 eggs",
+				"1 cup sour cream",
+				"1/4 cup coffee flavored liqueur",
+				"1 3/4 cups semisweet chocolate chips"
 			],
-			"directions": ""
+			"directions": "Preheat oven to 350 degrees F (175 degrees C). Grease and flour a 10 inch Bundt pan. In a large bowl, stir together cake mix , pudding mix and cinnamon. Make a well in the center and pour in water, oil, eggs, sour cream and coffee liqueur. Beat on low speed until blended. Scrape bowl, and beat 4 minutes on medium speed. Stir in chocolate chips. Pour batter into prepared 10 inch Bundt pan. Bake in the preheated oven for 50 to 60 minutes, or until a toothpick inserted into the center of the cake comes out clean. Allow to cool."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Mac n Cheese with Bacon Bits",
 			"ingredients": [
-				"",
-				""
+				"1 (16 ounce) package elbow macaroni",
+				"1/4 cup butter",
+				"1/2 cup sour cream",
+				"1 egg, beaten",
+				"2 tablespoons cream cheese, softened",
+				"4 cups grated Asiago cheese",
+				"4 cups grated Vermont Cheddar cheese",
+				"4 slices bacon",
+				"2 tablespoons butter",
+				"1 large onion, sliced thin",
+				"4 cloves garlic, minced",
+				"1/8 teaspoon brown sugar",
+				"1/4 cup chopped fresh parsley",
+				"1/4 cup panko bread crumbs",
+				"2 tablespoons butter",
+				"5 tablespoons all-purpose flour",
+				"3 cups milk",
+				"1/2 teaspoon ground mustard",
+				"1/2 teaspoon paprika",
+				"1/4 teaspoon salt",
+				"1/2 teaspoon pepper",
+				"1 tablespoon hot pepper sauce"
 			],
-			"directions": ""
+			"directions": "Bring a large pot of lightly salted water to a boil, add macaroni and cook for 8 minutes (noodles will still be slightly hard). Drain noodles and transfer to a large bowl with 1/4 cup of butter and toss to coat. Whisk together the sour cream, egg, and cream cheese; add to the pasta and mix well. Stir in 3 cups of grated Asiago and 3 cups of grated Cheddar cheese, reserving the remaining 2 cups of cheese for the topping. Place the bacon in a large, deep skillet, and cook over medium-high heat, turning occasionally, until evenly browned, about 10 minutes. Drain the bacon slices on a paper towel-lined plate and chop into small pieces. Preheat an oven to 400 degrees F (200 degrees C). Stir 2 tablespoons butter, the onion, and garlic into the bacon drippings in the pan and cook and stir for 2 minutes. Reduce the heat to medium-low, and add the brown sugar. Cook, stirring occasionally, for 10 to 15 minutes until the onions are very soft and golden brown. Mix the cooked bacon, parsley, and panko breadcrumbs into the onions, transfer mixture to a small bowl and set aside. Return the skillet to the heat and melt remaining 2 tablespoons butter over medium-low heat. Whisk in the flour, and stir until the mixture becomes paste-like and light golden brown, about 5 minutes. Gradually whisk the milk into the flour mixture and bring to a simmer over medium heat. Cook and stir until the mixture is smooth and thickened. Stir in the ground mustard, paprika, salt, pepper, and hot sauce. Remove sauce from heat and let cool for five minutes. Pour the sauce over the macaroni mixture, stirring well. Transfer to a greased 9x13 inch pan and sprinkle with the remaining 2 cups of Cheddar cheese. Top cheese with the onion breadcrumb mixture. Bake in preheated oven until bubbling, hot and golden brown on top, about 30 minutes."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Apple Pie",
 			"ingredients": [
-				"",
-				""
+				"1/2 cup butter",
+				"1 cup brown sugar",
+				"5 Granny Smith apples -- peeled, cored, quartered, and thinly sliced",
+				"3 (9 inch) refrigerated prerolled pie crusts",
+				"1 cup white sugar, divided",
+				"2 teaspoons ground cinnamon, divided",
+				"1/4 cup white sugar",
+				"1 tablespoon butter, cut into small chunks"
 			],
-			"directions": ""
+			"directions": "Preheat oven to 350 degrees F (175 degrees C). Place 1/2 cup butter into a heavy cast iron skillet, and melt butter in the oven. Remove skillet and sprinkle with brown sugar; return to oven to heat while you prepare the apples. Remove skillet, and place 1 refrigerated pie crust on top of the brown sugar. Top the pie crust with half the sliced apples. Sprinkle apples with 1/2 cup of sugar and 1 teaspoon of cinnamon; place a second pie crust over the apples; top the second crust with the remaining apples, and sprinkle with 1/2 cup sugar and 1 teaspoon cinnamon. Top with the third crust; sprinkle the top crust with 1/4 cup sugar, and dot with 1 tablespoon of butter. Cut 4 slits into the top crust for steam.Bake in the preheated oven until the apples are tender and the crust is golden brown, about 45 minutes. Serve warm."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Fried Chicken",
 			"ingredients": [
-				"",
-				""
+				"1 (4 pound) chicken, cut into pieces",
+				"salt and pepper to taste",
+				"1 1/2 cups all-purpose flour for coating",
+				"2 quarts vegetable oil for frying"
 			],
-			"directions": ""
+			"directions": "In a large skillet, heat oil over medium heat. Salt and pepper chicken pieces to taste, then roll in flour to coat. Place chicken pieces in skillet and fry on medium heat until one side is golden brown, then turn and brown other side until chicken is no longer pink inside and its juices run clear. Drain on paper towel and serve!"
 		}
 	]},
 
