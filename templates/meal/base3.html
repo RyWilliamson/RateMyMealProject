@@ -54,7 +54,7 @@ th, td {
 
 </style>
 
-<head lang = "en">
+	<head lang = "en">
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,54 +71,22 @@ th, td {
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 	
 	
-	<title>
-		{% block title_block %}
-			Rate My Meal
-		{% endblock %}
-	</title>
-</head>
+		<title>
+			{% block title_block %}
+				Rate My Meal
+			{% endblock %}
+		</title>
+	</head>
 	
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Rate My Meal</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'base' %}">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'about' %}">About</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		  
-			{% for category in categories %}
-				<li>
-                    <a class ="dropdown-item" href="{% url 'show_category' category.slug %}">{{category.name}}</a>
-                </li>
-			{% endfor %}
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-
-
-
+	<body>
+	
+		<div>
+			<a href = "{% url 'base' %}"><input type = "image" src = "{% static 'images/home.png' %}" name = "home" height = 100 width = 100 ></a>
+		</div>
+		
+		
+	
+	
 	{% block body_block %}
 		<h1> Rate My Meal </h1>
 		
@@ -195,5 +163,106 @@ th, td {
           </div>
         </div>
       </div>
-	{% endblock %}
+{% endblock %}
+		
+		
+		<div class="container">
+		<div class="table-responsive">
+		<table id = "1">
+			<tr>
+				<th>Your Account</th>
+			</tr>
+			{% if user.is_authenticated %}
+			<tr>
+				<td><a href = "{% url 'logout' %}">Log Out</a></td>
+			</tr>
+			
+			<tr>
+				<td><a href = "{% url 'add_recipe' %}">Add New Meal</a></td>
+			</tr>
+			{% else %}
+			<tr>
+				<td><a href = "{% url 'login' %}">Log In</a></td>
+			</tr>
+			
+			<tr>
+				<td><a href = "{% url 'signup' %}">Sign Up</a></td>
+			</tr>
+			{% endif %}
+		</table></br>
+		</div>
+		</div>
+		
+		<div class = "container">
+		<div class="active">
+		<div class="table-responsive">
+		<table id = "2">
+			<tr>
+				<th>About</th>
+			</tr>
+			
+			<tr>
+				<td>Hi! Our names are Catriona, Ryan, Chris and Jamie and we've created the website Rate My Meal for food enthusiasts everywhere to share their favourite foods and rate others. Create an account to comment on peoples' food and to post your very own recipes. Find out about real qualified chefs and use their recipes at home!</td>
+			</tr>
+			
+			
+		</table>
+		</div>
+		</div>
+		</div>
+		</br>
+		
+		
+		<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Categories</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                {% for category in categories %}
+				<li>
+                    <a href="{% url 'show_category' category.slug %}">{{category.name}}</a>
+                </li>
+				{% endfor %}
+                
+                <li>
+                    <a href="{% url 'trending' %}">Trending</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>Categories</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                </div>
+         </div>
+    </div>
+
+    
+		
 	
+		
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	
+		<script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+		</script>
+	</body>
+</head>
+</html>

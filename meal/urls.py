@@ -13,4 +13,5 @@ urlpatterns=[
 	url(r'^trending/$', views.trending, name = 'trending'),
 	url(r'^base/$', views.base, name = 'base'),
 	url(r'^signup/$', views.signUp, name = 'signup'),
+	url(r'^about/$', views.about, name = 'about'),
 ]
