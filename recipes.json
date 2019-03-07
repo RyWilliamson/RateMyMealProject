@@ -1,7 +1,6 @@
-{"categories":[
-	{"vegan": [
-		{
-			"recipe_name": "Vegan Chilli",
+{"categories": {
+	"Vegan/Vegetarian Meals": {
+		"Vegan Chilli": {
 			"ingredients": [
 				"1 (12 ounce) package vegetarian burger crumbles",
 				"1 (15 ounce) can tomato sauce",
@@ -19,8 +18,7 @@
 			"directions": "In a large pot combine crumbles, tomato sauce, water, onion, garlic, Worcestershire sauce, liquid smoke, chili powder, black pepper, mustard, salt and pepper flakes. Cook on low heat for 30 minutes, or until heated through."
 		},
 
-		{
-			"recipe_name": "Mushroom Burgers",
+		"Mushroom Burgers": {
 			"ingredients": [
 				"4 portobello mushroom caps",
 				"1/4 cup balsamic vinegar",
@@ -34,8 +32,7 @@
 			"directions": "Place the mushroom caps, smooth side up, in a shallow dish. In a small bowl, whisk together vinegar, oil, basil, oregano, garlic, salt, and pepper. Pour over the mushrooms. Let stand at room temperature for 15 minutes or so, turning twice. Preheat grill for medium-high heat. Brush grate with oil. Place mushrooms on the grill, reserving marinade for basting. Grill for 5 to 8 minutes on each side, or until tender. Brush with marinade frequently. Top with cheese during the last 2 minutes of grilling."
 		},
 		
-		{
-			"recipe_name": "Lasagne",
+		"Lasagne": {
 			"ingredients": [
 				"2 tablespoons olive oil",
 				"1 1/2 cups chopped onion",
@@ -58,8 +55,7 @@
 			"directions": "Make the sauce: In a large, heavy saucepan, over medium heat, heat the olive oil. Place the onions in the saucepan and saute them until they are soft, about 5 minutes. Add the garlic; cook 5 minutes more. Place the tomatoes, tomato paste, basil and parsley in the saucepan. Stir well, turn the heat to low and let the sauce simmer covered for 1 hour. Add the salt and pepper. While the sauce is cooking bring a large kettle of salted water to a boil. Boil the lasagna noodles for 9 minutes, then drain and rinse well. Preheat the oven to 400 degrees F (200 degrees C). Place the tofu blocks in a large bowl. Add the garlic, basil and parsley. Add the salt and pepper, and mash all the ingredients together by squeezing pieces of tofu through your fingers. Mix well. Assemble the lasagna: Spread 1 cup of the tomato sauce in the bottom of a 9x13 inch casserole pan. Arrange a single layer of lasagna noodles, sprinkle one-third of the tofu mixture over the noodles. Distribute the spinach evenly over the tofu. Next ladle 1 1/2 cups tomato sauce over the tofu, and top it with another layer of the noodles. Then sprinkle another 1/3 of the tofu mixture over the noodles, top the tofu with 1 1/2 cups tomato sauce, and place a final layer of noodles over the tomato sauce. Finally, top the noodles with the final 1/3 of the tofu, and spread the remaining tomato sauce over everything. Cover the pan with foil and bake the lasagna for 30 minutes. Serve hot and enjoy."
 		},
 		
-		{
-			"recipe_name": "Brownies",
+		"Brownies": {
 			"ingredients": [
 				"2 cups unbleached all-purpose flour",
 				"2 cups white sugar",
@@ -73,8 +69,7 @@
 			"directions": "Preheat the oven to 350 degrees F (175 degrees C). In a large bowl, stir together the flour, sugar, cocoa powder, baking powder and salt. Pour in water, vegetable oil and vanilla; mix until well blended. Spread evenly in a 9x13 inch baking pan. Bake for 25 to 30 minutes in the preheated oven, until the top is no longer shiny. Let cool for at least 10 minutes before cutting into squares."
 		},
 		
-		{
-			"recipe_name": "Falafel Burgers",
+		"Falafel Burgers": {
 			"ingredients": [
 				"2 tablespoons olive oil, divided",
 				"1 small red onion, chopped",
@@ -88,8 +83,7 @@
 			"directions": "In 12-inch skillet over medium heat, in 1 tablespoon hot olive oil, cook red onion and garlic about 5 minutes until tender-crisp. To food processor, add one-fourth of garbanzo beans, lemon juice and salt; pulse canned spinach until mixture is a smooth paste. Add remaining garbanzo beans, breadcrumbs and onion mixture; pulse until coarsely chopped. Shape mixture into four 4-inch patties. (If desired, you can refrigerate until ready to cook.) In 12-inch skillet over medium heat, in remaining tablespoon hot olive oil, cook falafel patties until golden and crisp, turning once. Serve with any of the above serving suggestions."
 		},
 		
-		{
-			"recipe_name": "Thai Curry",
+		"Thai Curry": {
 			"ingredients": [
 				"1 sweet potato, peeled and cubed",
 				"1 medium eggplant, cubed",
@@ -113,11 +107,10 @@
 			],
 			"directions": "In a large Dutch oven place sweet potato, eggplant, peppers, carrots, onion, and three tablespoons oil. Saute over medium heat for 5 minutes. In a medium saucepan place 3 tablespoons olive oil, garlic, turmeric, curry powder, cinnamon, salt and pepper and saute over medium heat for 3 minutes. Pour garlic and spice mixture into the Dutch oven with vegetables in it. Add the garbanzo beans, almonds, zucchini, raisins, and orange juice. Simmer 20 minutes, covered. Add spinach to pot and cook for 5 more minutes. Serve!"
 		}
-	]},
+	},
 
-	{"healthy": [
-		{
-			"recipe_name": "Roasted Chickpea Wraps",
+	"Healthy Meals": {
+		"Roasted Chickpea Wraps": {
 			"ingredients": [
 				"3 cups chickpeas drained and rinsed",
 				"1/4 cup hot sauce",
@@ -138,8 +131,7 @@
 			"directions": "Preheat the oven to 425 degrees. In a large bowl add all the chickpea ingredients except for the cilantro. Toss well to coat and spread the chickpeas in a single layer on a baking sheet (lined with parchment paper). Roast the chickpeas for 25 minutes (stirring frequently to make sure they roast evenly). Once the chickpeas are done, allow them to cool slightly before starting the wraps. Place a tortilla on a flat surface and spread with the hot sauce, add the kale along the centre of the tortilla. Pile the remaining toppings over the kale along the centre of the tortilla too, leaving an inch clearance on the both sides. gently fold the sides of the tortillas over the filling before you tart rolling (that way the filling doesn't fall off the wrap), and then start rolling the tortillas. Slice each wrap in half and serve! Enjoy :)"
 		},
 
-		{
-			"recipe_name": "Roast Pepper Pesto Pasta",
+		"Roast Pepper Pesto Pasta": {
 			"ingredients": [
 				"16 ounce jar roasted red peppers (or use 3-4 fresh roasted peppers)",
 				"1/4 cup packed fresh basil leaves (10-15 leaves)",
@@ -153,8 +145,7 @@
 			"directions": "Bring a large pot of salted water to a boil. Boil the pasta according to the DeLallo package instructions, approximately 10-12 minutes. Drain the pasta and pour back in the pot. While the pasta is cooking, chop the walnuts in a food processor. Pour the walnuts into a small bowl then add the roasted red peppers, fresh basil, and garlic to the food processor. Pulse until finely chopped. Add the parmesan cheese, chopped walnuts, olive oil, and 1/2 tsp. salt to the food processor, Pulse to combine. Salt and Pepper to taste. Pour the pesto over the cooked and drained pasta and toss to coat. Serve warm."
 		},
 
-		{
-			"recipe_name": "Veggie Wholewheat Pot Noodle",
+		"Veggie Wholewheat Pot Noodle": {
 			"ingredients": [
 				"100g dried wholewheat noodles",
 				"2 tsp groundnut oil",
@@ -175,8 +166,7 @@
 			"directions": "Fill a large saucepan with water and bring to the boil. Add the noodles and cook for 3-5 mins or until tender. Drain and leave to cool. Place a large non-stick pan (or wok) over a medium-high heat and add the groundnut oil. When hot, add the red pepper and cook for 2-3 mins until slightly softened. Add the courgette and edamame, and cook for a further 1-2 mins. Remove from the heat, transfer to a bowl and allow to cool. Whisk together the dressing ingredients in a small bowl, or 2 jars if taking to work, then season. Divide the noodles between 2 jars or plastic containers and top with the cooled vegetables, beansprouts, carrot, spinach, crispy onions and coriander. Add the dressing just before eating."
 		},
 
-		{
-			"recipe_name": "Lean Turkey Burger",
+		"Lean Turkey Burger": {
 			"ingredients": [
 				"2 lb organic lean ground turkey",
 				"1/3 cup bell pepper any color, diced",
@@ -195,8 +185,7 @@
 			"directions": "(Can choose to saute chopped bell peppers, onion and sundried tomato in 1 tsp olive oil prior to mixing with rest of ingredients for added flavor). Mix all ingredients together (excluding oil and chicken broth) in large bowl and form into patties. Place patties on a flat top, grill or in a skillet with olive oil on medium heat. Let cook until they have browned on either side (about 4-5 minutes). *If patties are thick and taking longer to cook then add chicken broth to pan and cover with lid to let steam on lower heat, OR put in the oven at 350 degrees F for about 5 minutes. Store in an air-tight container and refrigerate up to 5 days or store in freezer for later use."
 		},
 
-		{
-			"recipe_name": "Thai Prawn and Ginger Noodles",
+		"Thai Prawn and Ginger Noodles": {
 			"ingredients": [
 				"100g folded rice noodles (sen lek)",
 				"zest and juice 1 small orange",
@@ -216,8 +205,7 @@
 			"directions": "Put the noodles in a bowl and pour over boiling water to cover them. Set aside to soak for 10 mins. Stir together the orange juice and zest, curry paste, fish sauce, sugar and 3 tbsp water to make a sauce. Heat the oil in a large wok and add half the ginger and the garlic. Cook, stirring, for 1 min. Add the pepper and stir-fry for 3 mins more. Toss in the sugar snaps, cook briefly, then pour in the curry sauce. Add the beansprouts and prawns, and continue cooking until the prawns just turn pink. Drain the noodles, then toss these into the pan with the herbs and remaining ginger. Mix until the noodles are well coated in the sauce, then serve."
 		},
 
-		{
-			"recipe_name": "Overnight Oats",
+		"Overnight Oats": {
 			"ingredients": [
 				"1 cup Almond Breeze Vanilla almondmilk",
 				"1/2 mashed banana",
@@ -226,11 +214,10 @@
 			],
 			"directions": "In pint jar with lid, place all ingredients and shake. Cover; refrigerate at least 8 hours or overnight."
 		}
-	]},
+	},
 
-	{"brunch": [
-		{
-			"recipe_name": "Huevos Rancheros",
+	"Brunch Ideas": {
+		"Huevos Rancheros": {
 			"ingredients": [
 				"2 tablespoons vegetable oil",
 				"4 (6 inch) corn tortillas",
@@ -244,8 +231,7 @@
 			"directions": "Heat oil in a small skillet over medium-high heat. Fry tortillas one at a time until firm, but not crisp. Remove to paper towels to drain grease. Meanwhile, combine the refried beans and butter in a microwave-safe dish. Cover, and cook in the microwave until heated through. When tortillas are done, fry eggs over easy in the skillet. Add more oil if the tortillas have absorbed it all. Place tortillas onto plates, and spread a layer of beans on them. Top with cheese, a fried egg, crumbled bacon and if desired, salsa."
 		},
 
-		{
-			"recipe_name": "Eggs Royale",
+		"Eggs Royale": {
 			"ingredients": [
 				"200g hollandaise sauce",
 				"1 pinch salt",
@@ -257,8 +243,7 @@
 			"directions": "Fill a frying pan with about 5cm of water, add the vinegar and salt and bring to the boil. Adjust the heat so the water is boiling but not too fiercely then crack an egg into a cup and tip into the pan. Repeat with the remaining eggs, working quickly and remembering the order in which you put them in. Cook for 3-5 minutes depending on how you like your eggs cooked. While the eggs are cooking toast the muffin and then top with slices of smoked salmon. Remove the eggs from the pan with a slotted spoon and drain on kitchen paper before placing on top of the smoked salmon. Spoon over the Hollandaise sauce to serve."
 		},
 
-		{
-			"recipe_name": "French Toast with Maple Syrup",
+		"French Toast with Maple Syrup": {
 			"ingredients": [
 				"6 thick slices bread",
 				"2 eggs",
@@ -271,8 +256,7 @@
 			"directions": "Beat together egg, milk, salt, desired spices and vanilla. Heat a lightly oiled griddle or skillet over medium-high heat. Dunk each slice of bread in egg mixture, soaking both sides. Place in pan, and cook on both sides until golden. Serve hot."
 		},
 
-		{
-			"recipe_name": "Pancakes with Fresh Berries",
+		"Pancakes with Fresh Berries": {
 			"ingredients": [
 				"1 3/4 cups all purpose flour",
 				"2 teaspoons baking powder",
@@ -287,8 +271,7 @@
 			"directions": "In a medium-size mixing bowl, whisk together all your dry ingredients In a separate bowl, whisk together all of the wet ingredients until the egg is broken up. Add the wet ingredients to the dry ingredients and add the blueberries. Gently stir until you stop seeing flour. Be careful not to overmix, that will make the batter tough. Leave a few lumps for tender pancakes. Place your a large non-stick pan over a medium-high flame and let the surface get hot. It's hot enough when you sprinkle a few droplets of water over the surface and they evaporate. Moisten a paper towel with vegetable oil and lightly wipe the bottom of the pan. This will keep the pancakes from sticking. For each pancake, gently pour 1/2 cup of batter into the pan, using a ladle or a measuring cup. Use the back of a spoon to spread the batter into a circle. Bubbles will form in the batter. When they begin to pop, the pancakes are ready to be flipped. Turn over gently with the spatula and cook for about one minute on the flip side."
 		},
 
-		{
-			"recipe_name": "Berry Smoothie Bowl",
+		"Berry Smoothie Bowl": {
 			"ingredients": [
 				"1 cup frozen strawberries",
 				"1 cup frozen pineapple chunks",
@@ -306,8 +289,7 @@
 			"directions": "Blend strawberries, pineapple, yogurt, coconut water, and acai pulp in a blender until smooth; pour into a bowl. Top smoothie with kiwi, banana, blueberries, raspberries, almonds, granola, and chia seeds."
 		},
 
-		{
-			"recipe_name": "Baked Avocado with Smoked Salmon and Egg",
+		"Baked Avocado with Smoked Salmon and Egg": {
 			"ingredients": [
 				"avocado 3 large",
 				"eggs 6 small, separated",
@@ -318,11 +300,10 @@
 			],
 			"directions": "Heat the oven to 200C/fan 180C/gas 6. Halve the avocados lengthways and remove their stones. Cut a small slice off the skin-side of the avocado halves to stop them rolling and put them onto a baking tray. Scoop out some of the middle from where the stone was, add a little salmon to each and then add the egg yolks. Beat the egg whites quickly, so it's one uniform consistency, and pour in as much as you can. Grind over black pepper and bake for 10 minutes, or until the whites have set. Scatter over the chives and a pinch of cayenne, if you like. Serve with rye soldiers for dunking."
 		}
-	]},
+	},
 
-	{"mexican": [
-		{
-			"recipe_name": "Pulled Pork Burrito",
+	"Mexican Meals": {
+		"Pulled Pork Burrito": {
 			"ingredients": [
 				"4 burrito-size tortillas",
 				"1 pound pulled pork",
@@ -345,8 +326,7 @@
 			"directions": "Preheat oven to 400 degrees and spray a baking sheet with cooking spray. Place tortillas on a microwave-safe plate and lay a damp paper towel on top. Microwave for 30 seconds. (This will make them more pliable.) Mix BBQ sauce with pulled pork. Divide pulled pork, rice, and cheese evenly between tortillas and roll up burrito style. Place on prepared baking sheet and spray each burrito with cooking spray to help the tortilla crisp up. Place in oven for 20 minutes. While burritos are in the oven, heat butter and olive oil over medium heat in a medium saucepan. Add onion and cook until soft. Sprinkle flour into saucepan. Stir and cook for 1 minute. Sprinkle flour into saucepan. Stir and cook for 1 minute. Gradually whisk in chicken broth. Add green chilies, cumin, garlic powder, and salt and simmer 2 to 3 minutes to thicken. Keep warm and stir in sour cream and cheese just before ready to serve. Spoon sauce over burritos. Sprinkle with fresh cilantro and add some salsa if desired."
 		},
 
-		{
-			"recipe_name": "Chicken Fajitas",
+		"Chicken Fajitas": {
 			"ingredients": [
 				"1 Reynolds(R) Slow Cooker Liner",
 				"2 pounds boneless, skinless chicken breast tenders",
@@ -365,8 +345,7 @@
 			"directions": "Open Reynolds(R) Slow Cooker Liner and place it inside a 5- to 6 1/2-quart slow cooker bowl. Fit liner snugly against the bottom and sides of bowl; pull top of liner over rim of bowl. Place chicken in Reynolds(R) Slow Cooker Liner. Place onions and bell peppers on top of chicken. Mix salsa, fajita seasoning mix and cayenne pepper in a medium bowl. Pour over chicken. Place lid on slow cooker. Cook on LOW for 6 to 7 hours OR on HIGH for 3 to 4 hours until chicken is done. Carefully remove lid to allow steam to escape. Gently stir chicken and sauce with a plastic or wooden slotted spoon. Spoon 1/2 cup of chicken mixture into center of each tortilla; add desired toppings and fold tortilla over filling. Do not lift or transport liner with food inside. Cool slow cooker completely; remove Reynolds(R) Slow Cooker Liner and toss."
 		},
 
-		{
-			"recipe_name": "Vegetable Enchiladas",
+		"Vegetable Enchiladas": {
 			"ingredients": [
 				"3 tablespoons olive oil",
 				"1 tablespoon ground cumin",
@@ -394,8 +373,7 @@
 			"directions": "In a medium saucepan, heat olive oil over medium-high heat. Add cumin, adobo, garlic powder, white pepper, coriander, black pepper, flour, and tomato paste. Cook, whisking constantly, for 1 minute. Whisk in the broth and bring to a boil. Reduce to a simmer and cook until slightly thickened, about 5 minutes. Set aside. In a large skillet, heat olive oil over medium-high heat. Add garlic, onion, bell pepper and corn and saute until just softened. Stir in adobo, cumin and black beans. Add spinach and saute until wilted, about 2 minutes. Remove pan from heat. Stir in cilantro and 2 cups of cheese. Preheat oven to 375F. Lightly spray a 9x13 baking dish with non-stick spray. Pour 3/4 cup sauce in the bottom of the baking dish and spread evenly. Wrap corn tortillas in a damp paper towel and microwave for 30 seconds. Then working quickly, spoon about 1/3 c of the enchilada filling into each tortilla and roll up. Place in the baking dish, seam side down. Pack the filled tortillas tightly in the baking dish. Pour remaining sauce over them, making sure to cover the entire surface. Sprinkle remaining cheese evenly over the enchiladas. Bake uncovered until hot and bubbly, about 20 minutes. Cool for 5 minutes before serving and sprinkle with extra cilantro. Serve hot!"
 		},
 
-		{
-			"recipe_name": "Spicy Beef Quesadillas",
+		"Spicy Beef Quesadillas": {
 			"ingredients": [
 				"2 tablespoons butter",
 				"1 medium yellow or sweet onion, chopped",
@@ -412,8 +390,7 @@
 			"directions": "Melt butter over medium-high heat in a large pan. Add onion and bell pepper and cook until they are starting to soften but still have a little crunch. Add chipotle peppers, red pepper flakes, paprika and season to taste with salt and pepper. Stir leftover short ribs into onion mixture and transfer to a bowl. Wipe pan clean. For each quesadilla, sprinkle about 1/4 cup cheese on a tortilla, top with 1/4 of short rib/onion mixture, and cover with another 1/4 cup cheese. Place a second tortilla on top. Melt about a 1/2 tablespoon butter in the pan, add quesadilla and cook until golden brown on each side and cheese is melted. Repeat for remaining 3 quesadillas."
 		},
 
-		{
-			"recipe_name": "Chilli Con Carne",
+		"Chilli Con Carne": {
 			"ingredients": [
 				"6 pounds dried pinto beans",
 				"3/8 cup salt",
@@ -429,8 +406,7 @@
 			"directions": "Wash and sort pinto beans. Bring 3 gallons of water to boil in a 6 gallon pot. Pour in beans, return to a boil and cook 2 minutes. Remove from heat and let stand 1 hour. Stir in salt and simmer until tender, 90 minutes. Drain and set aside. Brown beef with onions and garlic over medium high heat in same pot or enormous skillet. Combine meat mixture, tomatoes, tomato paste, chili powder, cumin, pepper and cooked beans in 6 gallon pot; stir; cover and simmer 1 hour."
 		},
 
-		{
-			"recipe_name": "Churros",
+		"Churros": {
 			"ingredients": [
 				"1 cup water",
 				"2 1/2 tablespoons white sugar",
@@ -444,8 +420,7 @@
 			"directions": "In a small saucepan over medium heat, combine water, 2 1/2 tablespoons sugar, salt and 2 tablespoons vegetable oil. Bring to a boil and remove from heat. Stir in flour until mixture forms a ball. Heat oil for frying in deep-fryer or deep skillet to 375 degrees F (190 degrees C). Pipe strips of dough into hot oil using a pastry bag. Fry until golden; drain on paper towels. Combine 1/2 cup sugar and cinnamon. Roll drained churros in cinnamon and sugar mixture."
 		},
 
-		{
-			"recipe_name": "Jackfruit Tacos",
+		"Jackfruit Tacos": {
 			"ingredients": [
 				"2 (20 ounce) cans jackfruit in brine - drained, rinsed, and cut into bite-sized pieces",
 				"1 tablespoon vegetable oil",
@@ -456,11 +431,10 @@
 			],
 			"directions": "Heat oil in a small saucepan over medium heat. Add jackfruit; cook and stir for 2 to 3 minutes. Add 1 tablespoon water and taco seasoning; stir until well combined, about 1 minute. Add additional water 1 tablespoon at a time as needed. Place a small amount of jackfruit in each taco shell; add 2 tablespoons salsa."
 		}
-	]},
+	},
 
-	{"italian": [
-		{
-			"recipe_name": "Salsiccia Piccante Pizza",
+	"Italian Meals": {
+		"Salsiccia Piccante Pizza": {
 			"ingredients": [
 				"1 1/2 teaspoons olive oil",
 				"1/4 to 1/2 teaspoon crushed red pepper",
@@ -475,8 +449,7 @@
 			"directions": "Step 1 - Position an oven rack in lowest setting. Place a pizza stone on lowest rack. Step 2 - Preheat oven to 500. Preheat pizza stone 30 minutes before baking pizza. Step 3 - Heat oil in a large nonstick skillet over medium-high heat. Add pepper to pan; cook 10 seconds. Remove casings from sausage. Add sausage, fennel, and onion to pan; saute 4 minutes or until browned, stirring to crumble sausage. Stir in salt. Add tomato; saute 2 minutes or until tender. Remove from heat. Step 4 - Spread sausage mixture over Basic Pizza Dough, leaving a 1/2-inch border. Slide dough onto preheated pizza stone, using a spatula as a guide. Step 5 - Bake at 500 for 8 minutes or until crust is golden. Remove from pizza stone. Sprinkle with cheese. Cut pizza into 8 wedges."
 		},
 
-		{
-			"recipe_name": "Spaghetti Carbonara",
+		"Spaghetti Carbonara": {
 			"ingredients": [
 				"1 pound spaghetti",
 				"1 tablespoon olive oil",
@@ -494,8 +467,7 @@
 			"directions": "In a large pot of boiling salted water, cook spaghetti pasta until al dente. Drain well. Toss with 1 tablespoon of olive oil, and set aside. Meanwhile in a large skillet, cook chopped bacon until slightly crisp; remove and drain onto paper towels. Reserve 2 tablespoons of bacon fat; add remaining 1 tablespoon olive oil, and heat in reused large skillet. Add chopped onion, and cook over medium heat until onion is translucent. Add minced garlic, and cook 1 minute more. Add wine if desired; cook one more minute. Return cooked bacon to pan; add cooked and drained spaghetti. Toss to coat and heat through, adding more olive oil if it seems dry or is sticking together. Add beaten eggs and cook, tossing constantly with tongs or large fork until eggs are barely set. Quickly add 1/2 cup Parmesan cheese, and toss again. Add salt and pepper to taste (remember that bacon and Parmesan are very salty). Serve immediately with chopped parsley sprinkled on top, and extra Parmesan cheese at table."
 		},
 
-		{
-			"recipe_name": "Lobster Ravioli",
+		"Lobster Ravioli": {
 			"ingredients": [
 				"1/2 pound unpeeled large shrimp",
 				"1 yellow onion, quartered",
@@ -524,8 +496,7 @@
 			"directions": "Peel and devein the shrimp, reserving the shells and heads. Chop the shrimp into bite-size pieces. To make the shrimp stock, combine the shrimp shells and heads, onion, and celery in a large pot. Squeeze the lemon juice into the pot, then add the lemon halves as well. Add the dried basil, oregano, thyme, peppercorns, 1/2 cup parsley, and 3 cups of water. Cover the pot and bring to a boil. Reduce heat and simmer, uncovered, for 1 hour, skimming away any foam or impurities that have risen to the surface. Strain the shrimp stock and set aside. Heat the butter in a large skillet over medium heat. Cook the shrimp pieces until pink and almost cooked through, 1 to 2 minutes. Remove and set aside. Add the shallots to the pan; cook and stir until the shallots have softened and turned translucent, about 5 minutes. Stir in the garlic, lemon zest, salt, and ground pepper. Cook for thirty seconds, then add the white wine. Bring to a boil and cook until the white wine is reduced by half, about 5 minutes. Add the shrimp stock to the pan, bring it to a boil, and simmer until the sauce is reduce by half, about 15 minutes.  Meanwhile, fill a large pot with heavily salted water and bring to a rolling boil over high heat. Once the water is boiling, stir in ravioli, and return to a boil. Cook uncovered, stirring occasionally, until the ravioli float to the top and the filling is hot, 3 to 4 minutes. Drain well, reserving a little pasta-cooking water to thin the sauce, if necessary. Stir the diced tomatoes and cream into the shrimp sauce and heat through. Return the shrimp to the pan, taste the sauce, and season to taste with salt and pepper. Fold the ravioli into the sauce. Place four ravioli onto each of four warmed pasta bowls or plates and top with sauce. Garnish the pasta with chopped parsley and lemon zest."
 		},
 
-		{
-			"recipe_name": "Pollo Milanese",
+		"Pollo Milanese": {
 			"ingredients": [
 				"3 tablespoons flour",
 				"3 medium eggs",
@@ -546,8 +517,7 @@
 			"directions": "First prepare the sauce. Heat the oil in a medium saucepan over a medium heat. Add the garlic. As soon as it starts to sizzle, add the chilli flakes and fry for 1 minute, stirring continually. Tip in the tomatoes and olives and bring to the boil. Reduce the heat and simmer for 20 minutes, uncovered, stirring occasionally. Season with salt. Set aside. Put the flour on a large plate or tray. Beat the eggs in a large bowl and season with salt. Combine the grated Parmesan and breadcrumbs in a shallow dish. Place the chicken breasts between 2 sheets of cling film. Using a rolling pin, meat mallet or heavy-based pan, pound the chicken to about 1 cm thick. Dip each chicken breast in the flour, then the eggs, then finally the breadcrumb mixture. Ensure each breast is evenly coated and press the breadcrumbs firmly into the egg so they stick. Heat the oil in a large frying over a medium heat. Add the chicken and fry for 4-5 minutes each side. Drain on kitchen paper. Keep warm. Meanwhile, plunge the beans into boiling water for 2-3 minutes or until al dente. Using a slotted spoon, transfer to a large bowl. While still warm, drizzle over the oil and vinegar, season well and toss to coat. Gently warm through the sauce over a low heat. Divide the sauce among 4 serving plates, then place the chicken breast on the sauce. Scatter over the Parmesan shaving. Serve the beans on the side." 
 		},
 
-		{
-			"recipe_name": "Risotto Quattro Stagioni",
+		"Risotto Quattro Stagioni": {
 			"ingredients": [
 				"6 cups chicken broth, divided",
 				"3 tablespoons olive oil, divided",
@@ -565,8 +535,7 @@
 			"directions": "In a saucepan, warm the broth over low heat. Warm 2 tablespoons olive oil in a large saucepan over medium-high heat. Stir in the mushrooms, and cook until soft, about 3 minutes. Remove mushrooms and their liquid, and set aside. Add 1 tablespoon olive oil to skillet, and stir in the shallots. Cook 1 minute. Add rice, stirring to coat with oil, about 2 minutes. When the rice has taken on a pale, golden color, pour in wine, stirring constantly until the wine is fully absorbed. Add 1/2 cup broth to the rice, and stir until the broth is absorbed. Continue adding broth 1/2 cup at a time, stirring continuously, until the liquid is absorbed and the rice is al dente, about 15 to 20 minutes. Remove from heat, and stir in mushrooms with their liquid, butter, chives, and parmesan. Season with salt and pepper to taste."
 		},
 
-		{
-			"recipe_name": "Tiramisu",
+		"Tiramisu": {
 			"ingredients": [
 				"6 egg yolks",
 				"1 cup white sugar, divided",
@@ -580,11 +549,10 @@
 			],
 			"directions": "In a medium bowl beat together the egg yolks and 1/3 cup of sugar. Using a wooden spoon stir in mascarpone cheese, beaten egg whites, cream and kirschwasser; stir until smooth. Set aside. Dissolve remaining 2/3 cup sugar in coffee. Quickly, to avoid complete saturation, dip ends of ladyfingers in coffee mixture. Place ladyfingers in a single layer in a 9 x 13 inch glass baking dish. Spread a layer of cheese mixture over the ladyfingers; repeat layers, ending with cheese mixture. Cover and refrigerate for several hours. Sprinkle with cocoa just before serving."
 		}
-	]},
+	},
 
-	{"gluten-free": [
-		{
-			"recipe_name": "Scones",
+	"Gluten Free Meals": {
+		"Scones": {
 			"ingredients": [
 				"2 cups gluten-free all-purpose baking flour",
 				"2 tablespoons coconut flour",
@@ -600,8 +568,7 @@
 			"directions": "Preheat oven to 400 degrees F (200 degrees C). Line a baking sheet with parchment paper. Whisk gluten-free flour, coconut flour, baking powder, baking soda, sea salt, and xanthan gum together in a bowl. Stir butter, yogurt, honey, and egg together in a separate large bowl. Add flour mixture to butter mixture and stir until dough is just combined. Turn dough out onto prepared baking sheet and shape into a large round about 3/4-inch thick. Use a knife to score dough into 8 triangles without cutting all the way through the dough. Bake in the preheated oven until golden brown, about 17 minutes. Cut on the scored lines through the dough to separate into individual scones."
 		},
 
-		{
-			"recipe_name": "Bolognese",
+		"Bolognese": {
 			"ingredients": [
 				"300g Quorn Mince",
 				"2 tbsp olive oil",
@@ -624,8 +591,7 @@
 			"directions": "Heat the oil in a large frying pan, add the onion, carrot and celery. Cook over a medium heat stirring frequently for about 5 minutes until the vegetables are softened. Add the garlic and mushrooms and stir fry for 2-3 minutes more. Stir in the red wine and reduce until the liquid is halved in volume Add the pasata, vegetarian Worcestershire sauce, vegetable stock, tomato puree and oregano. Stir well. Cook for 8-10 minutes until the vegetables are cooked Stir in the Quorn Mince and continue to cook over low heat for 5 minutes. Stir in the basil and season to taste Meanwhile, cook the gluten free spaghetti according to pack instructions."
 		},
 
-		{
-			"recipe_name": "Pizza",
+		"Pizza": {
 			"ingredients": [
 				"250 ml semi-skimmed milk",
 				"1 x 7 g sachet of dried yeast",
@@ -645,8 +611,7 @@
 			"directions": "Preheat the oven to 220C/425F/gas 7. Place a pizza stone or a large baking tray in the oven to heat up. Heat the milk in a small pan over a low heat until lukewarm, then place 50ml into a jug with the yeast and sugar. Mix well, then set aside for a few minutes until starting to bubble. Meanwhile, sieve the flour, xanthan gum and salt into a large bowl, then make a well in the middle. In a separate bowl, combine the egg, 3 tablespoons of olive oil and the remaining milk, then pour it into the well, along with the yeast mixture. Gradually bring the mixture together with a fork until it forms a smooth dough. In a small cup, combine the bicarbonate of soda and vinegar, then quickly knead it into the mixture. Place the dough into a lightly oiled bowl, cover with a damp tea towel, then leave to prove in a warm place for around 1 hour, or until doubled in size. Meanwhile, make the topping. Pick the basil leaves and set aside, then finely chop the stalks. Peel and finely chop the garlic. Heat a splash of olive oil in a large frying pan over a medium heat, then add the basil stalks and garlic. Cook for a few minutes, or until golden. Pour in the tinned tomatoes, break them up with the back of a wooden spoon, then cook for 5 to 10 minutes, or until thickened. Transfer to a blender along with half the reserved basil leaves, blitz until smooth, then season to taste with sea salt and black pepper. Once doubled in size, divide the dough into four equal-sized pieces on a flour-dusted surface. Roll out until roughly 30cm in diameter and 2mm thick. Place the pizza bases onto the preheated pizza stone or baking tray (you'll need to do this in batches), then spread over the tomato sauce, leaving a rough 2cm gap around the edge. Tear over the mozzarella, then pop in the hot oven for 10 to 12 minutes or until golden and crisp. Scatter the reserved basil leaves on top, then serve."
 		},
 
-		{
-			"recipe_name": "Salmon and Brocolli Bake",
+		"Salmon and Brocolli Bake": {
 			"ingredients": [
 				"550g pack of 4 Waitrose Select Farm Salmon Fillets",
 				"1 broccoli crown, cut into florets (about 250g)",
@@ -659,8 +624,7 @@
 			"directions": "Preheat the oven to 200C, gas mark 6. Place the salmon in a shallow pan and pour over enough cold water to cover. Bring to the boil then lower the heat and poach gently for 10-12 minutes until just cooked through. Remove from the cooking liquid and flake the flesh. Arrange over the base of a shallow baking dish. Steam the broccoli florets for 4-5 minutes until just tender then add to the salmon. Whisk together the yogurt, egg, mustard, lemon zest and juice, season and spoon over the broccoli and salmon to coat. Scatter with the breadcrumbs and bake for 20-25 minutes until the topping is set and golden. Serve with new potatoes."
 		},
 
-		{
-			"recipe_name": "Pesto, Courgette * Gryuere Polenta Tart",
+		"Pesto, Courgette * Gryuere Polenta Tart": {
 			"ingredients": [
 				"500ml hot, gluten-free vegetable stock",
 				"140g fine polenta",
@@ -676,8 +640,7 @@
 			"directions": "First, make the polenta crust. Bring the vegetable stock to a simmer in a medium saucepan and, working quickly, pour the polenta into the pan. Keep your pan over a low heat and, using a wooden spoon, stir constantly, beating any lumps that form. Continue stirring for 5-6 mins until the polenta is very thick. Remove the pan from the heat, add the Gruyre and stir until the cheese has melted. Finally, stir through the beaten egg, season generously, and allow to cool slightly. Lightly brush a baking sheet with oil. Tip the polenta into the centre and, using a spatula or oiled fingers, gently spread the polenta into a rectangle shape roughly the size of an A4 sheet of paper. Heat oven to 200C/180C fan/gas 6. Smother a thin layer of pesto over the polenta, leaving a 1-1.5cm border around the edge of the tart. Top the pesto with slices of courgette, intermittently adding the sliced garlic and most of the basil. Season with ground black pepper and a good sprinkling of gruyre. Cook on the middle shelf of the oven for 45 mins. Reduce the temperature to 180C/160C fan/gas 4 for a further 15 mins. Remove and allow to cool for 5-10 mins, scatter over the remaining basil and serve."
 		},
 
-		{
-			"recipe_name": "Self-Saucing Chocolate Pudding",
+		"Self-Saucing Chocolate Pudding": {
 			"ingredients": [
 				"1/2 cup milk",
 				"1 egg",
@@ -693,11 +656,10 @@
 			],
 			"directions": "Step 1 - Preheat oven to 180C or 160C fan-forced. Grease a 1.5L capacity ovenproof baking dish. Step 2 - Combine milk, butter and egg and lightly whisk. Step 3 - Sift flour and cocoa into a large bowl. Stir in sugar. Slowly add milk mixture to flour mixture, whisking until well combined and smooth. Step 4 - Combine cocoa powder and brown sugar for sauce in a bowl. Step 5 - Spoon pudding mix into baking dish. Smooth top. Sprinkle combined sugar and cocoa over pudding. Step 6 - Slowly pour boiling water over the back of a large metal spoon to cover pudding. Place dish onto a baking tray. Bake for 35 to 40 minutes or until pudding bounces back when pressed gently in centre. Step 7 - Sift cocoa powder over pudding and serve hot with berries and cream."
 		}
-	]},
+	},
 
-	{"comfort": [
-		{
-			"recipe_name": "Beef Wellington",
+	"Comfort Food": {
+		"Beef Wellington": {
 			"ingredients": [
 				"2 1/2 pounds beef tenderloin",
 				"2 tablespoons butter, softened",
@@ -715,8 +677,7 @@
 			"directions": "Preheat oven to 425 degrees F (220 degrees C). Place beef in a small baking dish, and spread with 2 tablespoons softened butter. Bake for 10 to 15 minutes, or until browned. Remove from pan, and allow to cool completely. Reserve pan juices. Melt 2 tablespoons butter in a skillet over medium heat. Saute onion and mushrooms in butter for 5 minutes. Remove from heat, and let cool. Mix together pate and 2 tablespoons softened butter, and season with salt and pepper. Spread pate over beef. Top with onion and mushroom mixture. Roll out the puff pastry dough, and place beef in the center. Fold up, and seal all the edges, making sure the seams are not too thick. Place beef in a 9x13 inch baking dish, cut a few slits in the top of the dough, and brush with egg yolk. Bake at 450 degrees F (230 degrees C) for 10 minutes, then reduce heat to 425 degrees F (220 degrees C) for 10 to 15 more minutes, or until pastry is a rich, golden brown. Set aside, and keep warm. Place all reserved juices in a small saucepan over high heat. Stir in beef stock and red wine; boil for 10 to 15 minutes, or until slightly reduced. Strain, and serve with beef."
 		},
 
-		{
-			"recipe_name": "Shepherd's Pie",
+		"Shepherd's Pie": {
 			"ingredients": [
 				"1 tablespoon olive oil",
 				"1 tablespoon butter",
@@ -743,8 +704,7 @@
 			"directions": "Preheat the oven to 375 degrees F (190 degrees C). Place olive oil and butter in Dutch oven over medium heat. Stir in onion and ground lamb; brown the meat, breaking it up into small crumbles as it cooks, about 10 minutes. Stir in flour until incorporated, then mix in salt, black pepper, rosemary, paprika, cinnamon, ketchup, and garlic; cook and stir until garlic is fragrant, 2 to 3 minutes. Stir in water and scrape up any brown bits from the bottom of the Dutch oven. Reduce heat to medium-low and bring mixture to a simmer; cook and stir until thick, about 5-6 minutes. Remove lamb mixture from heat and stir in peas and carrots until combined. Spread lamb mixture into the bottom of a 9x13-inch baking dish and set aside. Place potatoes into a large pan of salted water. Bring to a boil, reduce heat to medium, and cook until tender, about 15 minutes. Drain well and return potatoes to pan. Mash butter, cayenne pepper, cream cheese, and Irish cheese into the potatoes. Mash until combined and potatoes are smooth. Season to taste with salt and black pepper. Whisk together egg yolk and milk in a small bowl; stir into the mashed potato mixture. Top the lamb mixture in the baking dish with the mashed potatoes and spread evenly to cover. Bake in the preheated oven until the top is golden brown and sauce is bubbling up around the edges, 25 to 30 minutes."
 		},
 
-		{
-			"recipe_name": "Chocolate Fudge Cake",
+		"Chocolate Fudge Cake": {
 			"ingredients": [
 				"1 (18.25 ounce) package devil's food cake mix",
 				"1 (3.9 ounce) package instant chocolate pudding mix",
@@ -759,8 +719,7 @@
 			"directions": "Preheat oven to 350 degrees F (175 degrees C). Grease and flour a 10 inch Bundt pan. In a large bowl, stir together cake mix , pudding mix and cinnamon. Make a well in the center and pour in water, oil, eggs, sour cream and coffee liqueur. Beat on low speed until blended. Scrape bowl, and beat 4 minutes on medium speed. Stir in chocolate chips. Pour batter into prepared 10 inch Bundt pan. Bake in the preheated oven for 50 to 60 minutes, or until a toothpick inserted into the center of the cake comes out clean. Allow to cool."
 		},
 
-		{
-			"recipe_name": "Mac n Cheese with Bacon Bits",
+		"Mac n Cheese with Bacon Bits": {
 			"ingredients": [
 				"1 (16 ounce) package elbow macaroni",
 				"1/4 cup butter",
@@ -788,8 +747,7 @@
 			"directions": "Bring a large pot of lightly salted water to a boil, add macaroni and cook for 8 minutes (noodles will still be slightly hard). Drain noodles and transfer to a large bowl with 1/4 cup of butter and toss to coat. Whisk together the sour cream, egg, and cream cheese; add to the pasta and mix well. Stir in 3 cups of grated Asiago and 3 cups of grated Cheddar cheese, reserving the remaining 2 cups of cheese for the topping. Place the bacon in a large, deep skillet, and cook over medium-high heat, turning occasionally, until evenly browned, about 10 minutes. Drain the bacon slices on a paper towel-lined plate and chop into small pieces. Preheat an oven to 400 degrees F (200 degrees C). Stir 2 tablespoons butter, the onion, and garlic into the bacon drippings in the pan and cook and stir for 2 minutes. Reduce the heat to medium-low, and add the brown sugar. Cook, stirring occasionally, for 10 to 15 minutes until the onions are very soft and golden brown. Mix the cooked bacon, parsley, and panko breadcrumbs into the onions, transfer mixture to a small bowl and set aside. Return the skillet to the heat and melt remaining 2 tablespoons butter over medium-low heat. Whisk in the flour, and stir until the mixture becomes paste-like and light golden brown, about 5 minutes. Gradually whisk the milk into the flour mixture and bring to a simmer over medium heat. Cook and stir until the mixture is smooth and thickened. Stir in the ground mustard, paprika, salt, pepper, and hot sauce. Remove sauce from heat and let cool for five minutes. Pour the sauce over the macaroni mixture, stirring well. Transfer to a greased 9x13 inch pan and sprinkle with the remaining 2 cups of Cheddar cheese. Top cheese with the onion breadcrumb mixture. Bake in preheated oven until bubbling, hot and golden brown on top, about 30 minutes."
 		},
 
-		{
-			"recipe_name": "Apple Pie",
+		"Apple Pie": {
 			"ingredients": [
 				"1/2 cup butter",
 				"1 cup brown sugar",
@@ -803,8 +761,7 @@
 			"directions": "Preheat oven to 350 degrees F (175 degrees C). Place 1/2 cup butter into a heavy cast iron skillet, and melt butter in the oven. Remove skillet and sprinkle with brown sugar; return to oven to heat while you prepare the apples. Remove skillet, and place 1 refrigerated pie crust on top of the brown sugar. Top the pie crust with half the sliced apples. Sprinkle apples with 1/2 cup of sugar and 1 teaspoon of cinnamon; place a second pie crust over the apples; top the second crust with the remaining apples, and sprinkle with 1/2 cup sugar and 1 teaspoon cinnamon. Top with the third crust; sprinkle the top crust with 1/4 cup sugar, and dot with 1 tablespoon of butter. Cut 4 slits into the top crust for steam.Bake in the preheated oven until the apples are tender and the crust is golden brown, about 45 minutes. Serve warm."
 		},
 
-		{
-			"recipe_name": "Fried Chicken",
+		"Fried Chicken": {
 			"ingredients": [
 				"1 (4 pound) chicken, cut into pieces",
 				"salt and pepper to taste",
@@ -813,11 +770,10 @@
 			],
 			"directions": "In a large skillet, heat oil over medium heat. Salt and pepper chicken pieces to taste, then roll in flour to coat. Place chicken pieces in skillet and fry on medium heat until one side is golden brown, then turn and brown other side until chicken is no longer pink inside and its juices run clear. Drain on paper towel and serve!"
 		}
-	]},
+	},
 
-	{"dairy-free": [
-		{
-			"recipe_name": "Meatloaf",
+	"Dairy Free Meals": {
+		"Meatloaf": {
 			"ingredients": [
 				"2 pounds lean ground beef",
 				"1 (10.75 ounce) can condensed tomato soup",
@@ -831,8 +787,7 @@
 			"directions": "In a large bowl, combine ground meat, soup, chopped onion, rolled oats, eggs, steak sauce, ketchup and mustard. Mix well. Shape into a loaf, and pat Into a loaf pan. Bake in a preheated 350 degrees F (175 degrees C) oven for 1 hour or until done."
 		},
 
-		{
-			"recipe_name": "Coconut and Fish Curry Parcels",
+		"Coconut and Fish Curry Parcels": {
 			"ingredients": [
 				"2 large tilapia fillets, about 125g/4oz each",
 				"2 tsp yellow or red curry paste",
@@ -847,8 +802,7 @@
 			"directions": "Heat oven to 200C/180C fan/gas 6. Tear off 4 large pieces of foil, double them up, then place a fish fillet in the middle of each. Spread over the curry paste. Divide the coconut, lime zest and juice, and soy between each fillet. Bring up the sides of the foil, then scrunch the edges and sides together to make 2 sealed parcels. Put the parcels on a baking tray and bake for 10-15 mins. Tip the rice into a pan with plenty of water, and boil for 12-15 mins or until cooked. Drain well. Serve the fish on the rice, drizzle over the chilli sauce and scatter with sliced chilli. Serve with broccoli and lime wedges."
 		},
 
-		{
-			"recipe_name": "Chocolate, Orange & Hazelnut Cake",
+		"Chocolate, Orange & Hazelnut Cake": {
 			"ingredients": [
 				"250g/9oz whole blanched hazelnuts",
 				"200g/7oz butter, cubed, plus extra for greasing",
@@ -861,8 +815,7 @@
 			"directions": "Preheat the oven to 200C/400F/Gas 6. Put the hazelnuts on a baking tray and roast them in the centre of the oven for 10 minutes, giving the pan a shake halfway through, until they are golden brown. Watch them carefully so that they don�t burn. Remove and leave them to cool for a few minutes. Reduce the oven temperature to 180C/350F/Gas 4.Butter a 23cm/9in springform cake tin and line the base with baking parchment. Place 200g/7oz of the hazelnuts in a food processor and blend them until they are fairly finely ground. If you blend the nuts to the consistency of fine breadcrumbs, they should work a treat, but leave a few coarser pieces to add texture. Set the remaining 50g/2oz hazelnuts aside. Put the butter and chocolate in a heatproof bowl and set it above a pan of gently simmering water. Stir occasionally and as soon as nearly all the chocolate has melted, remove the bowl from the pan and continue to let the chocolate melt in the residual heat. Stir in the ground hazelnuts and leave the mixture to cool for 5 minutes. Beat the egg yolks and sugar together with an electric hand-whisk for at least 5 minutes until pale and creamy, then stir into the chocolate mixture until thoroughly combined. Wash and dry the beaters well. In a clean bowl, whisk the egg whites until stiff peaks form � they are ready when you can turn the bowl upside down without the eggs sliding out. Do not over whisk. Working quickly, stir the hazelnut liqueur, amaretto or orange juice, into the chocolate mixture to soften. Add a couple of tablespoonfuls of the whisked egg whites and stir until thoroughly combined, then gently fold in the remaining egg whites. Spoon the mixture into the prepared tin and bake in the centre of the oven for 35�40 minutes or until the cake is well risen and firm. Remove the cake from the oven and leave it to cool in the tin for 30 minutes. Undo the springclip and invert the cake on to a serving plate, then peel off the lining paper and leave it to cool completely. When the cake is cold, spread it with the chocolate and hazelnut spread and sprinkle with the hazelnuts that you set aside � these can be whole or chopped, whatever you prefer."
 		},
 
-		{
-			"recipe_name": "Salmon & Lemon Mini Fishcakes",
+		"Salmon & Lemon Mini Fishcakes": {
 			"ingredients": [
 				"2 large baking potatoes",
 				"2 tbsp olive oil",
@@ -876,8 +829,7 @@
 			"directions": "Microwave potatoes on high for 10 mins until tender. Leave to cool for 5 mins, scoop the flesh in a bowl, then mash and leave to cool. Season with olive oil, lemon zest and juice to taste, then mix in the egg, salmon and parsley. Shape into small rounds 3cm wide and 1cm deep. Chill for 15 mins. Dust each cake with the peppered flour, then fry over a low heat in a little oil for 2-3 mins on each side. Drain on kitchen paper and serve garnished with salmon and parsley."
 		},
 
-		{
-			"recipe_name": "Lentil Lasagne",
+		"Lentil Lasagne": {
 			"ingredients": [
 				"knob of butter, for greasing and frying",
 				"200g/7oz Puy lentils",
@@ -902,8 +854,7 @@
 			"directions": "Preheat the oven to 180C/160C Fan/gas 4. Generously grease a baking dish with butter. For the lentil rag�, cover the lentils with cold water and bring to the boil. Crumble in the vegetable stock cube and cook for 15-20 minutes, or until the lentils are tender, then drain. Add a little more water if the mixture looks dry. Heat the garlic infused olive oil and butter in a lidded frying pan over a medium heat. Add the onion, garlic, mushrooms and leek and fry for about five minutes, or until softened. Stir in the cooked lentils and simmer gently for five minutes, then stir in the tomatoes. Cover with a lid and simmer on a low heat for 10-15 minutes. Season, to taste, with sea salt and freshly ground black pepper. Meanwhile, for the cheese sauce, melt the butter in a medium saucepan over a medium-high heat then mix in the flour and stir until bubbling. Gradually add the milk and cream, whisking constantly, until the mixture is smooth. Simmer gently, stirring constantly, until the sauce starts to thicken, then stir in the cheese and season with sea salt and freshly ground black pepper and remove from heat. To assemble the lasagne, spread a quarter of the lentil rag� over the base of the greased baking dish, cover this with a quarter of the cheese sauce, then arrange a third of the lasagne sheets over the top. Repeat, finishing with a layer of cheese sauce. Sprinkle over the parmesan cheese and bake in the oven for 30-40 minutes, or until bubbling and golden-brown. Serve with a green salad."
 		},
 
-		{
-			"recipe_name": "Sausage & Bean One-Pot",
+		"Sausage & Bean One-Pot": {
 			"ingredients": [
 				"1 tbsp vegetable oil",
 				"1 onion , thickly sliced",
@@ -914,11 +865,10 @@
 			],
 			"directions": "Heat the oil in a large frying pan. Cook the onion and sausages over a fairly high heat for 8-10 mins, turning the sausages often so they brown all over. Add the garlic to the pan with the kidney beans and their sauce. Half-fill one of the cans with water, swirl and then add this to the pan. Stir everything together and bring to the boil. Turn down to simmer and cook for 10 mins, or until the sausages are cooked through. Season and sprinkle with the parsley."
 		}
-	]},
+	},
 
-	{"kid-friendly": [
-		{
-			"recipe_name": "Crispy Fish Sticks",
+	"Kid Friendly Meals": {
+		"Crispy Fish Sticks": {
 			"ingredients": [
 				"2 large eggs, beaten to blend",
 				"2 cups panko (Japanese breadcrumbs)",
@@ -930,8 +880,7 @@
 			"directions": "Place eggs, panko, and flour in 3 separate shallow medium bowls. Season fish with salt and pepper. Working in batches, dredge fish in flour, shaking off excess. Coat with egg, allowing excess to drip back into bowl. Coat with panko, pressing to adhere. Transfer fish to a plate. Heat 1/2 cup oil in a large skillet over medium-high heat. Working in 2 batches and adding 1/4 cup oil between batches, cook fish until golden brown and cooked through, about 3 minutes per side. Transfer fish sticks to a paper towel-lined plate; season with salt. DO AHEAD: Fish sticks can be breaded 2 days ahead. Cover and chill, or freeze in resealable plastic bags up to 3 months. Fish sticks can be cooked from frozen (cooking time will be slightly longer)."
 		},
 
-		{
-			"recipe_name": "Burger Sliders",
+		"Burger Sliders": {
 			"ingredients": [
 				"2 pounds ground beef",
 				"1 (1.25 ounce) envelope onion soup mix",
@@ -943,8 +892,7 @@
 			"directions": "Preheat an oven to 350 degrees F (175 degrees C). Cover a baking sheet with aluminum foil and spray with cooking spray. Mix together the ground beef and onion soup mix in a large skillet; cook and stir over medium-high heat until the beef is crumbly, evenly browned, and no longer pink. Drain and discard any excess grease. Remove from heat. Stir the mayonnaise and Cheddar cheese into the ground beef mixture. Lay the bottoms of the dinner rolls on the prepared baking sheet. Spread the cheese and beef mixture on the bottom half of each roll. Replace the tops. Cover with another sheet of aluminum foil sprayed with cooking spray. Bake in the preheated oven until the burgers are heated through and cheese melts, about 30 minutes. Serve with sliced pickles."
 		},
 
-		{
-			"recipe_name": "Spaghetti Meatballs",
+		"Spaghetti Meatballs": {
 			"ingredients": [
 				"1 1/2 pounds lean ground beef",
 				"1/2 cup Italian seasoned dry bread crumbs",
@@ -955,8 +903,7 @@
 			"directions": "Combine ground beef, bread crumbs, eggs and 1/2 cup Sauce in medium bowl; shape into 18 meatballs. Bring remaining Sauce to a boil over medium-high heat in 12-inch skillet. Gently stir in uncooked meatballs. Reduce heat to low and simmer covered, stirring occasionally, 20 minutes or until meatballs are done. Serve over hot spaghetti."
 		},
 
-		{
-			"recipe_name": "Cheesy Chicken Casserole",
+		"Cheesy Chicken Casserole": {
 			"ingredients": [
 				"1 tablespoon vegetable oil",
 				"3 skinless, boneless chicken breast halves",
@@ -981,8 +928,7 @@
 			"directions": "Preheat oven to 350 degrees F (175 degrees C). Grease a 2-quart casserole dish. Heat vegetable oil in a skillet over medium heat. Sprinkle the chicken breasts with salt, black pepper, and 1 teaspoon of salt-free seasoning, and pan-fry in the hot oil until lightly browned on both sides, about 10 minutes per side. Cut the chicken breasts into bite-size pieces, and set aside. Place a steamer insert into a saucepan, and fill with water to just below the bottom of the steamer. Cover, and bring the water to a boil. Place the broccoli florets and sweet onion into the steamer basket, cover pan, and steam until broccoli turns bright green and is barely tender, about 3 minutes. In a large saucepan, bring 3 1/2 cups of water to a boil, and stir in the margarine until it melts. Pour in the contents of the two packages of rice side dish, and reduce heat to a simmer. Cover and cook until rice is tender, 7 to 10 minutes; turn off heat, and allow to stand covered for 2 minutes. Transfer cooked rice into a large mixing bowl, and stir in the chicken, broccoli, and onion. Mix in the cream of chicken soup, mayonnaise, 2 cups of Cheddar cheese, parsley, 2 teaspoons of salt-free seasoning, garlic powder, curry powder, lemon juice, and Dijon mustard until thoroughly combined. Adjust salt and black pepper. Spoon the mixture into the prepared casserole dish, and sprinkle 1/2 cup of Cheddar cheese over the top. Bake in preheated oven until the casserole is bubbling and lightly browned, about 30 minutes."
 		},
 
-		{
-			"recipe_name": "Vegetable Fried Rice",
+		"Vegetable Fried Rice": {
 			"ingredients": [
 				"3 cups water",
 				"1 1/2 cups quick-cooking brown rice",
@@ -1000,8 +946,7 @@
 			"directions": "In a saucepan bring water to a boil. Stir in rice. Reduce heat, cover and simmer for 20 minutes. Meanwhile, heat peanut oil in a large skillet or wok over medium heat. Add onions, bell pepper, garlic and pepper flakes, to taste. Cook 3 minutes, stirring occasionally. Increase heat to medium-high and stir in cooked rice, green onions and soy sauce. Stir-fry for 1 minute. Add peas and cook 1 minute more. Remove from heat. Add sesame oil and mix well. Garnish with peanuts, if desired."
 		},
 
-		{
-			"recipe_name": "Beef Stew and Dumplings",
+		"Beef Stew and Dumplings": {
 			"ingredients": [
 				"1 1/2 pounds cubed beef stew meat",
 				"1/4 cup all-purpose flour",
@@ -1024,5 +969,5 @@
 			],
 			"directions": "In a bowl, toss cubed beef with flour to coat. Heat 4 tablespoons butter in a heavy skillet over medium-high heat. Place flour in a bag or bowl, and add beef cubes. Toss to coat with flour. Place coated cubes in the skillet and fry until well-browned on all sides; remove from pan and set aside. Cook onion and garlic in same pan until tender. Return meat to pan with water, parsley, salt, pepper, and bay leaf. Reduce heat to low, cover, and simmer 1 hour, stirring occasionally and adding more water if needed. Stir in potatoes, carrots, celery, and green pepper, and continue cooking another 15 minutes. Remove the bay leaf, and stir in mushrooms. In a small bowl, mix together baking mix, 3 tablespoons melted butter, and milk until just blended. Drop dough by the tablespoonful into stew. Simmer, uncovered, approximately 10 minutes. Cover, and simmer 10 minutes more, or until dumplings are cooked through, but not dry."
 		}
-	]}
-]}
+	}
+}}
