@@ -1,9 +1,11 @@
-
 {% extends 'meal/base.html' %}
 {% load staticfiles %}
 
+{% block title_block %}
+	Trending
+{% endblock %}
 
-	{% block body_block %}
+{% block body_block %}
 	<h1>Trending</h1>
 
 	<div id="contentBox" style="margin:0px auto; width:70%">
@@ -27,4 +29,4 @@
 		<h4>Beef Quesadillas</h4><br>
     </div>
 	
-	{% endblock %}
+{% endblock %}

@@ -1,9 +1,12 @@
-
 {% extends 'meal/base.html' %}
 {% load staticfiles %}
 
+{% block title_block %}
+	About
+{% endblock %}
+
 {% block body_block %}
-	<h1> About </h1>
+	<h1> About Us</h1>
 	<center>Hi! Our names are Catriona, Ryan, Chris and Jamie and we've created the website Rate My Meal for food enthusiasts everywhere to share their favourite foods and rate others.</br>
 	Create an account to comment on peoples' food and to post your very own recipes.</br>
 	Find out about real qualified chefs and use their recipes at home!</center>
@@ -28,6 +31,5 @@
 		<IMG SRC="{% static 'images/ryan.jpg' %}" ALT="Ryan Williamson" >
 		<h4>Ryan Williamson</h4><br>
     </div>
-	
 	
 {% endblock %}
