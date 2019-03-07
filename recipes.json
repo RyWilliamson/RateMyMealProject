@@ -817,57 +817,102 @@
 
 	{"dairy-free": [
 		{
-			"recipe_name": "",
+			"recipe_name": "Meatloaf",
 			"ingredients": [
-				"",
-				""
+				"2 pounds lean ground beef",
+				"1 (10.75 ounce) can condensed tomato soup",
+				"1 onion, finely diced",
+				"1 cup rolled oats",
+				"2 eggs, beaten",
+				"1 tablespoon steak sauce",
+				"1/2 cup ketchup",
+				"3 tablespoons prepared mustard"
 			],
-			"directions": ""
+			"directions": "In a large bowl, combine ground meat, soup, chopped onion, rolled oats, eggs, steak sauce, ketchup and mustard. Mix well. Shape into a loaf, and pat Into a loaf pan. Bake in a preheated 350 degrees F (175 degrees C) oven for 1 hour or until done."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Coconut and Fish Curry Parcels",
 			"ingredients": [
-				"",
-				""
+				"2 large tilapia fillets, about 125g/4oz each",
+				"2 tsp yellow or red curry paste",
+				"2 tsp desiccated coconut",
+				"zest and juice 1 lime, plus wedges to serve",
+				"1 tsp soy sauce",
+				"140g basmati rice",
+				"2 tbsp sweet chilli sauce",
+				"1 red chilli, sliced",
+				"200g cooked thin-stemmed broccoli, to serve"
 			],
-			"directions": ""
+			"directions": "Heat oven to 200C/180C fan/gas 6. Tear off 4 large pieces of foil, double them up, then place a fish fillet in the middle of each. Spread over the curry paste. Divide the coconut, lime zest and juice, and soy between each fillet. Bring up the sides of the foil, then scrunch the edges and sides together to make 2 sealed parcels. Put the parcels on a baking tray and bake for 10-15 mins. Tip the rice into a pan with plenty of water, and boil for 12-15 mins or until cooked. Drain well. Serve the fish on the rice, drizzle over the chilli sauce and scatter with sliced chilli. Serve with broccoli and lime wedges."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Chocolate, Orange & Hazelnut Cake",
 			"ingredients": [
-				"",
-				""
+				"250g/9oz whole blanched hazelnuts",
+				"200g/7oz butter, cubed, plus extra for greasing",
+				"200g/7oz dark chocolate, broken into squares",
+				"6 medium eggs, separated",
+				"200g/7oz caster sugar, preferably golden",
+				"3 tbsp hazelnut liqueur or amaretto liqueur (or fresh orange juice)",
+				"150g/5oz chocolate and hazelnut spread"
 			],
-			"directions": ""
+			"directions": "Preheat the oven to 200C/400F/Gas 6. Put the hazelnuts on a baking tray and roast them in the centre of the oven for 10 minutes, giving the pan a shake halfway through, until they are golden brown. Watch them carefully so that they don�t burn. Remove and leave them to cool for a few minutes. Reduce the oven temperature to 180C/350F/Gas 4.Butter a 23cm/9in springform cake tin and line the base with baking parchment. Place 200g/7oz of the hazelnuts in a food processor and blend them until they are fairly finely ground. If you blend the nuts to the consistency of fine breadcrumbs, they should work a treat, but leave a few coarser pieces to add texture. Set the remaining 50g/2oz hazelnuts aside. Put the butter and chocolate in a heatproof bowl and set it above a pan of gently simmering water. Stir occasionally and as soon as nearly all the chocolate has melted, remove the bowl from the pan and continue to let the chocolate melt in the residual heat. Stir in the ground hazelnuts and leave the mixture to cool for 5 minutes. Beat the egg yolks and sugar together with an electric hand-whisk for at least 5 minutes until pale and creamy, then stir into the chocolate mixture until thoroughly combined. Wash and dry the beaters well. In a clean bowl, whisk the egg whites until stiff peaks form � they are ready when you can turn the bowl upside down without the eggs sliding out. Do not over whisk. Working quickly, stir the hazelnut liqueur, amaretto or orange juice, into the chocolate mixture to soften. Add a couple of tablespoonfuls of the whisked egg whites and stir until thoroughly combined, then gently fold in the remaining egg whites. Spoon the mixture into the prepared tin and bake in the centre of the oven for 35�40 minutes or until the cake is well risen and firm. Remove the cake from the oven and leave it to cool in the tin for 30 minutes. Undo the springclip and invert the cake on to a serving plate, then peel off the lining paper and leave it to cool completely. When the cake is cold, spread it with the chocolate and hazelnut spread and sprinkle with the hazelnuts that you set aside � these can be whole or chopped, whatever you prefer."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Salmon & Lemon Mini Fishcakes",
 			"ingredients": [
-				"",
-				""
+				"2 large baking potatoes",
+				"2 tbsp olive oil",
+				"grated zest and juice 1 lemon",
+				"1 egg yolk",
+				"140g smoked salmon trimmings, plus extra to serve",
+				"1 tbsp chopped parsley, plus extra",
+				"2 tbsp gluten-free flour mixed with 1 tsp coarsely ground pepper",
+				"a little oil, for frying"
 			],
-			"directions": ""
+			"directions": "Microwave potatoes on high for 10 mins until tender. Leave to cool for 5 mins, scoop the flesh in a bowl, then mash and leave to cool. Season with olive oil, lemon zest and juice to taste, then mix in the egg, salmon and parsley. Shape into small rounds 3cm wide and 1cm deep. Chill for 15 mins. Dust each cake with the peppered flour, then fry over a low heat in a little oil for 2-3 mins on each side. Drain on kitchen paper and serve garnished with salmon and parsley."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Lentil Lasagne",
 			"ingredients": [
-				"",
-				""
+				"knob of butter, for greasing and frying",
+				"200g/7oz Puy lentils",
+				"1 vegetable stock cube",
+				"1 tbsp garlic infused olive oil, or olive oil, for frying",
+				"1 onion, chopped",
+				"1 garlic clove, chopped",
+				"110g/4oz mushrooms, finely diced",
+				"110g/4oz leek, finely sliced",
+				"1 x 400g/14oz can chopped tomatoes",
+				"sea salt and freshly ground black pepper",
+				"6-9 sheets lasagne",
+				"handful grated dairy free Parmesan (or vegetarian alternative)",
+				"green salad, to serve",
+				"110g/4oz butter",
+				"85g/3oz plain flour",
+				"850ml/1 pints dairy free milk",
+				"6 tbsp double dairy free cream",
+				"110g/4oz grated dairy free cheddar",
+				"sea salt and freshly ground black pepper"
 			],
-			"directions": ""
+			"directions": "Preheat the oven to 180C/160C Fan/gas 4. Generously grease a baking dish with butter. For the lentil rag�, cover the lentils with cold water and bring to the boil. Crumble in the vegetable stock cube and cook for 15-20 minutes, or until the lentils are tender, then drain. Add a little more water if the mixture looks dry. Heat the garlic infused olive oil and butter in a lidded frying pan over a medium heat. Add the onion, garlic, mushrooms and leek and fry for about five minutes, or until softened. Stir in the cooked lentils and simmer gently for five minutes, then stir in the tomatoes. Cover with a lid and simmer on a low heat for 10-15 minutes. Season, to taste, with sea salt and freshly ground black pepper. Meanwhile, for the cheese sauce, melt the butter in a medium saucepan over a medium-high heat then mix in the flour and stir until bubbling. Gradually add the milk and cream, whisking constantly, until the mixture is smooth. Simmer gently, stirring constantly, until the sauce starts to thicken, then stir in the cheese and season with sea salt and freshly ground black pepper and remove from heat. To assemble the lasagne, spread a quarter of the lentil rag� over the base of the greased baking dish, cover this with a quarter of the cheese sauce, then arrange a third of the lasagne sheets over the top. Repeat, finishing with a layer of cheese sauce. Sprinkle over the parmesan cheese and bake in the oven for 30-40 minutes, or until bubbling and golden-brown. Serve with a green salad."
 		},
 
 		{
-			"recipe_name": "",
+			"recipe_name": "Sausage & Bean One-Pot",
 			"ingredients": [
-				"",
-				""
+				"1 tbsp vegetable oil",
+				"1 onion , thickly sliced",
+				"8 Cumberland sausages",
+				"1 fat garlic clove, crushed",
+				"2 x 400g cans kidney beans in chilli sauce",
+				"2-3 sprigs curly parsley, chopped"
 			],
-			"directions": ""
+			"directions": "Heat the oil in a large frying pan. Cook the onion and sausages over a fairly high heat for 8-10 mins, turning the sausages often so they brown all over. Add the garlic to the pan with the kidney beans and their sauce. Half-fill one of the cans with water, swirl and then add this to the pan. Stir everything together and bring to the boil. Turn down to simmer and cook for 10 mins, or until the sausages are cooked through. Season and sprinkle with the parsley."
 		}
 	]},
 
