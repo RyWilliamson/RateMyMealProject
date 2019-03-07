@@ -41,7 +41,6 @@ def register(request):
 def signUp(request):
 	return render(request, 'meal/signup.html', {})
 	
-	
 def registerRegular(request):
     registered = False
 
@@ -104,9 +103,6 @@ def registerChef(request):
                      'registered':registered}
 
     return render(request, 'meal/registerChef.html', context_dict)
-        
-
-
 
 def user_login(request):
 
@@ -128,12 +124,7 @@ def user_login(request):
     else:
         
         return render(request,'meal/login.html',{})
-
-
-
-
-
-
+		
 @permission_required('meal.read_chef',raise_exception=True)
 def restricted(request):
     return render(request,'meal/restricted.html',{})

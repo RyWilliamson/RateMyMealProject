@@ -1,6 +1,8 @@
 {% extends 'meal/base.html' %}
 {% load staticfiles %}
-
+{% block title_block %}
+	Categories
+{% endblock %}
 {% block body_block %}
 <h1>Categories</h1>
 
@@ -39,6 +41,5 @@
 		<IMG SRC="{% static 'images/brunch.jpg' %}" ALT="Brunch" >
 		<h4>Brunch</h4><br>
     </div>
-
 
 {% endblock %}

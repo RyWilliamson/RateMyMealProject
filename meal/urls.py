@@ -17,5 +17,4 @@ urlpatterns=[
 	url(r'^italian/$', views.italian, name = 'italian'),
 	url(r'^add_recipe/$', views.addRecipe, name = 'addRecipe'),
 	url(r'^categories/$', views.categories, name = 'categories'),
-	
 ]
