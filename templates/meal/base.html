@@ -108,19 +108,11 @@ a {
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		  
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 				<a class="dropdown-item" href="{% url 'italian' %}">Italian</a>
-				<a class="dropdown-item" href="{% url 'trending' %}">Another action</a>
+				<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-          <div class="dropdown-divider"></div>
-        </div>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="{% url 'trending' %}">Trending</a>
-      </li>
 	  
 	  {% if user.is_authenticated %}
 	  <li class="nav-item">
