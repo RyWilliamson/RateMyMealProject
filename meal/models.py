@@ -45,7 +45,6 @@ class Chef(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
-    website = models.URLField(blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
    
     def __str__(self):
