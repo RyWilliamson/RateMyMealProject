@@ -1,4 +1,5 @@
-.import os
+import os
+import json
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RateMyMealProject.settings')
 
 import django
@@ -482,22 +483,27 @@ def populate():
 		"Dairy Free Meals": {"recipes": dairy_free_recipes, "views":99,"likes":65},
 		"Kid Friendly Meals": {"recipes": kid_friendly_recipes, "views":88,"likes":21}
 	}
+
+	with open('recipes.json', 'r') as f:
+		recipes_dict = json.load(f)
 	
 	for cat, cat_data in cats.items():
 		c = add_cat(cat, cat_data["views"], cat_data["likes"])
 		for p in cat_data["recipes"]:
-			add_recipe(c, p["recipe_name"], p["image"], p["views"],
-			 p["likes"], p["recipe_data"])
+			add_recipe(c, p["recipe_name"], p["image"], p["views"], p["likes"],
+			 json.dumps(recipes_dict['categories'][cat][p["recipe_name"]]['ingredients']),
+			 recipes_dict['categories'][cat][p["recipe_name"]]['directions'])
 			
 	for c in Category.objects.all():
 		for p in Recipe.objects.filter(category=c):
 			print("- {0} - {1}".format(str(c), str(p)))
 
-def add_recipe(cat, recipe_name, image, views=0, likes=0, recipe_data=""):
+def add_recipe(cat, recipe_name, image, views=0, likes=0, recipe_ingredients="", recipe_directions=""):
 	p = Recipe.objects.get_or_create(category=cat, recipe_name=recipe_name)[0]
 	p.views = views
 	p.likes = likes
-	p.recipe_data = recipe_data
+	p.recipe_ingredients = recipe_ingredients
+	p.recipe_directions = recipe_directions
 	p.image = image
 	p.save()
 	return p
@@ -508,5 +514,5 @@ def add_cat(name,views,likes):
 	return c
 
 if __name__ == '__main__':
-	print("Starting Rango population script...")
+	print("Starting RateMyMeal population script...")
 	populate()

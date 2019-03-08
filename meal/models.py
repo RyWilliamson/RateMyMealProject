@@ -3,6 +3,8 @@ from django import forms
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import AbstractUser, User
 
+import json
+
 
 class Category(models.Model):
     name = models.CharField(max_length = 128, unique = True)
@@ -24,11 +26,15 @@ class Recipe(models.Model):
     category = models.ForeignKey(Category)
     recipe_name = models.CharField(max_length = 128)
     views = models.IntegerField(default = 0)
-    recipe_data = models.TextField()
+    recipe_ingredients = models.TextField(default = "")
+    recipe_directions = models.TextField(default = "")
     image = models.ImageField(upload_to = 'recipe_images/', blank = False)
 
     def __str__(self):
         return self.recipe_name
+
+    def getIngredients(self):
+        return json.decoder.JSONDecoder().decode(self.recipe_ingredients)
 
 class Chef(AbstractUser):
     username = models.CharField(max_length=128, null= True, unique=True)
