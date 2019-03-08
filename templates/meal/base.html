@@ -93,126 +93,122 @@ a {
 
 <body>
 <nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand" href="{% url 'base' %}">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon">Menu</span>
-  </button>
+	<a class="navbar-brand" href="{% url 'base' %}">Home</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon">Menu</span>
+	</button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="{% url 'about' %}">About</a>
-      </li>
-      <li class="nav-item dropdown">
+    </li>
+    <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="{% url 'categories' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Categories
+			Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="{% url 'italian' %}">Italian</a>
-				<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+			<a class="dropdown-item" href="{% url 'italian' %}">Italian</a>
+			<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Something else here</a>
         </div>
 	  
-	  {% if user.is_authenticated %}
-	  <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="{% url 'add_recipe' %}">Add Recipe</a>
-      </li>
-	  {% else %}
-	  <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">Log In</a>
-      </li>
-	  <li class="nav-item">
-        <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
-      </li>
-	  {% endif %}
+		{% if user.is_authenticated %}
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'add_recipe' %}">Add Recipe</a>
+		</li>
+		{% else %}
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'login' %}">Log In</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+		</li>
+		{% endif %}
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    
+	<form class="form-inline my-2 my-lg-0">
+		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
 </nav>
 
-	{% block body_block %}
-		<h1> Rate My Meal </h1>
-		  <div class="container">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef1.jpg' %}" alt="Raymond Bolt">
-                <div class="card-body">
-                  <p class="card-text">Raymond Bolt</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-            </div>
-			
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef2.jpg' %}" alt="Hayley Bean">
-                <div class="card-body">
-				<p class="card-text">Hayley Bean</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-            </div>
-			
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef3.jpg' %}" alt="Stanley Spears">
-                <div class="card-body">
-				<p class="card-text">Stanley Spears</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef4.jpg' %}" alt="Mario Manini">
-                <div class="card-body">
-				<p class="card-text">Mario Manini</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-            </div>
-			
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef5.jpg' %}" alt="Aidan Mack">
-                <div class="card-body">
-				<p class="card-text">Aidan Mack</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="{% static 'images/chef6.jpg' %}" alt="Henry Michaels">
-                <div class="card-body">
-				<p class="card-text">Henry Michaels</p>
-                  <div class="d-flex justify-content-between align-items-center">                
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+{% block body_block %}
+	<h1> Rate My Meal </h1>
+	<div class="container">
+    <div class="row">
+	
+    <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="{% static 'images/chef1.jpg' %}" alt="Raymond Bolt">
+        <div class="card-body">
+            <p class="card-text">Raymond Bolt</p>
+            <div class="d-flex justify-content-between align-items-center"></div>
         </div>
-      </div>
-	{% endblock %}
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </div>
+    </div>
+			
+    <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="{% static 'images/chef2.jpg' %}" alt="Hayley Bean">
+        <div class="card-body">
+			<p class="card-text">Hayley Bean</p>
+            <div class="d-flex justify-content-between align-items-center"></div>
+        </div>
+    </div>
+    </div>
+			
+    <div class="col-md-4">
+    <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="{% static 'images/chef3.jpg' %}" alt="Stanley Spears">
+        <div class="card-body">
+			<p class="card-text">Stanley Spears</p>
+            <div class="d-flex justify-content-between align-items-center"></div>
+		</div>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="card mb-4 box-shadow">
+		<img class="card-img-top" src="{% static 'images/chef4.jpg' %}" alt="Mario Manini">
+		<div class="card-body">
+			<p class="card-text">Mario Manini</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+		</div>
+	</div>
+	</div>
+			
+	<div class="col-md-4">
+	<div class="card mb-4 box-shadow">
+		<img class="card-img-top" src="{% static 'images/chef5.jpg' %}" alt="Aidan Mack">
+		<div class="card-body">
+			<p class="card-text">Aidan Mack</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+		</div>
+	</div>
+	</div>
+
+	<div class="col-md-4">
+	<div class="card mb-4 box-shadow">
+		<img class="card-img-top" src="{% static 'images/chef6.jpg' %}" alt="Henry Michaels">
+		<div class="card-body">
+			<p class="card-text">Henry Michaels</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+		</div>
+	</div>
+	</div>
+</div>
+</div>
+{% endblock %}
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
