@@ -33,8 +33,11 @@ class Recipe(models.Model):
     def __str__(self):
         return self.recipe_name
 
-    def getIngredients(self):
+    def get_ingredients(self):
         return json.decoder.JSONDecoder().decode(self.recipe_ingredients)
+
+    def _get_category_slug():
+        return self.category.slug
 
 class Chef(AbstractUser):
     username = models.CharField(max_length=128, null= True, unique=True)

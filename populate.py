@@ -490,7 +490,7 @@ def populate():
 	for cat, cat_data in cats.items():
 		c = add_cat(cat, cat_data["views"], cat_data["likes"])
 		for p in cat_data["recipes"]:
-			add_recipe(c, p["recipe_name"], p["image"], p["views"], p["likes"],
+			add_recipe(c, p["recipe_name"], os.path.join("recipe_images", c.slug, p["image"]), p["views"], p["likes"],
 			 json.dumps(recipes_dict['categories'][cat][p["recipe_name"]]['ingredients']),
 			 recipes_dict['categories'][cat][p["recipe_name"]]['directions'])
 			
