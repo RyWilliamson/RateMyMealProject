@@ -3,8 +3,6 @@
 {% load staticfiles %}
 
 <html>
-
-
 <head lang = "en">
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,9 +107,8 @@ a {
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 			<a class="dropdown-item" href="{% url 'italian' %}">Italian</a>
-			<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
 			<div class="dropdown-divider"></div>
-			<a class="dropdown-item" href="#">Something else here</a>
+			<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
         </div>
 	  
 		{% if user.is_authenticated %}
