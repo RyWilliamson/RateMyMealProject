@@ -13,7 +13,7 @@ from django.http import HttpResponse
 def categories(request):
 	return render(request, 'meal/categories.html', {})
 	
-def addRecipe(request):
+def add_recipe(request):
 	return render(request, 'meal/add_recipe.html', {})
 
 def italian(request):

@@ -15,6 +15,6 @@ urlpatterns=[
 	url(r'^signup/$', views.signUp, name = 'signup'),
 	url(r'^about/$', views.about, name = 'about'),
 	url(r'^italian/$', views.italian, name = 'italian'),
-	url(r'^add_recipe/$', views.addRecipe, name = 'addRecipe'),
+	url(r'^add_recipe/$', views.add_recipe, name = 'add_recipe'),
 	url(r'^categories/$', views.categories, name = 'categories'),
 ]

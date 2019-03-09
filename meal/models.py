@@ -56,7 +56,7 @@ class UserProfile(models.Model):
 class Professional(Chef):
     class Meta:
         permissions = ( 
-            ( 'read_chef', 'Can read Chef' ),
+            ( "read_chef", "Can read Chef" ),
         )
 
 class Casual(Chef):
