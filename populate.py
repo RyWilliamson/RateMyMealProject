@@ -12,14 +12,12 @@ def populate():
 		{"username": "MotherMartha1978",
 		 "email": "mothermartha1984@gmail.com",
 		 "password": "marthasmonkies",
-		 "website": "motheringwithmartha.co.uk",
 		 "profile_picture": ""
 		},
 
 		{"username": "JustJack99",
 		 "email": "MadJacko@gmail.com",
 		 "password": "justjackthings99",
-		 "website": "",
 		 "profile_picture": ""
 		}
 	]
@@ -28,42 +26,36 @@ def populate():
 		{"username": "RaymondBolt",
 		 "email": "stoneeagle@gmail.com",
 		 "password": "cheddar",
-		 "website": "",
 		 "profile_picture": ""
 		},
 
 		{"username": "HayleyBean",
 		 "email": "hayleybean@gmail.com",
 		 "password": "s6n*cjd(&4ds",
-		 "website": "",
 		 "profile_picture": ""
 		},
 
 		{"username": "TheRealStanleySpears",
 		 "email": "therealstanleyspears@gmail.com",
 		 "password": "l&^5bkw2'!p)",
-		 "website": "",
 		 "profile_picture": ""
 		},
 
 		{"username": "ItsaMarioManini",
 		 "email": "mariomanini@gmail.com",
 		 "password": "i'mperfect",
-		 "website": "",
 		 "profile_picture": ""
 		},
 
 		{"username": "AidanMack",
 		 "email": "aidanmack@gmail.com",
 		 "password": "je86^jka%33mn)1",
-		 "website": "",
 		 "profile_picture": ""
 		},
 
 		{"username": "HenryMichaels",
 		 "email": "henrymichaels@gmail.com",
 		 "password": "sajq76&(*3bmn1",
-		 "website": "",
 		 "profile_picture": ""
 		}
 	]

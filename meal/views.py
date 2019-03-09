@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 
@@ -14,7 +14,21 @@ def categories(request):
 	return render(request, 'meal/categories.html', {})
 	
 def add_recipe(request):
-	return render(request, 'meal/add_recipe.html', {})
+    form = RecipeForm()
+    if request.method == 'POST':
+        form = RecipeForm(request.POST)
+        if form.is_valid():
+            if category:
+                page = form.save(commit=False)
+                page.category = category
+                page.views = 0
+                page.save()
+            return show_category(request, category_name_slug)
+        else:
+            print (form.errors)
+
+    context_dict = {'form':form}
+    return render(request, 'meal/add_recipe.html', {})
 
 def italian(request):
 	return render(request, 'meal/italian.html', {})
