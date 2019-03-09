@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import Textarea
 from django.contrib.auth.models import User
 from meal.models import Chef, UserProfile, Professional, Casual, Recipe
 
@@ -26,9 +27,9 @@ class UserProfileForm(forms.ModelForm):
         fields = ('picture',)
 
 class RecipeForm(forms.ModelForm):
-    recipe_name = forms.CharField(max_length = 128, help_text = "Please enter the title of the recipe.")
-    recipe_ingredients = forms.CharField(max_length=50, help_text = "Please enter the recipe ingredients here")
-    recipe_directions = forms.CharField(max_length=200, help_text = "Please enter the recipe steps here")
+    recipe_name = forms.CharField(max_length = 128, help_text = "* Please enter the title of the recipe.")
+    recipe_ingredients = forms.CharField(max_length=50, help_text = "* Please enter the recipe ingredients here")
+    recipe_directions = forms.CharField(max_length=200, help_text = "* Please enter the recipe steps here")
     views = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
 
@@ -40,7 +41,9 @@ class RecipeForm(forms.ModelForm):
             cleaned_data['url'] = url
         return cleaned_data
         
-
     class Meta:
         model = Recipe
+        widgets = {
+                  'recipe_directions': Textarea(attrs={'rows':80, 'cols':200}),
+                }
         exclude = ('category',)

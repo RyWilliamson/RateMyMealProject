@@ -18,17 +18,14 @@ def add_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(request.POST)
         if form.is_valid():
-            if category:
                 page = form.save(commit=False)
-                page.category = category
                 page.views = 0
                 page.save()
-            return show_category(request, category_name_slug)
         else:
             print (form.errors)
 
     context_dict = {'form':form}
-    return render(request, 'meal/add_recipe.html', {})
+    return render(request, 'meal/add_recipe.html', context_dict)
 
 def italian(request):
 	return render(request, 'meal/italian.html', {})
