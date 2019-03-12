@@ -8,10 +8,12 @@
 {% block body_block %}
     {% if category %}
         <h1> {{ category.name}} </h1>
-        {% if pages%}
+        {% if recipes%}
+            reading recipes correctly
             <ul>
             {% for recipe in recipes%}
-                <li><a href= " {{ recipe.url}}">{{recipe.title}}</a></li>
+                recipe number 
+                <li><a>{{recipe_name}}</a></li>
             {% endfor%}
             </ul>
         {% else %}
