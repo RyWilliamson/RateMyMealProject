@@ -17,6 +17,6 @@ urlpatterns=[
 	url(r'^italian/$', views.italian, name = 'italian'),
 	url(r'^add_recipe/$', views.add_recipe, name = 'add_recipe'),
 	url(r'^categories/$', views.categories, name = 'categories'),
-
     url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
+	
 ]
