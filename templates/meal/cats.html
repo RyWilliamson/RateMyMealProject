@@ -1,14 +1,22 @@
+ <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
 {% for c in cats %}
     {% if c == act_cat %}
         <li>
         <strong>
-            <a href="{% url 'show_category' c.slug %}">{{c.name}}</a>
+            <a class="dropdown-item" href="{% url 'show_category' c.slug %}">{{c.name}}</a>
+			<div class="dropdown-divider"></div>
+            
         </strong>
         </li>
     {% else %}
         <li>
-            <a href="{% url 'show_category' c.slug %}">{{c.name}}</a>
+            <a class="dropdown-item" href="{% url 'show_category' c.slug %}">{{c.name}}</a>
+			<div class="dropdown-divider"></div>
         </li>
     {% endif %}
 {% endfor %}
+</div>
+
+
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 {% load staticfiles %}
-{%load meal_template_tags%}
+{% load meal_template_tags %}
 
 <html>
 <head lang = "en">
@@ -126,7 +126,6 @@ a {
 </style>
 
 <body>
-{% block sidebar_block%}
 <nav class="navbar navbar-expand-lg">
 	<a class="navbar-brand" href="{% url 'base' %}">Home</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,11 +141,9 @@ a {
         <a class="nav-link dropdown-toggle" href="{% url 'categories' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 			Categories
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
+            {% block sidebar_block%}
             {% get_category_list%} 
-           
-        </div>
+            {% endblock%}
 	  
 		{% if user.is_authenticated %}
 		<li class="nav-item">
@@ -166,7 +163,6 @@ a {
 		</li>
 		{% endif %}
     </ul>
-     {% endblock%}
     
 	<form class="form-inline my-2 my-lg-0">
 		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
