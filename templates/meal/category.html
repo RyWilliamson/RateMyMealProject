@@ -1,0 +1,25 @@
+{% extends 'meal/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    {{ category.name}}
+{% endblock %}
+
+{% block body_block %}
+    {% if category %}
+        <h1> {{ category.name}} </h1>
+        {% if pages%}
+            <ul>
+            {% for recipe in recipes%}
+                <li><a href= " {{ recipe.url}}">{{recipe.title}}</a></li>
+            {% endfor%}
+            </ul>
+        {% else %}
+            <strong> No pages currently in category. </strong>
+        {% endif %} 
+        
+    {% else %}
+        The specified category does not exist!
+    {% endif %}
+    
+{% endblock %}

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from meal.models import Category, Recipe
 from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -19,12 +20,12 @@ def show_category(request, category_name_slug):
     try:
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
-        context_dict['pages'] = pages
+        context_dict['recipes'] = recipe
         context_dict['category'] = category
     except Category.DoesNotExist:
         context_dict['pages'] = None
         context_dict['category'] = None
-    return render(request, 'rango/category.html', context_dict)
+    return render(request, 'meal/category.html', context_dict)
 	
 def add_recipe(request):
     form = RecipeForm()
