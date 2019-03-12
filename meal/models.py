@@ -24,11 +24,11 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     category = models.ForeignKey(Category)
-    recipe_name = models.CharField(max_length = 128)
+    recipe_name = models.TextField()
     views = models.IntegerField(default = 0)
     likes = models.IntegerField(default=0)
-    recipe_ingredients = models.TextField(default = "")
-    recipe_directions = models.TextField(default = "")
+    recipe_ingredients = models.TextField()
+    recipe_directions = models.TextField()
     image = models.ImageField(upload_to = 'recipe_images/', blank = False)
 
     def __str__(self):
