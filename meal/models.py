@@ -10,7 +10,7 @@ class Category(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     views = models.IntegerField(default = 0)
     likes = models.IntegerField(default = 0)
-    slug = models.SlugField(blank=True,unique = True)
+    slug = models.SlugField(blank = True, unique = True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -26,10 +26,15 @@ class Recipe(models.Model):
     category = models.ForeignKey(Category)
     recipe_name = models.TextField()
     views = models.IntegerField(default = 0)
-    likes = models.IntegerField(default=0)
+    likes = models.IntegerField(default = 0)
     recipe_ingredients = models.TextField()
     recipe_directions = models.TextField()
     image = models.ImageField(upload_to = 'recipe_images/', blank = False)
+    slug = models.SlugField(blank = True, unique = True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.recipe_name)
+        super(Recipe, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.recipe_name

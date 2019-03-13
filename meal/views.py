@@ -17,15 +17,31 @@ def categories(request):
 # potential replacement for the categories view
 def show_category(request, category_name_slug):
     context_dict = {}
+    
     try:
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
         context_dict['recipes'] = recipe
         context_dict['category'] = category
     except Category.DoesNotExist:
-        context_dict['pages'] = None
+        context_dict['recipes'] = None
         context_dict['category'] = None
+
     return render(request, 'meal/category.html', context_dict)
+
+def show_recipe(request, category_name_slug, recipe_name_slug):
+    context_dict = {}
+
+    try:
+        category = Category.objects.get(slug = category_name_slug)
+        recipe = Recipe.objects.filter(slug = recipe_name_slug)
+        context_dict['recipes'] = recipe
+        context_dict['category'] = category
+    except Recipe.DoesNotExist:
+        context_dict['recipes'] = None
+        context_dict['category'] = None
+        
+    return render(request, 'meal/recipe.html', context_dict)
 	
 def add_recipe(request):
     form = RecipeForm()

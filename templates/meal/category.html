@@ -9,11 +9,9 @@
     {% if category %}
         <h1> {{ category.name }} </h1>
         {% if recipes %}
-            reading recipes correctly
             <ul>
-            {% for recipe in recipes %}
-                recipe number 
-                <li><a>{{recipe_name }}</a></li>
+            {% for recipe in recipes %} 
+                <li><a>{{ recipe.recipe_name }}</a></li>
             {% endfor%}
             </ul>
         {% else %}
