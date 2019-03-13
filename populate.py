@@ -506,5 +506,5 @@ def add_cat(name,views,likes):
 	return c
 
 if __name__ == '__main__':
-	print("Starting RateMyMeal population script...")
+	print("Starting RateMyMseal population script...")
 	populate()
