@@ -2,28 +2,16 @@
 {% load staticfiles %}
 
 {% block title_block %}
-        Sign Up!
+	Sign Up
 {% endblock %}
 
+
+
 {% block body_block %}
-    <h1>Sign Up as a Home Cook!</h1>
-    {% if registered %}
-        Rango says: <strong>thank you for registering!</strong>
-
-    {% else %}
-        <form id="user_form" method="post" action="{% url 'registerRegular' %}"enctype="multipart/form-data">
-
-        {% csrf_token %}
-      
-        {{ user_form.as_p }}
-        {{ profile_form.as_p }}
-		<div class="radio">
-			<label><input type="radio" name="optradio" checked>Certified Chef</label>
-		</div>
-		<div class="radio">
-			<label><input type="radio" name="optradio" checked>Home Cook</label>
-		</div>
-        <input type="submit" name="submit" value="Register" />
-        </form>
-    {% endif %}
+<h1>Create an Account!</h1>
+<h2>Choose Your Account Type Below!</h2>
+Select the type of account you want to create
+</br>
+  <a href="{% url 'registerRegular' %}" class="button button1">I'm a Home Cook</a></br>
+  <a href="{% url 'registerChef' %}" class="button button2">I'm a Chef</a></br>
 {% endblock %}
