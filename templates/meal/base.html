@@ -143,10 +143,9 @@ a {
 			Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		
 			{% get_category_list %}
-		
         <div class="dropdown-divider"></div>
+		<a class = "dropdown-item" href="{% url 'categories' %}">All Categories</a>
 		<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
         </div>
 	  

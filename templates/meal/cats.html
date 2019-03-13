@@ -5,14 +5,12 @@
         <li>
         <strong>
             <a class="dropdown-item" href="{% url 'show_category' c.slug %}">{{c.name}}</a>
-			<div class="dropdown-divider"></div>
             
         </strong>
         </li>
     {% else %}
         <li>
             <a class="dropdown-item" href="{% url 'show_category' c.slug %}">{{c.name}}</a>
-			<div class="dropdown-divider"></div>
         </li>
     {% endif %}
 {% endfor %}
