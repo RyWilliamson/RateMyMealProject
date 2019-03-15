@@ -3,3 +3,20 @@
 
 {% block title_block %}
     {{ recipe.recipe_name }}
+{% endblock %}
+
+{% block body_block %}
+
+    {% if category %}
+
+        <h1> {{ recipe.recipe_name }} </h1>
+        <h2> Ingredients </h2>
+        <ul>
+        {% for ingredient in ingredients %}
+            <li> {{ ingredient }} </li>
+        {% endfor %}
+        <h2> Method </h2>
+        <p> {{ recipe.recipe_directions }} </p>
+        </ul>
+    {% endif %}
+{% endblock %}
