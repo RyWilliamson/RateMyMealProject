@@ -168,12 +168,32 @@ a {
 		{% endif %}
     </ul>
      {% endblock%}
-    
-	<form class="form-inline my-2 my-lg-0">
-		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+
+	<form class="form-inline id="user_form" method="GET" action="{% url 'search' %}">
+		{% csrf_token %}
+		<div class="form-group">
+			<input class="form-control mr-sm-2" type="search" 
+			name='q' value="{{request.GET.q}}" id="search" placeholder="Search" />
+		</div>
 		<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
-  </div>
+
+	
+	<div>
+		{% if result_list %}
+		<h3>Results</h3>
+		<div class="list group">
+		{% for result in result_list %}
+			<div class="list-group-item">
+				<h4 class="list-group-item-heading">
+					<a href="{{ result.link }}">{{ result.title }}</p>
+				</h4>
+				<p class="list-group-item-text">{{ result.summary }}</p>
+			</div>
+		{% endfor %}
+		</div>
+		{% endif %}
+	</div>
 </nav>
 
 {% block body_block %}

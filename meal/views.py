@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import Permission
+from meal.webhose_search import run_query
+from django.db.models import Q
 
 from django.http import HttpResponse
 
@@ -175,4 +177,13 @@ def restricted(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+def search(request):         
+        query =  request.GET.get('q')
+        results = Recipe.objects.filter(recipe_name__icontains=query)
+        print(results)
+        return render(request,"meal/search.html",{"results":results})
+
+
 
