@@ -39,6 +39,12 @@ nav{
 	background-color:#3CB371;
 	color: #B22222;
 }
+.nav-link:hover{
+	color: white;
+}
+.navbar-brand:hover{
+	color: white;
+}
 img{
 	height: 180px;
 	width: 180px;
@@ -100,9 +106,7 @@ a {
   transition-duration: 0.4s;
   cursor: pointer;
   position: center;
-  
 }
-
 .button1 {
   background-color: white; 
   color: black; 
@@ -146,7 +150,8 @@ a {
 			Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			{% get_category_list %}
+		{% get_category_list %}
+
         <div class="dropdown-divider"></div>
 		<a class = "dropdown-item" href="{% url 'categories' %}">All Categories</a>
 		<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
@@ -170,7 +175,7 @@ a {
 		</li>
 		{% endif %}
     </ul>
-     {% endblock%}
+{% endblock%}
 
 	<form class="form-inline id="user_form" method="GET" action="{% url 'search' %}">
 		{% csrf_token %}
