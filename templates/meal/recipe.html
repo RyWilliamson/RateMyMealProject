@@ -12,7 +12,7 @@
         <h1> {{ recipe.recipe_name }} </h1>
 		<IMG src="{{ MEDIA_URL }}bolognese.jpg" alt="Spaghetti Bolognese" style="width:500px;height:350px;"></br>
 		<div id="contentBox" style="margin:0px auto; width:70%">
-		
+		<a href="{% url 'registerRegular' %}" class="button button1">Like</a></br>
 		<div id="column2" style="float:left; margin:0; width:50%;">
 		<h2> Method </h2>
         {{ recipe.recipe_directions }}
