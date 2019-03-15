@@ -26,16 +26,18 @@
 <style>
 
 body{
-	font-family: tempus sans itc !important;
-	color: #660066 !important;
+	font-family: copperplate !important;
+	color: #B22222 !important;
 	text-align: center;
+	font-weight: bold;
+	
 }
 h1{
-	background-color: #66CC99;
+	background-color: #3CB371;
 }
 nav{
-	background-color:#66CC99;
-	color: #660066;
+	background-color:#3CB371;
+	color: #B22222;
 }
 img{
 	height: 180px;
@@ -76,16 +78,16 @@ th, td {
 	position:relative;
 }
 .navbar-toggler-icon{
-	color: #660066;
+	color: #B22222;
 }
 form{
 	text-align: center;
 }
 a {
-  color: #660066;
+  color: #B22222;
 }
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #B22222; /* Green */
   border: none;
   color: white;
   padding: 16px 32px;
@@ -104,28 +106,29 @@ a {
 .button1 {
   background-color: white; 
   color: black; 
-  border: 2px solid #660066;
+  border: 2px solid #B22222;
 }
 
 .button1:hover {
-  background-color: #660066;
+  background-color: #B22222;
   color: white;
 }
 
 .button2 {
   background-color: white; 
   color: black; 
-  border: 2px solid #660066;
+  border: 2px solid #B22222;
 }
 
 .button2:hover {
-  background-color: #660066;
+  background-color: #B22222;
   color: white;
 
 }
 </style>
 
-<body>
+<body background = "{% static 'images/background.jpg' %}">
+
 {% block sidebar_block%}
 <nav class="navbar navbar-expand-lg">
 	<a class="navbar-brand" href="{% url 'base' %}">Home</a>
