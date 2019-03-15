@@ -10,13 +10,23 @@
     {% if category %}
 
         <h1> {{ recipe.recipe_name }} </h1>
-        <h2> Ingredients </h2>
-        <ul>
-        {% for ingredient in ingredients %}
+		<IMG src="{{ MEDIA_URL }}bolognese.jpg" alt="Spaghetti Bolognese" style="width:500px;height:350px;"></br>
+		<div id="contentBox" style="margin:0px auto; width:70%">
+		
+		<div id="column2" style="float:left; margin:0; width:50%;">
+		<h2> Method </h2>
+        {{ recipe.recipe_directions }}
+		
+		</div>
+		<div id="column3" style="float:left; margin:0; width:50%;">
+		<h2> Ingredients </h2>
+		{% for ingredient in ingredients %}
             <li> {{ ingredient }} </li>
         {% endfor %}
-        <h2> Method </h2>
-        <p> {{ recipe.recipe_directions }} </p>
-        </ul>
+		
+		</div>
+		
+        </div>
+        
     {% endif %}
 {% endblock %}
