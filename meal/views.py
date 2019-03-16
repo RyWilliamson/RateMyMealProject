@@ -180,6 +180,20 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+@login_required
+def like_recipe(request):
+    recipe_id = None
+    if request.method == 'GET':
+        recipe_id = request.GET['recipe_id']
+        likes = 0
+        if recipe_id:
+            recipe = Recipe.objects.get(id=int(recipe_id))
+            if recipe:
+                likes = recipe.likes + 1
+                recipe.likes = likes
+                recipe.save()
+    return HttpResponse(likes)
+
 
 def search(request):         
         query =  request.GET.get('q')
