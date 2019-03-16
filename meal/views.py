@@ -72,7 +72,14 @@ def base(request):
 
 
 def trending(request):
-	return render(request, 'meal/trending.html', {})
+    request.session.set_test_cookie()
+    recipe_likes = Recipe.objects.order_by('-likes')[:2]
+    recipe_views = Recipe.objects.order_by('-views')[:2]
+
+    context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+    
+    response = render(request, 'meal/trending.html', context=context_dict)
+    return response
 
 def index(request):
 	return render(request, 'meal/index.html', {})

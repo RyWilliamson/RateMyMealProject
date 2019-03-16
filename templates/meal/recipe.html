@@ -15,7 +15,7 @@
 		<div id="column2" style="float:left; margin:0; width:50%;">
 
         <div>
-        <strong id="like_count">{{ recipe.likes }}</strong> people like this category
+        <strong id="like_count">{{ recipe.likes }}</strong> people like this recipe
         {% if user.is_authenticated %}
         <button id="likes" data-catid="{{recipe.id}}"
         class="btn btn-primary btn-sm" type="button">
