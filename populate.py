@@ -123,7 +123,7 @@ def populate():
 		 "views": 128,
 		 "likes": 64,
 		 "recipe_data": "temp",
-		 "image": "beggie-wholewheat-pot-noodle.jpg"
+		 "image": "veggie-wholewheat-pot-noodle.jpg"
 		},
 
 		{"recipe_name": "Lean Turkey Burger",
@@ -309,11 +309,11 @@ def populate():
 		 "image": "pizza.jpg"
 		},
 
-		{"recipe_name": "Salmon and Brocolli Bake",
+		{"recipe_name": "Salmon and Broccolli Bake",
 		 "views": 31,
 		 "likes": 11,
 		 "recipe_data": "temp",
-		 "image": "salmon-and-brocolli-bake.jpg"
+		 "image": "salmon-and-broccolli-bake.jpg"
 		},
 
 		{"recipe_name": "Pesto, Courgette * Gryuere Polenta Tart",
@@ -506,5 +506,5 @@ def add_cat(name,views,likes):
 	return c
 
 if __name__ == '__main__':
-	print("Starting RateMyMseal population script...")
+	print("Starting RateMyMeal population script...")
 	populate()

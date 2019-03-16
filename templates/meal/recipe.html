@@ -10,18 +10,19 @@
     {% if category %}
 
         <h1> {{ recipe.recipe_name }} </h1>
-		<IMG src="{{ MEDIA_URL }}bolognese.jpg" alt="Spaghetti Bolognese" style="width:500px;height:350px;"></br>
+		<img src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}" style="width:500px;height:350px;"> </br>
 		<div id="contentBox" style="margin:0px auto; width:70%">
 		<div id="column2" style="float:left; margin:0; width:50%;">
 
         <div>
         <strong id="like_count">{{ recipe.likes }}</strong> people like this recipe
+
         {% if user.is_authenticated %}
-        <button id="likes" data-catid="{{recipe.id}}"
-        class="btn btn-primary btn-sm" type="button">
-        Like
-        </button>
+            <button id="likes" data-catid="{{recipe.id}}" class="btn btn-primary btn-sm" type="button">
+                Like
+            </button>
         {% endif %}
+
         </div>
 
 		<h2> Method </h2>
