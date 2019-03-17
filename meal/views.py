@@ -10,19 +10,11 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import Permission
 from meal.webhose_search import run_query
 from django.db.models import Q
-import math
 
 from django.http import HttpResponse
 
 def categories(request):
-    context_dict = {}
-    categories = Category.objects.all()
-    size = len(categories)
-    context_dict['column1'] = categories[0 : int(size / 3)]
-    context_dict['column2'] = categories[int(size / 3) : 2 * int(size / 3)]
-    context_dict['column3'] = categories[2 * int(size / 3) : size]
-
-    return render(request, 'meal/categories.html', context_dict)
+	return render(request, 'meal/categories.html', {})
 
 # potential replacement for the categories view
 def show_category(request, category_name_slug):
@@ -196,18 +188,20 @@ def user_logout(request):
     return HttpResponseRedirect(reverse('index'))
 
 @login_required
-def like_recipe(request):
-    recipe_id = None
+def like_recipe(request,category_name_slug,recipe_name_slug):
+    rec_id = None
+    category = Category.objects.get(slug = category_name_slug)
+    recipe1 = Recipe.objects.get(slug = recipe_name_slug)
+
     if request.method == 'GET':
-        recipe_id = request.GET['recipe_id']
         likes = 0
-        if recipe_id:
-            recipe = Recipe.objects.get(id=int(recipe_id))
-            if recipe:
-                likes = recipe.likes + 1
-                recipe.likes = likes
-                recipe.save()
+        if recipe1:
+           likes = recipe1.likes + 1
+           recipe1.likes = likes
+           recipe1.save()
     return HttpResponse(likes)
+
+
 
 
 def search(request):         

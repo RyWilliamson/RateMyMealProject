@@ -18,7 +18,7 @@
         <strong id="like_count">{{ recipe.likes }}</strong> people like this recipe
 
         {% if user.is_authenticated %}
-            <button id="likes" data-catid="{{recipe.id}}" class="btn btn-primary btn-sm" type="button">
+            <button id="likes" data-recid="{{recipe.id}}" class="btn btn-primary btn-sm" type="button">
                 Like
             </button>
         {% endif %}
