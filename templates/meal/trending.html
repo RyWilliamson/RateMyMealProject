@@ -14,10 +14,13 @@
 		<h3>Most Viewed</h3>
 		<!-- New line -->
         {%for recipe in recipe_views%}
-		<IMG SRC={{recipe.image}} ALT= {{recipe.recipe_name}} >
+        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT= {{recipe.recipe_name}} >
 		<h4>{{recipe.recipe_name}}</h4><br>
+        
         {%endfor%}
 		<!-- New line -->
+       
 	
     </div>
 {%endif%}
@@ -25,10 +28,13 @@
     <div id="column2" style="float:left; margin:0;width:50%;">
 		<h3>Most Liked</h3>
 		<!-- New line -->
-        {%for recipe in recipe_views%}
-		<IMG SRC="{{ MEDIA_URL }}"{{recipe.image}} ALT={{recipe.image}} >
+        {%for recipe in recipe_likes%}
+        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT={{recipe.image}} >
         <h4>{{recipe.recipe_name}}</h4><br>
+        <br />
         {%endfor%}
-	</div>
+    <!-- New line -->
+
 {%endif%}
 {% endblock %}

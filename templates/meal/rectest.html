@@ -1,0 +1,7 @@
+{% for c in cats %}
+            <a class="dropdown-item" color = "#B22222" href="{% url 'show_category' c.slug %}">{{c.name}}</a>
+            <select id="country" name="country">
+             <option value={{c}}>{{c.name}}</option>
+  </select>
+            
+{% endfor %}
