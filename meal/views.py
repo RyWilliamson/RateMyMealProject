@@ -54,6 +54,7 @@ def add_recipe(request):
         form = RecipeForm(request.POST)
         if form.is_valid():
                 page = form.save(commit=False)
+                page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
                 page.views = 0
                 page.save()
                 return show_category(request, category_name_slug)
