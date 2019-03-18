@@ -316,11 +316,11 @@ def populate():
 		 "image": "salmon-and-broccolli-bake.jpg"
 		},
 
-		{"recipe_name": "Pesto, Courgette * Gryuere Polenta Tart",
+		{"recipe_name": "Pesto & Courgette Gryuere Polenta Tart",
 		 "views": 92,
 		 "likes": 46,
 		 "recipe_data": "temp",
-		 "image": "pesto,-courgette-*-gryuere-polenta-tart.jpg"
+		 "image": "pesto-&-courgette-gryuere-polenta-tart.jpg"
 		},
 
 		{"recipe_name": "Self-Saucing Chocolate Pudding",
