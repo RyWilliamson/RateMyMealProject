@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import Permission
 from meal.webhose_search import run_query
 from django.db.models import Q
@@ -57,7 +58,9 @@ def add_recipe(request):
                 page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
                 page.views = 0
                 page.save()
-                return show_category(request, category_name_slug)
+                return HttpResponse('image upload success')
+
+               
         else:
             print (form.errors)
 
@@ -114,6 +117,7 @@ def registerRegular(request):
                 profile.picture = request.FILES['picture']
             profile.save()
             registered = True;
+            return redirect_to_login('meal/login.html')
         else:
             print(user_form.errors,profile_form.errors)
     else:
@@ -147,6 +151,7 @@ def registerChef(request):
                 profile.picture = request.FILES['picture']
             profile.save()
             registered = True;
+            return redirect_to_login('meal/login.html')
         else:
             print(user_formChef.errors,profile_form.errors)
     else:
@@ -157,28 +162,28 @@ def registerChef(request):
                      'profile_form':profile_form,
                      'registered':registered}
 
-    return render(request, 'meal/registerChef.html', context_dict)
+    return render(request,'meal/registerChef.html',context_dict)
 
 def user_login(request):
-
-    if request.method=='POST':
-        username=request.POST.get('username')
-        password=request.POST.get('password')
-
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect(reverse('index'))
-            else:
-                return HttpResponse('Your meal account is disabled')
+    try:
+        user = authenticate(username = request.POST['username'],
+            password = request.POST['password'])
+    except KeyError:
+        return render(request, 'meal/login.html',{
+            'login_message' : 'Please Enter Your Username and Password',}) 
+    if user is not None:
+        if user.is_active:
+            login(request, user)
         else:
-            print('invalid login details {0}, {1}'.format(username,password))
-            return HttpResponse("Invalid login details supplied")
-
+            return render(request, 'meal/login.html',{
+                'login_message' : 'Your Account Has Been Banned',})
     else:
-        
-        return render(request,'meal/login.html',{})
+        return render(request, 'meal/login.html',{
+            'login_message' : 'Please Enter Your Username and Password correctly',})
+    return HttpResponseRedirect(reverse('index'))
+
+
+
 		
 @permission_required('meal.read_chef',raise_exception=True)
 def restricted(request):
