@@ -18,4 +18,7 @@ urlpatterns=[
     url(r'^add_recipe/$', views.add_recipe, name = 'add_recipe'),
     url(r'^categories/$', views.categories, name = 'categories'),
     url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
+    url(r'^category/(?P<category_name_slug>[\w\-]+)/(?P<recipe_name_slug>[\w\-]+)/$', views.show_recipe, name='show_recipe'),
+    url(r'^category/(?P<category_name_slug>[\w\-]+)/(?P<recipe_name_slug>[\w\-]+)/like/$', views.like_recipe, name='like_recipe'),
+    url(r'^like/$', views.like_recipe, name='like_recipe'),
 ]

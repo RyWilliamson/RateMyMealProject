@@ -10,10 +10,8 @@
 	<h2>{{ query }}</h2>
 	<br/>
 	{% if results %}
-		{% for results in results %}
-			<p>{{result.recipe_name}}</p>
+		{% for result in results %}
+			<p><a href="../category/{{result.category.slug}}/{{result.slug}}">{{result.recipe_name}}</a></p>
 		{% endfor %}
-		<p>Hi</p>
 	{% endif %}
-	<p>Bye</p>
 {% endblock %}

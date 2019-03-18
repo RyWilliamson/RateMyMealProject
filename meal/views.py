@@ -19,7 +19,7 @@ def categories(request):
 # potential replacement for the categories view
 def show_category(request, category_name_slug):
     context_dict = {}
-    
+
     try:
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
@@ -36,11 +36,13 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
 
     try:
         category = Category.objects.get(slug = category_name_slug)
-        recipe = Recipe.objects.filter(slug = recipe_name_slug)
-        context_dict['recipes'] = recipe
+        recipe = Recipe.objects.get(slug = recipe_name_slug)
+        context_dict['recipe'] = recipe
+        context_dict['ingredients'] = recipe.get_ingredients()
         context_dict['category'] = category
     except Recipe.DoesNotExist:
-        context_dict['recipes'] = None
+        context_dict['recipe'] = None
+        context_dict['ingredients'] = None
         context_dict['category'] = None
         
     return render(request, 'meal/recipe.html', context_dict)
@@ -70,7 +72,14 @@ def base(request):
 
 
 def trending(request):
-	return render(request, 'meal/trending.html', {})
+    request.session.set_test_cookie()
+    recipe_likes = Recipe.objects.order_by('-likes')[:2]
+    recipe_views = Recipe.objects.order_by('-views')[:2]
+
+    context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+    
+    response = render(request, 'meal/trending.html', context=context_dict)
+    return response
 
 def index(request):
 	return render(request, 'meal/index.html', {})
@@ -178,12 +187,26 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
+@login_required
+def like_recipe(request,category_name_slug,recipe_name_slug):
+    rec_id = None
+    category = Category.objects.get(slug = category_name_slug)
+    recipe1 = Recipe.objects.get(slug = recipe_name_slug)
+
+    if request.method == 'GET':
+        likes = 0
+        if recipe1:
+           likes = recipe1.likes + 1
+           recipe1.likes = likes
+           recipe1.save()
+    return HttpResponse(likes)
+
 
 def search(request):         
         query =  request.GET.get('q')
         results = Recipe.objects.filter(recipe_name__icontains=query)
-        print(results)
-        return render(request,"meal/search.html",{"results":results})
+        return render(request,"meal/search.html",{"query":query,
+                                                  "results":results})
 
 
 

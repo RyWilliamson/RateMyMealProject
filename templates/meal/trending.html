@@ -7,26 +7,34 @@
 
 {% block body_block %}
 	<h1>Trending</h1>
+    {%if recipe_views%}
 
 	<div id="contentBox" style="margin:0px auto; width:70%">
 	<div id="column1" style="float:left; margin:0; width:50%;">
 		<h3>Most Viewed</h3>
 		<!-- New line -->
-		<IMG SRC="{{ MEDIA_URL }}bolognese.jpg" ALT="Spaghetti Bolognese" >
-		<h4>Spaghetti Bolognese</h4><br>
+        {%for recipe in recipe_views%}
+        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT= {{recipe.recipe_name}} >
+		<h4>{{recipe.recipe_name}}</h4><br>
+        
+        {%endfor%}
 		<!-- New line -->
-		<IMG SRC="{{ MEDIA_URL }}pancakes.jpg" ALT="Pancakes" >
-		<h4>Berry Pancakes</h4><br>
+       
+	
     </div>
-
+{%endif%}
+{%if recipe_likes%}
     <div id="column2" style="float:left; margin:0;width:50%;">
 		<h3>Most Liked</h3>
 		<!-- New line -->
-		<IMG SRC="{{ MEDIA_URL }}chocolate_fudge.jpg" ALT="Chocolate Fudge Cake" >
-		<h4>Chocolate Fudge Cake</h4><br>
-		<!-- New line -->
-		<IMG SRC="{{ MEDIA_URL }}quesadilla.jpg" ALT="Quesadilla" >
-		<h4>Beef Quesadillas</h4><br>
-    </div>
-	
+        {%for recipe in recipe_likes%}
+        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT={{recipe.image}} >
+        <h4>{{recipe.recipe_name}}</h4><br>
+        <br />
+        {%endfor%}
+    <!-- New line -->
+
+{%endif%}
 {% endblock %}

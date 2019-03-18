@@ -27,15 +27,22 @@
 
 body{
 	font-family: tempus sans itc !important;
-	color: #660066 !important;
+	color: #B22222 !important;
 	text-align: center;
+	font-weight: bold;
+	font-variant: small-caps;
 }
 h1{
-	background-color: #66CC99;
+	background-color: #43CD80;
 }
 nav{
-	background-color:#66CC99;
-	color: #660066;
+	background-color:#43CD80;
+}
+.nav-link:hover{
+	color: white;
+}
+.navbar-brand:hover{
+	color: white;
 }
 img{
 	height: 180px;
@@ -76,16 +83,16 @@ th, td {
 	position:relative;
 }
 .navbar-toggler-icon{
-	color: #660066;
+	color: #B22222;
 }
 form{
 	text-align: center;
 }
 a {
-  color: #660066;
+  color: #B22222;
 }
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color: #B22222;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -94,38 +101,50 @@ a {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
   cursor: pointer;
   position: center;
-  
 }
-
 .button1 {
   background-color: white; 
   color: black; 
-  border: 2px solid #660066;
+  border: 2px solid #B22222;
 }
 
 .button1:hover {
-  background-color: #660066;
+  background-color: #B22222;
   color: white;
 }
 
 .button2 {
   background-color: white; 
   color: black; 
-  border: 2px solid #660066;
+  border: 2px solid #B22222;
 }
 
 .button2:hover {
-  background-color: #660066;
+  background-color: #B22222;
   color: white;
+}
+.dropdown-item{
+	color:#B22222;
+}
+.dropdown-menu{
+	background-color: #43CD80;
+}
 
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
 }
 </style>
 
-<body>
+<body background = "{% static 'images/background.jpg' %}">
+
 {% block sidebar_block%}
 <nav class="navbar navbar-expand-lg">
 	<a class="navbar-brand" href="{% url 'base' %}">Home</a>
@@ -143,7 +162,8 @@ a {
 			Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-			{% get_category_list %}
+		{% get_category_list %}
+
         <div class="dropdown-divider"></div>
 		<a class = "dropdown-item" href="{% url 'categories' %}">All Categories</a>
 		<a class="dropdown-item" href="{% url 'trending' %}">Trending</a>
@@ -167,7 +187,7 @@ a {
 		</li>
 		{% endif %}
     </ul>
-     {% endblock%}
+{% endblock%}
 
 	<form class="form-inline id="user_form" method="GET" action="{% url 'search' %}">
 		{% csrf_token %}
@@ -268,5 +288,6 @@ a {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<script src="{% static "js/meal-ajax.js" %}"></script>
 </body>
 </html>

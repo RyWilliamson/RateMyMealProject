@@ -65,42 +65,42 @@ def populate():
 		 "views": 22,
 		 "likes": 10, 
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "vegan-chilli.jpg"
 		},
 
 		{"recipe_name": "Mushroom Burgers",
 		 "views" :55,
 		 "likes": 22,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "mushroom-burgers.jpg"
 		},
 
 		{"recipe_name": "Lasagne", 
 		 "views": 222,
 		 "likes": 222,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "lasagne.jpg"
 		},
 
 		{"recipe_name": "Brownies",
 		 "views":159,
 		 "likes": 158,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "brownies.jpg"
 		},
 
 		{"recipe_name": "Falafel Burgers",
 		 "views":32,
 		 "likes": 0,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "falafel-burgers.jpg"
 		},
 
 		{"recipe_name": "Thai Curry",
 		 "views":96,
 		 "likes": 90,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "thai-curry.jpg"
 		}
 	]
 
@@ -109,42 +109,42 @@ def populate():
 		 "views": 39,
 		 "likes": 16,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "roasted-chickpea-wraps.jpg"
 		},
 
 		{"recipe_name": "Roast Pepper Pesto Pasta",
 		 "views": 98,
 		 "likes": 40,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "roast-pepper-pesto-pasta.jpg"
 		},
 
 		{"recipe_name": "Veggie Wholewheat Pot Noodle",
 		 "views": 128,
 		 "likes": 64,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "veggie-wholewheat-pot-noodle.jpg"
 		},
 
 		{"recipe_name": "Lean Turkey Burger",
 		 "views": 90,
 		 "likes": 30,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "lean-turkey-burger.jpg"
 		},
 
 		{"recipe_name": "Thai Prawn and Ginger Noodles",
 		 "views": 530,
 		 "likes": 500,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "thai-prawn-and-ginger-noodles.jpg"
 		},
 
 		{"recipe_name": "Overnight Oats",
 		 "views": 530,
 		 "likes": 222,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "overnight-oats.jpg"
 		}
 	]
 
@@ -153,42 +153,42 @@ def populate():
 		 "views": 67,
 		 "likes": 31,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "huevos-rancheros.jpg"
 		},
 
 		{"recipe_name": "Eggs Royale",
 		 "views": 300,
 		 "likes": 177,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "eggs-royale.jpg"
 		},
 
 		{"recipe_name": "French Toast with Maple Syrup", 
 		 "views": 600,
 		 "likes": 200,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "french-toast-with-maple-syrup.jpg"
 		},
 
 		{"recipe_name": "Pancakes with Fresh Berries",
 		 "views": 549,
 		 "likes": 199,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "pancakes-with-fresh-berriess.jpg"
 		},
 
 		{"recipe_name": "Berry Smoothie Bowl",
 		 "views": 12,
 		 "likes": 12,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "berrry-smoothie-bowl.jpg"
 		},
 
 		{"recipe_name":"Baked Avocado with Smoked Salmon and Egg",
 		 "views":90,
 		 "likes": 40,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "baked-avocado-with-smoked-salmon-and-egg.jpg"
 		}
 	]
 
@@ -197,49 +197,49 @@ def populate():
 		 "views": 32,
 		 "likes": 10,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "pulled-pork-burrito.jpg"
 		},
 
 		{"recipe_name": "Chicken Fajitas",
 		 "views": 80,
 		 "likes": 26,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "chicken-fajitas.jpg"
 		},
 
 		{"recipe_name": "Vegetable Enchiladas",
 		 "views":91,
 		 "likes": 30,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "vegetable-enchiladas.jpg"
 		},
 
 		{"recipe_name": "Spicy Beef Quesadillas",
 		 "views": 76,
 		 "likes": 68,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "spicy-beef-quesadillas.jpg"
 		},
 
 		{"recipe_name": "Chilli Con Carne",
 		 "views": 230,
 		 "likes": 130,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "chilli-con-carne.jpg"
 		},
 
 		{"recipe_name": "Churros",
 		 "views":89,
 		 "likes": 30,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "churros.jpg"
 		},
 
 		{"recipe_name": "Jackfruit Tacos",
 		 "views":35,
 		 "likes": 5,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "jackfruit-tacos.jpg"
 		}
 	]
 
@@ -248,42 +248,42 @@ def populate():
 		 "views" :210,
 		 "likes": 185,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "salsiccia-piccante-pizza.jpg"
 		},
 
 		{"recipe_name": "Spaghetti Carbonara",
 		 "views" :333,
 		 "likes": 220,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "spaghetti-carbonara.jpg"
 		},
 
 		{"recipe_name": "Lobster Ravioli",
 		 "views" :39,
 		 "likes": 26,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "lobster-ravioli.jpg"
 		},
 
 		{"recipe_name": "Pollo Milanese",
 		 "views" :80,
 		 "likes": 36,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "pollo-milanese.jpg"
 		},
 
 		{"recipe_name": "Risotto Quattro Stagioni",
 		 "views" :12,
 		 "likes": 8,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "risotto-quattro-stagioni.jpg"
 		},
 
 		{"recipe_name": "Tiramisu",
 		 "views" :99,
 		 "likes": 40,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "tiramisu.jpg"
 		}
 	]
 
@@ -292,7 +292,7 @@ def populate():
 		 "views": 54,
 		 "likes": 48,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "scones.jpg"
 		},
 
 		{"recipe_name": "Bolognese",
@@ -306,28 +306,28 @@ def populate():
 		 "views": 159,
 		 "likes": 99,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "pizza.jpg"
 		},
 
-		{"recipe_name": "Salmon and Brocolli Bake",
+		{"recipe_name": "Salmon and Broccolli Bake",
 		 "views": 31,
 		 "likes": 11,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "salmon-and-broccolli-bake.jpg"
 		},
 
 		{"recipe_name": "Pesto, Courgette * Gryuere Polenta Tart",
 		 "views": 92,
 		 "likes": 46,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "pesto,-courgette-*-gryuere-polenta-tart.jpg"
 		},
 
 		{"recipe_name": "Self-Saucing Chocolate Pudding",
 		 "views": 500,
 		 "likes": 500,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "self-saucing-chocolate-pudding.jpg"
 		}
 	]
 
@@ -336,42 +336,42 @@ def populate():
 		 "views": 35,
 		 "likes": 24,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "beef-wellington.jpg"
 		},
 
 		{"recipe_name": "Shepherd's Pie",
 		 "views": 215,
 		 "likes": 126,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "shepherd's-pie.jpg"
 		},
 
 		{"recipe_name": "Chocolate Fudge Cake",
 		 "views": 530,
 		 "likes": 520,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "chocolate-fudge-cake.jpg"
 		},
 		
 		{"recipe_name": "Mac n Cheese with Bacon Bits",
 		 "views": 428,
 		 "likes": 400,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "mac-n-cheese-with-bacon-bits.jpg"
 		},
 
 		{"recipe_name": "Apple Pie",
 		 "views": 92,
 		 "likes": 87,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "apple-pie.jpg"
 		},
 		
 		{"recipe_name": "Fried Chicken",
 		 "views": 76,
 		 "likes": 46,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "fried-chicken.jpg"
 		}
 	]
 
@@ -380,42 +380,42 @@ def populate():
 		 "views": 98,
 		 "likes": 13,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "meatloaf.jpg"
 		},
 
 		{"recipe_name": "Coconut and Fish Curry Parcels",
 		 "views": 75,
 		 "likes": 2,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "coconut-and-fish-curry-parcels.jpg"
 		},
 		
 		{"recipe_name": "Chocolate, Orange & Hazelnut Cake",
 		 "views": 145,
 		 "likes": 136,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "chocolate,-orange-&-hazelnut-cake.jpg"
 		},
 
 		{"recipe_name": "Salmon & Lemon Mini Fishcakes",
 		 "views": 530,
 		 "likes": 381,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "salmon-&-lemon-mini-fishcakes.jpg"
 		},
 
 		{"recipe_name": "Lentil Lasagne",
 		 "views": 200,
 		 "likes": 137,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "lentil-lasagne.jpg"
 		},
 
 		{"recipe_name": "Sausage & Bean One-Pot",
 		 "views": 237,
 		 "likes": 100,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "sausage-&-bean-one-pot.jpg"
 		}
 	]
 	
@@ -424,35 +424,35 @@ def populate():
 		 "views": 117,
 		 "likes": 10,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "crispy-fish-sticks.jpg"
 		},
 
 		{"recipe_name": "Burger Sliders",
 		 "views": 54,
 		 "likes": 33,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "burger-sliders.jpg"
 		},
 
 		{"recipe_name": "Spaghetti Meatballs",
 		 "views": 77,
 		 "likes": 67,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "spaghetti-meatballs.jpg"
 		},
 
 		{"recipe_name": "Cheesy Chicken Casserole",
 		 "views": 8,
 		 "likes": 4,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "chessy-chicken-casserole.jpg"
 		},
 
 		{"recipe_name": "Vegetable Fried Rice",
 		 "views": 22,
 		 "likes": 16,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "vegetable-fried-rice.jpg"
 		},
 		
 
@@ -460,7 +460,7 @@ def populate():
 		 "views": 10,
 		 "likes": 5,
 		 "recipe_data": "temp",
-		 "image": "bolognese.jpg"
+		 "image": "beef-stew-and-dumplings.jpg"
 		}
 	]
 		
@@ -506,5 +506,5 @@ def add_cat(name,views,likes):
 	return c
 
 if __name__ == '__main__':
-	print("Starting RateMyMseal population script...")
+	print("Starting RateMyMeal population script...")
 	populate()

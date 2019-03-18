@@ -3,3 +3,41 @@
 
 {% block title_block %}
     {{ recipe.recipe_name }}
+{% endblock %}
+
+{% block body_block %}
+
+    {% if category %}
+
+        <h1> {{ recipe.recipe_name }} </h1>
+		<img src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}" style="width:500px;height:350px;"> </br>
+		<div id="contentBox" style="margin:0px auto; width:70%">
+		<div id="column2" style="float:left; margin:0; width:50%;">
+
+        <div>
+        <strong id="like_count">{{ recipe.likes }}</strong> people like this recipe
+
+        {% if user.is_authenticated %}
+            <button id="likes" data-recid="{{recipe.id}}" class="btn btn-primary btn-sm" type="button">
+                Like
+            </button>
+        {% endif %}
+
+        </div>
+
+		<h2> Method </h2>
+        {{ recipe.recipe_directions }}
+		
+		</div>
+		<div id="column3" style="float:left; margin:0; width:50%;">
+		<h2> Ingredients </h2>
+		{% for ingredient in ingredients %}
+            <li> {{ ingredient }} </li>
+        {% endfor %}
+		
+		</div>
+		
+        </div>
+        
+    {% endif %}
+{% endblock %}
