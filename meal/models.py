@@ -42,6 +42,9 @@ class Recipe(models.Model):
     def get_ingredients(self):
         return json.decoder.JSONDecoder().decode(self.recipe_ingredients)
 
+    def set_ingredients(self, ingredients):
+        self.recipe_ingredients = json.dumps(ingredients)
+
     def _get_category_slug():
         return self.category.slug
 
