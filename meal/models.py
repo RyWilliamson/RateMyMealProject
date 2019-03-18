@@ -29,7 +29,7 @@ class Recipe(models.Model):
     likes = models.IntegerField(default = 0)
     recipe_ingredients = models.TextField()
     recipe_directions = models.TextField()
-    image = models.ImageField(upload_to = 'recipe_images/', blank = False)
+    image = models.ImageField(upload_to = 'recipe_images/')
     slug = models.SlugField(blank = True, unique = True)
 
     def save(self, *args, **kwargs):

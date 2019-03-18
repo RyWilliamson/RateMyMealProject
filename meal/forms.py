@@ -28,13 +28,13 @@ class UserProfileForm(forms.ModelForm):
         fields = ('picture',)
 
 class RecipeForm(forms.ModelForm):
-    recipe_name = forms.CharField(max_length = 128,required=True,  help_text = "* Please enter the title of the recipe.")
+    recipe_name = forms.CharField(max_length = 128,  help_text = "* Please enter the title of the recipe.")
 
-    recipe_ingredients = forms.CharField(max_length=50, required=True, help_text = "* Please enter the recipe ingredients here",widget=forms.Textarea(attrs={'rows': 2, 'cols': 20}))
+    recipe_ingredients = forms.CharField(max_length=50, help_text = "* Please enter the recipe ingredients here",widget=forms.Textarea(attrs={'rows': 2, 'cols': 20}))
 
-    recipe_directions = forms.CharField(max_length=200,required=True, widget=forms.Textarea(attrs={'rows': 2, 'cols': 20}), help_text = "* Please enter the recipe steps here")
+    recipe_directions = forms.CharField(max_length=200, widget=forms.Textarea(attrs={'rows': 2, 'cols': 20}), help_text = "* Please enter the recipe steps here")
    
-
+    image = forms.ImageField(required=False)
     views = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
 
