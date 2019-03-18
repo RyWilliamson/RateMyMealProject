@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import RequestContext
 from meal.models import Category, Recipe
 from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
@@ -7,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import Permission
 from meal.webhose_search import run_query
 from django.db.models import Q
@@ -53,8 +55,12 @@ def add_recipe(request):
         form = RecipeForm(request.POST)
         if form.is_valid():
                 page = form.save(commit=False)
+                page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
                 page.views = 0
                 page.save()
+                return HttpResponse('image upload success')
+
+               
         else:
             print (form.errors)
 
@@ -111,6 +117,7 @@ def registerRegular(request):
                 profile.picture = request.FILES['picture']
             profile.save()
             registered = True;
+            return redirect_to_login('meal/login.html')
         else:
             print(user_form.errors,profile_form.errors)
     else:
@@ -144,6 +151,7 @@ def registerChef(request):
                 profile.picture = request.FILES['picture']
             profile.save()
             registered = True;
+            return redirect_to_login('meal/login.html')
         else:
             print(user_formChef.errors,profile_form.errors)
     else:
@@ -154,28 +162,28 @@ def registerChef(request):
                      'profile_form':profile_form,
                      'registered':registered}
 
-    return render(request, 'meal/registerChef.html', context_dict)
+    return render(request,'meal/registerChef.html',context_dict)
 
 def user_login(request):
-
-    if request.method=='POST':
-        username=request.POST.get('username')
-        password=request.POST.get('password')
-
-        user = authenticate(username=username, password=password)
-        if user:
-            if user.is_active:
-                login(request, user)
-                return HttpResponseRedirect(reverse('index'))
-            else:
-                return HttpResponse('Your meal account is disabled')
+    try:
+        user = authenticate(username = request.POST['username'],
+            password = request.POST['password'])
+    except KeyError:
+        return render(request, 'meal/login.html',{
+            'login_message' : 'Please Enter Your Username and Password',}) 
+    if user is not None:
+        if user.is_active:
+            login(request, user)
         else:
-            print('invalid login details {0}, {1}'.format(username,password))
-            return HttpResponse("Invalid login details supplied")
-
+            return render(request, 'meal/login.html',{
+                'login_message' : 'Your Account Has Been Banned',})
     else:
-        
-        return render(request,'meal/login.html',{})
+        return render(request, 'meal/login.html',{
+            'login_message' : 'Please Enter Your Username and Password correctly',})
+    return HttpResponseRedirect(reverse('index'))
+
+
+
 		
 @permission_required('meal.read_chef',raise_exception=True)
 def restricted(request):
@@ -187,18 +195,33 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-@login_required
-def like_recipe(request,category_name_slug,recipe_name_slug):
-    rec_id = None
-    category = Category.objects.get(slug = category_name_slug)
-    recipe1 = Recipe.objects.get(slug = recipe_name_slug)
+#@login_required
+#def like_recipe(request,category_name_slug,recipe_name_slug):
+    #rec_id = None
+    #category = Category.objects.get(slug = category_name_slug)
+    #recipe1 = Recipe.objects.get(slug = recipe_name_slug)
 
+    #if request.method == 'GET':
+        #likes = 0
+        #if recipe1:
+       #    likes = recipe1.likes + 1
+      #     recipe1.likes = likes
+     #      recipe1.save()
+    #return HttpResponse(likes)
+
+@login_required
+def like_recipe(request):
+    context = RequestContext(request)
+    cat_id = None
     if request.method == 'GET':
+        cat_id = request.GET['recipe_id']
         likes = 0
-        if recipe1:
-           likes = recipe1.likes + 1
-           recipe1.likes = likes
-           recipe1.save()
+        if cat_id:
+            cat = Recipe.objects.get(id=int(cat_id))
+            if cat:
+                likes = cat.likes + 1
+                cat.likes = likes
+                cat.save()
     return HttpResponse(likes)
 
 

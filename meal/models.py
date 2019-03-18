@@ -29,7 +29,7 @@ class Recipe(models.Model):
     likes = models.IntegerField(default = 0)
     recipe_ingredients = models.TextField()
     recipe_directions = models.TextField()
-    image = models.ImageField(upload_to = 'recipe_images/')
+    image = models.ImageField(upload_to = 'recipe_images/', default = 'recipe_images/bolognese.jpg')
     slug = models.SlugField(blank = True, unique = True)
 
     def save(self, *args, **kwargs):
@@ -41,6 +41,9 @@ class Recipe(models.Model):
 
     def get_ingredients(self):
         return json.decoder.JSONDecoder().decode(self.recipe_ingredients)
+
+    def set_ingredients(self, ingredients):
+        self.recipe_ingredients = json.dumps(ingredients)
 
     def _get_category_slug():
         return self.category.slug

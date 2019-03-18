@@ -8,6 +8,8 @@
 {% block body_block %}
 <h1>Log In!</h1>
 <form id="login_form" method="post" action ="{% url 'login' %}">
+    {{ login_message }}
+    <br/>
 	{% csrf_token %}
 	Username: <input type="text" name="username" value="" size="50" /> 
 	<br/>
