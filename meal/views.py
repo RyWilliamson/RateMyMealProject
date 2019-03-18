@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.template import RequestContext
 from meal.models import Category, Recipe
 from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
@@ -55,6 +56,7 @@ def add_recipe(request):
                 page = form.save(commit=False)
                 page.views = 0
                 page.save()
+                return show_category(request, category_name_slug)
         else:
             print (form.errors)
 
@@ -187,18 +189,33 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-@login_required
-def like_recipe(request,category_name_slug,recipe_name_slug):
-    rec_id = None
-    category = Category.objects.get(slug = category_name_slug)
-    recipe1 = Recipe.objects.get(slug = recipe_name_slug)
+#@login_required
+#def like_recipe(request,category_name_slug,recipe_name_slug):
+    #rec_id = None
+    #category = Category.objects.get(slug = category_name_slug)
+    #recipe1 = Recipe.objects.get(slug = recipe_name_slug)
 
+    #if request.method == 'GET':
+        #likes = 0
+        #if recipe1:
+       #    likes = recipe1.likes + 1
+      #     recipe1.likes = likes
+     #      recipe1.save()
+    #return HttpResponse(likes)
+
+@login_required
+def like_recipe(request):
+    context = RequestContext(request)
+    cat_id = None
     if request.method == 'GET':
+        cat_id = request.GET['recipe_id']
         likes = 0
-        if recipe1:
-           likes = recipe1.likes + 1
-           recipe1.likes = likes
-           recipe1.save()
+        if cat_id:
+            cat = Recipe.objects.get(id=int(cat_id))
+            if cat:
+                likes = cat.likes + 1
+                cat.likes = likes
+                cat.save()
     return HttpResponse(likes)
 
 
