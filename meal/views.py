@@ -16,7 +16,14 @@ from django.db.models import Q
 from django.http import HttpResponse
 
 def categories(request):
-	return render(request, 'meal/categories.html', {})
+    context_dict = {}
+    categories = Category.objects.all()
+    size = len(categories)
+    context_dict['column1'] = categories[0 : int(size / 3)]
+    context_dict['column2'] = categories[int(size / 3) : 2 * int(size / 3)]
+    context_dict['column3'] = categories[2 * int(size / 3) : size]
+
+    return render(request, 'meal/categories.html', context_dict)
 
 # potential replacement for the categories view
 def show_category(request, category_name_slug):

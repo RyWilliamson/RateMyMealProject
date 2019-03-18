@@ -4,9 +4,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RateMyMealProject.settings')
 
 import django
 django.setup()
-from meal.models import Category, Recipe
+from meal.models import Category, Recipe, Professional, Casual, UserProfile
 
-# TODO: Update recipe images at bottom to reflect slug changes
 def populate():
 	casual_chefs = [
 		{"username": "MotherMartha1978",
@@ -26,37 +25,37 @@ def populate():
 		{"username": "RaymondBolt",
 		 "email": "stoneeagle@gmail.com",
 		 "password": "cheddar",
-		 "profile_picture": ""
+		 "profile_picture": "RaymondBolt.jpg"
 		},
 
 		{"username": "HayleyBean",
 		 "email": "hayleybean@gmail.com",
 		 "password": "s6n*cjd(&4ds",
-		 "profile_picture": ""
+		 "profile_picture": "HayleyBean.jpg"
 		},
 
 		{"username": "TheRealStanleySpears",
 		 "email": "therealstanleyspears@gmail.com",
 		 "password": "l&^5bkw2'!p)",
-		 "profile_picture": ""
+		 "profile_picture": "TheRealStanleySpears.jpg"
 		},
 
 		{"username": "ItsaMarioManini",
 		 "email": "mariomanini@gmail.com",
 		 "password": "i'mperfect",
-		 "profile_picture": ""
+		 "profile_picture": "ItsaMarioManini"
 		},
 
 		{"username": "AidanMack",
 		 "email": "aidanmack@gmail.com",
 		 "password": "je86^jka%33mn)1",
-		 "profile_picture": ""
+		 "profile_picture": "AidanMack.jpg"
 		},
 
 		{"username": "HenryMichaels",
 		 "email": "henrymichaels@gmail.com",
 		 "password": "sajq76&(*3bmn1",
-		 "profile_picture": ""
+		 "profile_picture": "HenryMichaels.jpg"
 		}
 	]
 
@@ -485,10 +484,21 @@ def populate():
 			add_recipe(c, p["recipe_name"], os.path.join("recipe_images", c.slug, p["image"]), p["views"], p["likes"],
 			 json.dumps(recipes_dict['categories'][cat][p["recipe_name"]]['ingredients']),
 			 recipes_dict['categories'][cat][p["recipe_name"]]['directions'])
+
+	for chef_data in casual_chefs:
+		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
+		 chef_data['profile_picture'], Casual)
+
+	for chef_data in professional_chefs:
+		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
+		 chef_data['profile_picture'], Professional)
 			
 	for c in Category.objects.all():
 		for p in Recipe.objects.filter(category=c):
 			print("- {0} - {1}".format(str(c), str(p)))
+
+	for profile in UserProfile.objects.all():
+		print("- {0}".format(str(profile.user)))
 
 def add_recipe(cat, recipe_name, image, views=0, likes=0, recipe_ingredients="", recipe_directions=""):
 	p = Recipe.objects.get_or_create(category=cat, recipe_name=recipe_name)[0]
@@ -504,6 +514,15 @@ def add_cat(name,views,likes):
 	c =  Category.objects.get_or_create(name=name, views = views, likes=likes)[0]
 	c.save()
 	return c
+
+def add_chef(username, email, password, profile_picture, chef_class):
+	chef = chef_class.objects.get_or_create(username = username, email = email, password = password)[0]
+	chef.save()
+	profile = UserProfile.objects.get_or_create(user = chef, picture = profile_picture)[0]
+	profile.save()
+	return profile
+
+
 
 if __name__ == '__main__':
 	print("Starting RateMyMeal population script...")
