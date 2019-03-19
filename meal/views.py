@@ -87,15 +87,11 @@ def add_recipe(request):
     context_dict = {'form':form,'profile_form':profile_form}
     return render(request, 'meal/add_recipe.html', context_dict)
 
-def italian(request):
-	return render(request, 'meal/italian.html', {})
-
 def about(request):
 	return render(request, 'meal/about.html', {})
 
 def base(request):
 	return render(request, 'meal/base.html', {})
-
 
 def trending(request):
     request.session.set_test_cookie()
@@ -109,9 +105,6 @@ def trending(request):
 
 def index(request):
 	return render(request, 'meal/index.html', {})
-
-def search(request):
-	return render(request, 'meal/search.html', {})
 	
 def register(request):
     return render(request, 'meal/register.html', {})
@@ -136,7 +129,7 @@ def registerRegular(request):
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
             profile.save()
-            registered = True;
+            registered = True
             return redirect_to_login('meal/login.html')
         else:
             print(user_form.errors,profile_form.errors)
@@ -170,7 +163,7 @@ def registerChef(request):
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
             profile.save()
-            registered = True;
+            registered = True
             return redirect_to_login('meal/login.html')
         else:
             print(user_formChef.errors,profile_form.errors)
