@@ -1,0 +1,35 @@
+{% extends 'meal/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+	Categories
+{% endblock %}
+{% block body_block %}
+<h1>Categories</h1>
+	<div id="column1" style="float:left; margin:0; width:33%;">
+		{% for item in column1 %}
+			<a href="{% url 'show_category' item.slug %}">
+				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
+				<h4>{{item.name}}</h4><br>
+			</a>
+		{% endfor %}
+    </div>
+	
+	<div id="column2" style="float:left; margin:0; width:33%;">
+		{% for item in column2 %}
+			<a href="{% url 'show_category' item.slug %}">
+				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
+				<h4>{{item.name}}</h4><br>
+			</a>
+		{% endfor %}
+    </div>
+	
+	<div id="column3" style="float:left; margin:0; width:33%;">
+		{% for item in column3 %}
+			<a href="{% url 'show_category' item.slug %}">
+				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
+				<h4>{{item.name}}</h4><br>
+			</a>
+		{% endfor %}
+    </div>
+
+{% endblock %}
