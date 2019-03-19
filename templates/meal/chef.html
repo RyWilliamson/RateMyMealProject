@@ -1,0 +1,16 @@
+{% extends 'meal/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    {{ recipe.recipe_name }}
+{% endblock %}
+
+{% block body_block %}
+
+    {% if chef %}
+
+        <h1> {{ chef.user.username }} </h1>
+		<img src="{{ MEDIA_URL }}{{chef.picture}}" alt="{{ chef.user.username }}" style="width:500px;height:350px;"> </br>
+        
+    {% endif %}
+{% endblock %}

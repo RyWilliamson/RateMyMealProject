@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from meal.models import Category, Recipe
+from meal.models import Category, Recipe, UserProfile, Professional
 from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -63,6 +63,15 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         context_dict['category'] = None
         
     return render(request, 'meal/recipe.html', context_dict)
+
+def show_chef(request, chef_name_slug):
+    context_dict = {}
+
+    professional = [Professional.objects.get(slug = chef_name_slug)]
+    chef = UserProfile.objects.get(user__in = professional)
+    context_dict['chef'] = chef
+
+    return render(request, 'meal/chef.html', context_dict)
 	
 # This is the view for representing the add recipe page.
 def add_recipe(request):
@@ -100,7 +109,13 @@ def about(request):
 
 # This is the view representing the base page.
 def base(request):
-	return render(request, 'meal/base.html', {})
+    context_dict = {}
+
+    professionals = Professional.objects.all()
+    chefs = UserProfile.objects.filter(user__in = professionals)
+    context_dict['chefs'] = chefs
+    
+    return render(request, 'meal/base.html', context_dict)
 
 # This is the view representing the trending page.
 def trending(request):

@@ -9,6 +9,11 @@ class Chef(AbstractUser):
     username = models.CharField(max_length=128, null= True, unique=True)
     email = models.CharField(max_length=128, null= True)
     password = models.CharField(max_length=128, null= True)
+    slug = models.SlugField(blank = True, unique = True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.username)
+        super(Chef, self).save(*args, **kwargs)
 
     USERNAME_FIELD = 'username'
 
