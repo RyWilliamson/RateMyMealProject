@@ -24,6 +24,7 @@ class Category(models.Model):
 
 class Recipe(models.Model):
     category = models.ForeignKey(Category)
+    chef = models.ForeignKey(UserProfile)
     recipe_name = models.TextField()
     views = models.IntegerField(default = 0)
     likes = models.IntegerField(default = 0)
