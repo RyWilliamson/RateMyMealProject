@@ -14,15 +14,16 @@ from meal.webhose_search import run_query
 from django.db.models import Q
 
 from django.http import HttpResponse
+import math
 
 # This is the view representing the all categories page.
 def categories(request):
     context_dict = {}
     categories = Category.objects.all()
-    size = len(categories)
-    context_dict['column1'] = categories[0 : int(size / 3)]
-    context_dict['column2'] = categories[int(size / 3) : 2 * int(size / 3)]
-    context_dict['column3'] = categories[2 * int(size / 3) : size]
+    chunks = [categories[i::3] for i in range(0, 3)]
+    context_dict['column1'] = chunks[0]
+    context_dict['column2'] = chunks[1]
+    context_dict['column3'] = chunks[2]
 
     return render(request, 'meal/categories.html', context_dict)
 
@@ -34,10 +35,10 @@ def show_category(request, category_name_slug):
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
 
-        size = len(recipe)
-        context_dict['column1'] = recipe[0 : int(size / 3)]
-        context_dict['column2'] = recipe[int(size / 3) : 2 * int(size / 3)]
-        context_dict['column3'] = recipe[2 * int(size / 3) : size]
+        chunks = [recipe[i::3] for i in range(0, 3)]
+        context_dict['column1'] = chunks[0]
+        context_dict['column2'] = chunks[1]
+        context_dict['column3'] = chunks[2]
 
         context_dict['recipes'] = recipe
         context_dict['category'] = category
