@@ -14,7 +14,7 @@ class Chef(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    picture = models.ImageField(upload_to='profile_image', blank=True)
    
     def __str__(self):
         return self.user.username
@@ -76,3 +76,12 @@ class Recipe(models.Model):
 
     def _get_category_slug():
         return self.category.slug
+
+class RecipeProfile(models.Model):
+    image = models.ImageField(upload_to='profile_images', blank=True)
+    recipe = models.OneToOneField(Recipe)
+    
+
+    def __str__(self):
+        return self.recipe.recipe_name
+

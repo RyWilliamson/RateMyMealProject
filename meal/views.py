@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from meal.models import Category, Recipe
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm,RecipeImageForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 
@@ -60,16 +60,21 @@ def add_recipe(request):
     if request.method == 'POST':
         form = RecipeForm(data=request.POST)
         profile_form = RecipeImageForm(data=request.POST)
+
         if form.is_valid()and profile_form.is_valid():
-                page = form.save(commit=False)
-                page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
-                page.views = 0
-                page.save()
-                profile = profile_form.save(commit=False)
-                if 'image' in request.FILES:
-                    profile.image = request.FILES['image']
-                profile.save()
-                return HttpResponse('image upload success')
+
+            page = form.save(commit=False)
+            page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
+            page.views = 0
+            page.save()
+
+            profile = profile_form.save(commit=False)
+            profile.recipe_name=recipe_name
+
+            if 'image' in request.FILES:
+                profile.image = request.FILES['image']
+            profile.save()
+            return HttpResponse('image upload success')
 
                
         else:
