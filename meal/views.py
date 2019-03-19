@@ -69,7 +69,8 @@ def add_recipe(request):
             page.save()
 
             profile = profile_form.save(commit=False)
-            profile.recipe_name=recipe_name
+            profile.recipe=page
+            
 
             if 'image' in request.FILES:
                 profile.image = request.FILES['image']
