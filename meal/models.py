@@ -48,7 +48,7 @@ class Category(models.Model):
         return self.name
 
 def _get_upload_path(self, filename):
-    return os.path.join("recipe_images/" + self._get_category_slug() + "/" )
+    return os.path.join("recipe_images/" + self._get_category_slug() + "/" + filename )
 
 class Recipe(models.Model):
     category = models.ForeignKey(Category)

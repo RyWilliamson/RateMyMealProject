@@ -14,7 +14,6 @@ from meal.webhose_search import run_query
 from django.db.models import Q
 
 from django.http import HttpResponse
-import math
 
 # This is the view representing the all categories page.
 def categories(request):
