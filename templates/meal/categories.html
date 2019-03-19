@@ -5,38 +5,53 @@
 {% endblock %}
 {% block body_block %}
 <h1>Categories</h1>
+<div class="container">
+<div class="row">
 
-	<div id="column1" style="float:left; margin:0; width:33%;">
-		
-		{% for item in column1 %}
+<div class="col-md-4">
+	{% for item in column1 %}
+		<div class="card mb-4 box-shadow">
 			<a href="{% url 'show_category' item.slug %}">
-				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
-				<h4>{{item.name}}</h4><br>
+			<img class="card-img-top" src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}">
+			<div class="card-body">
+				<p class="card-text">{{item.name}}</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
 			</a>
-		{% endfor %}
+		</div>
+	{% endfor %}
+</div>
 
-    </div>
-	
-	<div id="column2" style="float:left; margin:0; width:33%;">
-		
-		{% for item in column2 %}
+<div class="col-md-4">
+	{% for item in column2 %}
+		<div class="card mb-4 box-shadow">
 			<a href="{% url 'show_category' item.slug %}">
-				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
-				<h4>{{item.name}}</h4><br>
+			<img class="card-img-top" src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}">
+			<div class="card-body">
+				<p class="card-text">{{item.name}}</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
 			</a>
-		{% endfor %}
+		</div>
+	{% endfor %}
+</div>
 
-    </div>
-	
-	<div id="column3" style="float:left; margin:0; width:33%;">
-		
-		{% for item in column3 %}
+<div class="col-md-4">
+	{% for item in column3 %}
+		<div class="card mb-4 box-shadow">
 			<a href="{% url 'show_category' item.slug %}">
-				<img src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}" >
-				<h4>{{item.name}}</h4><br>
+			<img class="card-img-top" src="{% static 'images/' %}{{item.slug}}.png" alt="{{ item.name }}">
+			<div class="card-body">
+				<p class="card-text">{{item.name}}</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
 			</a>
-		{% endfor %}
+		</div>
+	{% endfor %}
+</div>
 
-    </div>
+
+</div>
+</div>
 
 {% endblock %}
