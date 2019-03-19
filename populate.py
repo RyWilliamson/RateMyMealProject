@@ -43,7 +43,7 @@ def populate():
 		{"username": "ItsaMarioManini",
 		 "email": "mariomanini@gmail.com",
 		 "password": "i'mperfect",
-		 "profile_picture": "ItsaMarioManini"
+		 "profile_picture": "ItsaMarioManini.jpg"
 		},
 
 		{"username": "AidanMack",

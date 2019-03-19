@@ -238,67 +238,21 @@ select {
 	<div class="container">
     <div class="row">
 	
-    <div class="col-md-4">
-    <div class="card mb-4 box-shadow">
-        <img class="card-img-top" src="{% static 'images/chef1.jpg' %}" alt="Raymond Bolt">
-        <div class="card-body">
-            <p class="card-text">Raymond Bolt</p>
-            <div class="d-flex justify-content-between align-items-center"></div>
-        </div>
-    </div>
-    </div>
-			
-    <div class="col-md-4">
-    <div class="card mb-4 box-shadow">
-        <img class="card-img-top" src="{% static 'images/chef2.jpg' %}" alt="Hayley Bean">
-        <div class="card-body">
-			<p class="card-text">Hayley Bean</p>
-            <div class="d-flex justify-content-between align-items-center"></div>
-        </div>
-    </div>
-    </div>
-			
-    <div class="col-md-4">
-    <div class="card mb-4 box-shadow">
-        <img class="card-img-top" src="{% static 'images/chef3.jpg' %}" alt="Stanley Spears">
-        <div class="card-body">
-			<p class="card-text">Stanley Spears</p>
-            <div class="d-flex justify-content-between align-items-center"></div>
+			{% for chef in chefs %}
+				<div class="col-md-4">
+					<div class="card mb-4 box-shadow">
+						<a href="{% url 'show_chef' chef.user.slug %}">
+							<img class="card-img-top" src="{{ MEDIA_URL }}{{chef.picture}}" alt="{{ chef.user.username }}" />
+							<div class="card-body">
+								<p class="card-text">{{chef.user.username}}</p>
+								<div class="d-flex justify-content-between align-items-center"></div>
+							</div>
+						</a>
+					</div>
+    		</div>
+			{% endfor %}
 		</div>
 	</div>
-	</div>
-
-	<div class="col-md-4">
-	<div class="card mb-4 box-shadow">
-		<img class="card-img-top" src="{% static 'images/chef4.jpg' %}" alt="Mario Manini">
-		<div class="card-body">
-			<p class="card-text">Mario Manini</p>
-			<div class="d-flex justify-content-between align-items-center"></div>
-		</div>
-	</div>
-	</div>
-			
-	<div class="col-md-4">
-	<div class="card mb-4 box-shadow">
-		<img class="card-img-top" src="{% static 'images/chef5.jpg' %}" alt="Aidan Mack">
-		<div class="card-body">
-			<p class="card-text">Aidan Mack</p>
-			<div class="d-flex justify-content-between align-items-center"></div>
-		</div>
-	</div>
-	</div>
-
-	<div class="col-md-4">
-	<div class="card mb-4 box-shadow">
-		<img class="card-img-top" src="{% static 'images/chef6.jpg' %}" alt="Henry Michaels">
-		<div class="card-body">
-			<p class="card-text">Henry Michaels</p>
-			<div class="d-flex justify-content-between align-items-center"></div>
-		</div>
-	</div>
-	</div>
-</div>
-</div>
 {% endblock %}
 	
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
