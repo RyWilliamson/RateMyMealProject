@@ -464,26 +464,19 @@ def populate():
 	]
 		
 		
-	cats =  {"Vegan/Vegetarian Meals": {"recipes": vegan_recipes, "views":128, "likes":64}, 
-		"Healthy Meals": {"recipes": healthy_recipes, "views":64,"likes":32},
-		"Brunch Ideas": {"recipes": brunch_recipes, "views":32, "likes":16},
-		"Mexican Meals": {"recipes": mexican_recipes, "views":72,"likes":32},
-		"Italian Meals": {"recipes": italian_recipes, "views":82,"likes":12},
-		"Gluten Free Meals": {"recipes": gluten_free_recipes, "views":25,"likes":11},
-		"Comfort Food": {"recipes": comfort_recipes, "views":55,"likes":41},
-		"Dairy Free Meals": {"recipes": dairy_free_recipes, "views":99,"likes":65},
-		"Kid Friendly Meals": {"recipes": kid_friendly_recipes, "views":88,"likes":21}
+	cats =  {"Vegan/Vegetarian Meals": {"recipes": vegan_recipes, "views":128, "likes":64, "chef": "RaymondBolt"}, 
+		"Healthy Meals": {"recipes": healthy_recipes, "views":64,"likes":32, "chef": "RaymondBolt"},
+		"Brunch Ideas": {"recipes": brunch_recipes, "views":32, "likes":16, "chef": "HayleyBean"},
+		"Mexican Meals": {"recipes": mexican_recipes, "views":72,"likes":32, "chef": "TheRealStanleySpears"},
+		"Italian Meals": {"recipes": italian_recipes, "views":82,"likes":12, "chef": "ItsaMarioManini"},
+		"Gluten Free Meals": {"recipes": gluten_free_recipes, "views":25,"likes":11, "chef": "ItsaMarioManini"},
+		"Comfort Food": {"recipes": comfort_recipes, "views":55,"likes":41, "chef": "AidanMack"},
+		"Dairy Free Meals": {"recipes": dairy_free_recipes, "views":99,"likes":65, "chef": "HenryMichaels"},
+		"Kid Friendly Meals": {"recipes": kid_friendly_recipes, "views":88,"likes":21, "chef": "HenryMichaels"}
 	}
 
 	with open('recipes.json', 'r') as f:
 		recipes_dict = json.load(f)
-	
-	for cat, cat_data in cats.items():
-		c = add_cat(cat, cat_data["views"], cat_data["likes"])
-		for p in cat_data["recipes"]:
-			add_recipe(c, p["recipe_name"], os.path.join("recipe_images", c.slug, p["image"]), p["views"], p["likes"],
-			 json.dumps(recipes_dict['categories'][cat][p["recipe_name"]]['ingredients']),
-			 recipes_dict['categories'][cat][p["recipe_name"]]['directions'])
 
 	for chef_data in casual_chefs:
 		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
@@ -492,6 +485,17 @@ def populate():
 	for chef_data in professional_chefs:
 		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
 		 chef_data['profile_picture'], Professional)
+	
+	for cat, cat_data in cats.items():
+		c = add_cat(cat, cat_data["views"], cat_data["likes"])
+		cur_chef = Professional.objects.get(username = cat_data['chef'])
+		for p in cat_data["recipes"]:
+			add_recipe(c, p["recipe_name"], 
+			 os.path.join("recipe_images", c.slug, p["image"]),
+			 UserProfile.objects.get(user = cur_chef),
+			 p["views"], p["likes"],
+			 json.dumps(recipes_dict['categories'][cat][p["recipe_name"]]['ingredients']),
+			 recipes_dict['categories'][cat][p["recipe_name"]]['directions'])
 			
 	for c in Category.objects.all():
 		for p in Recipe.objects.filter(category=c):
@@ -500,8 +504,8 @@ def populate():
 	for profile in UserProfile.objects.all():
 		print("- {0}".format(str(profile.user)))
 
-def add_recipe(cat, recipe_name, image, views=0, likes=0, recipe_ingredients="", recipe_directions=""):
-	p = Recipe.objects.get_or_create(category=cat, recipe_name=recipe_name)[0]
+def add_recipe(cat, recipe_name, image, chef, views=0, likes=0, recipe_ingredients="", recipe_directions=""):
+	p = Recipe.objects.get_or_create(category=cat, recipe_name=recipe_name, chef=chef)[0]
 	p.views = views
 	p.likes = likes
 	p.recipe_ingredients = recipe_ingredients
