@@ -15,6 +15,7 @@ from django.db.models import Q
 
 from django.http import HttpResponse
 
+# This is the view representing the all categories page.
 def categories(request):
     context_dict = {}
     categories = Category.objects.all()
@@ -25,13 +26,19 @@ def categories(request):
 
     return render(request, 'meal/categories.html', context_dict)
 
-# potential replacement for the categories view
+# This is the view for the page representing individual categories.
 def show_category(request, category_name_slug):
     context_dict = {}
 
     try:
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
+
+        size = len(recipe)
+        context_dict['column1'] = recipe[0 : int(size / 3)]
+        context_dict['column2'] = recipe[int(size / 3) : 2 * int(size / 3)]
+        context_dict['column3'] = recipe[2 * int(size / 3) : size]
+
         context_dict['recipes'] = recipe
         context_dict['category'] = category
     except Category.DoesNotExist:
@@ -40,6 +47,7 @@ def show_category(request, category_name_slug):
 
     return render(request, 'meal/category.html', context_dict)
 
+# This is the view for the page representing each individual recipes.
 def show_recipe(request, category_name_slug, recipe_name_slug):
     context_dict = {}
 
@@ -56,6 +64,7 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         
     return render(request, 'meal/recipe.html', context_dict)
 	
+# This is the view for representing the add recipe page.
 def add_recipe(request):
     context_dict = {}
     if request.method == 'POST':
@@ -85,16 +94,15 @@ def add_recipe(request):
     context_dict = {'form':form}
     return render(request, 'meal/add_recipe.html', context_dict)
 
-def italian(request):
-	return render(request, 'meal/italian.html', {})
-
+# This is the view representing the about page.
 def about(request):
 	return render(request, 'meal/about.html', {})
 
+# This is the view representing the base page.
 def base(request):
 	return render(request, 'meal/base.html', {})
 
-
+# This is the view representing the trending page.
 def trending(request):
     request.session.set_test_cookie()
     recipe_likes = Recipe.objects.order_by('-likes')[:2]
@@ -105,18 +113,15 @@ def trending(request):
     response = render(request, 'meal/trending.html', context=context_dict)
     return response
 
+# This is the view representing the index page.
 def index(request):
 	return render(request, 'meal/index.html', {})
 
-def search(request):
-	return render(request, 'meal/search.html', {})
-	
-def register(request):
-    return render(request, 'meal/register.html', {})
-
+# This is the view representing the user sign up page.
 def signUp(request):
 	return render(request, 'meal/signup.html', {})
-	
+
+# This is the view representing the register page for the home chefs.
 def registerRegular(request):
     registered = False
 
@@ -134,7 +139,7 @@ def registerRegular(request):
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
             profile.save()
-            registered = True;
+            registered = True
             return redirect_to_login('meal/login.html')
         else:
             print(user_form.errors,profile_form.errors)
@@ -148,6 +153,7 @@ def registerRegular(request):
 
     return render(request, 'meal/registerRegular.html', context_dict)
 
+# This is the view representing the register page for the professional chefs.
 def registerChef(request):
     registered = False
 
@@ -168,7 +174,7 @@ def registerChef(request):
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
             profile.save()
-            registered = True;
+            registered = True
             return redirect_to_login('meal/login.html')
         else:
             print(user_formChef.errors,profile_form.errors)
@@ -182,6 +188,7 @@ def registerChef(request):
 
     return render(request,'meal/registerChef.html',context_dict)
 
+# This is the view representing the user login page.
 def user_login(request):
     try:
         user = authenticate(username = request.POST['username'],
@@ -200,33 +207,13 @@ def user_login(request):
             'login_message' : 'Please Enter Your Username and Password correctly',})
     return HttpResponseRedirect(reverse('index'))
 
-
-
-		
-@permission_required('meal.read_chef',raise_exception=True)
-def restricted(request):
-    return render(request,'meal/restricted.html',{})
-
-
+# This view allows the user to logout.
 @login_required
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
 
-#@login_required
-#def like_recipe(request,category_name_slug,recipe_name_slug):
-    #rec_id = None
-    #category = Category.objects.get(slug = category_name_slug)
-    #recipe1 = Recipe.objects.get(slug = recipe_name_slug)
-
-    #if request.method == 'GET':
-        #likes = 0
-        #if recipe1:
-       #    likes = recipe1.likes + 1
-      #     recipe1.likes = likes
-     #      recipe1.save()
-    #return HttpResponse(likes)
-
+# This view is used for allowing a user to like a recipe.
 @login_required
 def like_recipe(request):
     context = RequestContext(request)
@@ -242,12 +229,9 @@ def like_recipe(request):
                 cat.save()
     return HttpResponse(likes)
 
-
+# This is the view for the search page.
 def search(request):
 	query =  request.GET.get('q')
 	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
 	categoryResults = Category.objects.filter(name__icontains=query)
 	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
-
-
-
