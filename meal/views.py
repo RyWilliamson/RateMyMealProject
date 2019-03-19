@@ -57,23 +57,28 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
     return render(request, 'meal/recipe.html', context_dict)
 	
 def add_recipe(request):
-    form = RecipeForm()
     if request.method == 'POST':
-        form = RecipeForm(request.POST,request.FILES)
-        if form.is_valid():
+        form = RecipeForm(data=request.POST)
+        profile_form = RecipeImageForm(data=request.POST)
+        if form.is_valid()and profile_form.is_valid():
                 page = form.save(commit=False)
                 page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
                 page.views = 0
-                #if 'image' in request.FILES:
-                   # page.image = request.FILES['image']
                 page.save()
+                profile = profile_form.save(commit=False)
+                if 'image' in request.FILES:
+                    profile.image = request.FILES['image']
+                profile.save()
                 return HttpResponse('image upload success')
 
                
         else:
-            print (form.errors)
+            print (form.errors,profile_form.errors)
+    else:
+        form = RecipeForm()
+        profile_form = RecipeImageForm()
 
-    context_dict = {'form':form}
+    context_dict = {'form':form,'profile_form':profile_form}
     return render(request, 'meal/add_recipe.html', context_dict)
 
 def italian(request):
