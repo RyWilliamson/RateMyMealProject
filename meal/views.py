@@ -52,11 +52,13 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
 def add_recipe(request):
     form = RecipeForm()
     if request.method == 'POST':
-        form = RecipeForm(request.POST)
+        form = RecipeForm(request.POST,request.FILES)
         if form.is_valid():
                 page = form.save(commit=False)
                 page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
                 page.views = 0
+                #if 'image' in request.FILES:
+                   # page.image = request.FILES['image']
                 page.save()
                 return HttpResponse('image upload success')
 

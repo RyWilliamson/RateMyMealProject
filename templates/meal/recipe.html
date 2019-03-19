@@ -10,7 +10,7 @@
     {% if category %}
 
         <h1> {{ recipe.recipe_name }} </h1>
-		<img src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}" style="width:500px;height:350px;"> </br>
+		<img src="{{ recipe.image.url }}" alt="{{ recipe.image }}" style="width:500px;height:350px;"> </br>
 		<div id="contentBox" style="margin:0px auto; width:70%">
 		<div id="column2" style="float:left; margin:0; width:50%;">
 
