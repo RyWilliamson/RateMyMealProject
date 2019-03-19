@@ -245,7 +245,7 @@ def like_recipe(request):
     return HttpResponse(likes)
 
 
-def search(request):         
+def search(request):
 	query =  request.GET.get('q')
 	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
 	categoryResults = Category.objects.filter(name__icontains=query)

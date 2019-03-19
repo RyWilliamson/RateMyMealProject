@@ -47,6 +47,9 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+def _get_upload_path(self, filename):
+    return os.path.join("recipe_images/" + self._get_category_slug() + "/" + filename)
+
 class Recipe(models.Model):
     category = models.ForeignKey(Category)
     chef = models.ForeignKey(UserProfile, null = True)
@@ -55,7 +58,7 @@ class Recipe(models.Model):
     likes = models.IntegerField(default = 0)
     recipe_ingredients = models.TextField()
     recipe_directions = models.TextField()
-    image = models.ImageField(upload_to = 'uploaded_image', default = 'bolognese.jpg')
+    image = models.ImageField(upload_to = _get_upload_path, default = 'bolognese.jpg')
     slug = models.SlugField(blank = True, unique = True)
 
     def save(self, *args, **kwargs):
