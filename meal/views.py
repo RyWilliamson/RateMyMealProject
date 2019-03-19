@@ -69,7 +69,9 @@ def show_chef(request, chef_name_slug):
 
     professional = [Professional.objects.get(slug = chef_name_slug)]
     chef = UserProfile.objects.get(user__in = professional)
+    recipes = Recipe.objects.filter(chef = chef)
     context_dict['chef'] = chef
+    context_dict['recipes'] = recipes
 
     return render(request, 'meal/chef.html', context_dict)
 	
