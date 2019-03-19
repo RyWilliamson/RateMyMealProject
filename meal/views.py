@@ -33,6 +33,12 @@ def show_category(request, category_name_slug):
     try:
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
+
+        size = len(recipe)
+        context_dict['column1'] = recipe[0 : int(size / 3)]
+        context_dict['column2'] = recipe[int(size / 3) : 2 * int(size / 3)]
+        context_dict['column3'] = recipe[2 * int(size / 3) : size]
+
         context_dict['recipes'] = recipe
         context_dict['category'] = category
     except Category.DoesNotExist:
