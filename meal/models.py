@@ -2,6 +2,7 @@ from django.db import models
 from django import forms
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import AbstractUser, User
+from django.utils import timezone
 import os
 import json
 
@@ -19,6 +20,7 @@ class Chef(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
+    created = models.DateTimeField(default = timezone.now)
     picture = models.ImageField(upload_to='profile_image', blank=True)
    
     def __str__(self):

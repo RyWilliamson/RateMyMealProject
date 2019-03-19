@@ -113,6 +113,7 @@ def base(request):
 
     professionals = Professional.objects.all()
     chefs = UserProfile.objects.filter(user__in = professionals)
+    chefs = chefs.order_by('-created')[:6]
     context_dict['chefs'] = chefs
     
     return render(request, 'meal/base.html', context_dict)
