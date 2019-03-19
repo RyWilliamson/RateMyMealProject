@@ -58,7 +58,7 @@ class Chef(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    picture = models.ImageField(upload_to='profile_image', blank=True)
    
     def __str__(self):
         return self.user.username

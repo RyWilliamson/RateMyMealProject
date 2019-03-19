@@ -49,3 +49,8 @@ class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe  
         fields = ('recipe_name','recipe_ingredients','recipe_directions','image','category')
+
+class RecipeImageForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = ('imagegit pull',)
