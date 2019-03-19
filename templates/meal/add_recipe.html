@@ -9,7 +9,7 @@
 <h1>Add your Own Meal</h1>
 <h2>Fill out the details below<h2><h5>(Fields marked * are compulsory)</h5>
 
-<form id = "RecipeForm" method = "post" action ="/meal/add_recipe/">
+<form id = "form" method = "post" action ="/meal/add_recipe/" enctype="multipart/form-data">
     {% csrf_token  %}
 
     {% for hidden in form.hidden_fields %}

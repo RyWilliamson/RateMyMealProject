@@ -2,7 +2,7 @@ from django.db import models
 from django import forms
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import AbstractUser, User
-
+import os
 import json
 
 class Chef(AbstractUser):
@@ -48,7 +48,7 @@ class Category(models.Model):
         return self.name
 
 def _get_upload_path(self, filename):
-    return os.path.join("recipe_images/" + self._get_category_slug() + "/" + filename)
+    return os.path.join("recipe_images/" + self._get_category_slug() + "/" )
 
 class Recipe(models.Model):
     category = models.ForeignKey(Category)
@@ -58,7 +58,7 @@ class Recipe(models.Model):
     likes = models.IntegerField(default = 0)
     recipe_ingredients = models.TextField()
     recipe_directions = models.TextField()
-    image = models.ImageField(upload_to = _get_upload_path, default = 'bolognese.jpg')
+    image = models.ImageField(upload_to = _get_upload_path)
     slug = models.SlugField(blank = True, unique = True)
 
     def save(self, *args, **kwargs):

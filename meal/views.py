@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from meal.models import Category, Recipe
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm,RecipeImageForm
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 
@@ -57,34 +57,32 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
     return render(request, 'meal/recipe.html', context_dict)
 	
 def add_recipe(request):
+    context_dict = {}
     if request.method == 'POST':
-        form = RecipeForm(data=request.POST)
-        profile_form = RecipeImageForm(data=request.POST)
-
-        if form.is_valid()and profile_form.is_valid():
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
 
             page = form.save(commit=False)
             page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
             page.views = 0
-            page.save()
-
-            profile = profile_form.save(commit=False)
-            profile.recipe=page
             
-
             if 'image' in request.FILES:
-                profile.image = request.FILES['image']
-            profile.save()
-            return HttpResponse('image upload success')
+                page.picture = request.FILES['image']
+                print ("yeehaw")
+
+            
+            page.save()
+            #print (page.picture)
+            return HttpResponseRedirect(reverse('index'))
 
                
         else:
-            print (form.errors,profile_form.errors)
+            #print (page.picture)
+            print (form.errors)
     else:
         form = RecipeForm()
-        profile_form = RecipeImageForm()
 
-    context_dict = {'form':form,'profile_form':profile_form}
+    context_dict = {'form':form}
     return render(request, 'meal/add_recipe.html', context_dict)
 
 def italian(request):

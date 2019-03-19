@@ -34,6 +34,7 @@ class RecipeForm(forms.ModelForm):
 
     recipe_directions = forms.CharField(max_length=500, widget=forms.Textarea(attrs={'rows': 2, 'cols': 20}), help_text = "* Please enter the recipe steps here")
     
+    image = forms.ImageField(required=True)
     views = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
     likes = forms.IntegerField(widget=forms.HiddenInput(),initial=0)
 
@@ -47,9 +48,4 @@ class RecipeForm(forms.ModelForm):
         
     class Meta:
         model = Recipe  
-        fields = ('recipe_name','recipe_ingredients','recipe_directions','category')
-
-class RecipeImageForm(forms.ModelForm):
-    class Meta:
-        model = Recipe
-        fields = ('image',)
+        fields = ('recipe_name','recipe_ingredients','recipe_directions','image','category')
