@@ -14,4 +14,11 @@
 			<p><a href="../category/{{result.category.slug}}/{{result.slug}}">{{result.recipe_name}}</a></p>
 		{% endfor %}
 	{% endif %}
+	
+	{% if catResults %}
+		{% for res in catResults %}
+			<p><a href="../category/{{res.slug}}">{{res.name}}</a></p>
+		{% endfor %}
+	{% endif %}
+	
 {% endblock %}

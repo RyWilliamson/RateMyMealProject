@@ -235,10 +235,10 @@ def like_recipe(request):
 
 
 def search(request):         
-        query =  request.GET.get('q')
-        results = Recipe.objects.filter(recipe_name__icontains=query)
-        return render(request,"meal/search.html",{"query":query,
-                                                  "results":results})
+	query =  request.GET.get('q')
+	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
+	categoryResults = Category.objects.filter(name__icontains=query)
+	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
 
 
 
