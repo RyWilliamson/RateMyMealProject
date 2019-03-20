@@ -281,12 +281,20 @@ def like_recipe(request):
 
 # This is the view for the search page.
 def search(request):
-	query =  request.GET.get('q')
+    query =  request.GET.get('q')
 
     # Queries database for recipes and categories that contains query.
-	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
-	categoryResults = Category.objects.filter(name__icontains=query)
-	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
+    try:
+        recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
+    except Recipe.DoesNotExist:
+        recipeResults = None
+        
+    try:
+        categoryResults = Category.objects.filter(name__icontains=query)
+    except Category.DoesNotExist:
+        categoryResults = None
+        
+    return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
 
 def visitor_cookie_handler(request):
 
