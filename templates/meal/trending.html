@@ -9,11 +9,11 @@
     <h1>Trending</h1>
     
     {% if recipe_views and recipe_likes %}
-			</hr>
-			<h3>Most Viewed</h3>
-            
 			<div class="container">
 			<div class="row">
+
+			<h3>Most Viewed</h3>
+
 			
 			<div class="col-md-4">
 				{% for recipe in recipe_views %}
@@ -29,17 +29,7 @@
 				{% endfor %}
 			</div>
 			
-			</div>
-			</div>
-			</hr>
-					
-			
-			<hr>
-			
 			<h3>Most Liked</h3>
-			
-			<div class="container">
-			<div class="row">
 			
 			<div class="col-md-4">
 				{% for recipe in recipe_likes %}
@@ -57,9 +47,6 @@
 
 			</div>
 			</div>
-			
-			</hr>
-			
     {% else %}
         <strong>There are no recipes present.</strong>
     {% endif %}
