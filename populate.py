@@ -43,7 +43,7 @@ def populate():
 		{"username": "ItsaMarioManini",
 		 "email": "mariomanini@gmail.com",
 		 "password": "i'mperfect",
-		 "profile_picture": "ItsaMarioManini"
+		 "profile_picture": "ItsaMarioManini.jpg"
 		},
 
 		{"username": "AidanMack",
@@ -480,11 +480,11 @@ def populate():
 
 	for chef_data in casual_chefs:
 		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
-		 chef_data['profile_picture'], Casual)
+		 os.path.join("profile_image", chef_data['profile_picture']), Casual)
 
 	for chef_data in professional_chefs:
 		add_chef(chef_data['username'], chef_data['email'], chef_data['password'],
-		 chef_data['profile_picture'], Professional)
+		 os.path.join("profile_image", chef_data['profile_picture']), Professional)
 	
 	for cat, cat_data in cats.items():
 		c = add_cat(cat, cat_data["views"], cat_data["likes"])

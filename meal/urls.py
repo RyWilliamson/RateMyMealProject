@@ -2,7 +2,7 @@ from django.conf.urls import url
 from meal import views
 
 urlpatterns=[
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.base, name='base'),
     url(r'^login/$', views.user_login, name='login'),
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^registerChef/$', views.registerChef, name='registerChef'),
@@ -15,6 +15,7 @@ urlpatterns=[
     url(r'^add_recipe/$', views.add_recipe, name = 'add_recipe'),
     url(r'^categories/$', views.categories, name = 'categories'),
     url(r'^category/(?P<category_name_slug>[\w\-]+)/$', views.show_category, name='show_category'),
+    url(r'^chef/(?P<chef_name_slug>[\w\-]+)/$', views.show_chef, name='show_chef'),
     url(r'^category/(?P<category_name_slug>[\w\-]+)/(?P<recipe_name_slug>[\w\-]+)/$', views.show_recipe, name='show_recipe'),
     url(r'^like/$', views.like_recipe, name='like_recipe'),
     url(r'^unlike/$', views.unlike_recipe, name='unlike_recipe'),

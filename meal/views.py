@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from meal.models import Category, Recipe, Like, Chef
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm,RecipeImageForm
+from meal.models import Category, Recipe, UserProfile, Professional, Like, Chef
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm, RecipeImageForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 
@@ -18,11 +18,19 @@ from django.http import HttpResponse
 # This is the view representing the all categories page.
 def categories(request):
     context_dict = {}
-    categories = Category.objects.all()
-    size = len(categories)
-    context_dict['column1'] = categories[0 : int(size / 3)]
-    context_dict['column2'] = categories[int(size / 3) : 2 * int(size / 3)]
-    context_dict['column3'] = categories[2 * int(size / 3) : size]
+
+    try:
+        # Queries data base for all categories
+        categories = Category.objects.all()
+
+        # Splits the categories list into three separate lists for presentation.
+        chunks = [categories[i::3] for i in range(0, 3)]
+        context_dict['categories'] = categories
+        context_dict['column1'] = chunks[0]
+        context_dict['column2'] = chunks[1]
+        context_dict['column3'] = chunks[2]
+    except Category.DoesNotExist:
+        context_dict['categories'] = None
 
     return render(request, 'meal/categories.html', context_dict)
 
@@ -31,13 +39,15 @@ def show_category(request, category_name_slug):
     context_dict = {}
 
     try:
+        # Queries database for all recipes of the representative category.
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
 
-        size = len(recipe)
-        context_dict['column1'] = recipe[0 : int(size / 3)]
-        context_dict['column2'] = recipe[int(size / 3) : 2 * int(size / 3)]
-        context_dict['column3'] = recipe[2 * int(size / 3) : size]
+        # Splits the recipe list into three separate lists for presentation.
+        chunks = [recipe[i::3] for i in range(0, 3)]
+        context_dict['column1'] = chunks[0]
+        context_dict['column2'] = chunks[1]
+        context_dict['column3'] = chunks[2]
 
         context_dict['recipes'] = recipe
         context_dict['category'] = category
@@ -52,8 +62,10 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
     context_dict = {}
 
     try:
+        # Queries database for a single recipe, identified by parameters passed in.
         category = Category.objects.get(slug = category_name_slug)
         recipe = Recipe.objects.get(slug = recipe_name_slug)
+
         context_dict['recipe'] = recipe
         context_dict['ingredients'] = recipe.get_ingredients()
         context_dict['category'] = category
@@ -61,39 +73,62 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         context_dict['recipe'] = None
         context_dict['ingredients'] = None
         context_dict['category'] = None
+
+    visitor_cookie_handler(request)
+    
+    views1=Recipe.objects.get(id=recipe.id)
+    views1.views=views1.views+1
+    views1.save()
+    context_dict['views'] = views1.views
+    
         
-    return render(request, 'meal/recipe.html', context_dict)
+    response = render(request, 'meal/recipe.html', context_dict)
+    #response.set_cookie('views',recipe.views)
+    return response
+
+# This is the view for the page representing chegs.
+def show_chef(request, chef_name_slug):
+    context_dict = {}
+
+    try:
+        # Queries the database to get the chef and the chefs recipes.
+        professional = [Professional.objects.get(slug = chef_name_slug)]
+        chef = UserProfile.objects.get(user__in = professional)
+        recipes = Recipe.objects.filter(chef = chef)
+
+        context_dict['chef'] = chef
+        context_dict['recipes'] = recipes
+    except Professional.DoesNotExist:
+        context_dict['chef'] = None
+        context_dict['recipes'] = None
+
+    return render(request, 'meal/chef.html', context_dict)
 	
 # This is the view for representing the add recipe page.
 def add_recipe(request):
+    context_dict = {}
     if request.method == 'POST':
-        form = RecipeForm(data=request.POST)
-        profile_form = RecipeImageForm(data=request.POST)
 
-        if form.is_valid()and profile_form.is_valid():
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
 
             page = form.save(commit=False)
             page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
             page.views = 0
-            page.save()
-
-            profile = profile_form.save(commit=False)
-            profile.recipe=page
             
-
             if 'image' in request.FILES:
-                profile.image = request.FILES['image']
-            profile.save()
-            return HttpResponse('image upload success')
+                page.picture = request.FILES['image']
+            
+            page.save()
+            return HttpResponseRedirect(reverse('base'))
 
                
         else:
-            print (form.errors,profile_form.errors)
+            print (form.errors)
     else:
         form = RecipeForm()
-        profile_form = RecipeImageForm()
 
-    context_dict = {'form':form,'profile_form':profile_form}
+    context_dict = {'form':form}
     return render(request, 'meal/add_recipe.html', context_dict)
 
 # This is the view representing the about page.
@@ -102,28 +137,41 @@ def about(request):
 
 # This is the view representing the base page.
 def base(request):
-	return render(request, 'meal/base.html', {})
+    context_dict = {}
+
+    # Queries the database to get the 6 most recent chefs
+    try:
+        professionals = Professional.objects.all()
+        chefs = UserProfile.objects.filter(user__in = professionals)
+        chefs = chefs.order_by('-created')[:6]
+
+        context_dict['chefs'] = chefs
+    except Professional.DoesNotExist:
+        context_dict['chefs'] = None
+    
+    return render(request, 'meal/base.html', context_dict)
 
 # This is the view representing the trending page.
 def trending(request):
     request.session.set_test_cookie()
-    recipe_likes = Recipe.objects.order_by('-likes')[:2]
-    recipe_views = Recipe.objects.order_by('-views')[:2]
 
-    context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+    # Queries the database to get the recipes corresponding to the two most liked and viewed recipes.
+    try:
+        recipe_likes = Recipe.objects.order_by('-likes')[:2]
+        recipe_views = Recipe.objects.order_by('-views')[:2]
+
+        context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+    except Recipe.DoesNotExist:
+        context_dict = {"recipe_likes" : None, "recipe_views" : None}
     
     response = render(request, 'meal/trending.html', context=context_dict)
     return response
-
-# This is the view representing the index page.
-def index(request):
-	return render(request, 'meal/index.html', {})
 
 # This is the view representing the user sign up page.
 def signUp(request):
 	return render(request, 'meal/signup.html', {})
 
-# This is the view representing the register page for the home chefs.
+# This is the view representing the register page for the casual chefs.
 def registerRegular(request):
     registered = False
 
@@ -207,13 +255,13 @@ def user_login(request):
     else:
         return render(request, 'meal/login.html',{
             'login_message' : 'Please Enter Your Username and Password correctly',})
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('base'))
 
 # This view allows the user to logout.
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('base'))
 
 # This view is used for allowing a user to like a recipe.
 @login_required
@@ -275,7 +323,52 @@ def like_exists(request):
 
 # This is the view for the search page.
 def search(request):
-	query =  request.GET.get('q')
-	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
-	categoryResults = Category.objects.filter(name__icontains=query)
-	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
+    
+#	query =  request.GET.get('q')
+#	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
+#	categoryResults = Category.objects.filter(name__icontains=query)
+#	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
+
+    query =  request.GET.get('q')
+
+    # Queries database for recipes and categories that contains query.
+    try:
+        recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
+    except Recipe.DoesNotExist:
+        recipeResults = None
+        
+    try:
+        categoryResults = Category.objects.filter(name__icontains=query)
+    except Category.DoesNotExist:
+        categoryResults = None
+        
+    return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
+
+def visitor_cookie_handler(request):
+
+    views = int(get_server_side_cookie(request, 'views', '1'))
+    last_visit_cookie = get_server_side_cookie(request,'last_visit',
+    str(datetime.now()))
+
+    last_visit_time = datetime.strptime(last_visit_cookie[:-7],
+    '%Y-%m-%d %H:%M:%S')
+    
+    if (datetime.now() - last_visit_time).days > -1:
+        views = views + 1
+        
+        request.session['last_visit'] = str(datetime.now())
+
+    else:
+    # set the last visit cookie
+        request.session['last_visit'] = last_visit_cookie
+# Update/set the visits cookie
+    request.session['views'] = views
+
+
+
+def get_server_side_cookie(request, cookie, default_val=None):
+    val = request.session.get(cookie)
+    if not val:
+        val = default_val
+    return val
+

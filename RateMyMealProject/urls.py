@@ -21,7 +21,7 @@ from django.conf.urls import include
 from meal import views
 
 urlpatterns = [
-    url(r'^$', views.index, name = 'index'),
+    url(r'^$', views.base, name = 'base'),
     url(r'^meal/', include('meal.urls')),
     url(r'^admin/', admin.site.urls),
     
