@@ -15,22 +15,34 @@
         <div class="container">
             <div class="row">
 
-                {% for recipe in recipes %}
-                <div class="col-md-4">
-                        <div class="card mb-4 box-shadow">
-                            <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
-                                <img class="card-img-top" src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}" />
-                                <div class="card-body">
-                                    <p class="card-text">{{recipe.recipe_name}}</p>
-                                    <div class="d-flex justify-content-between align-items-center"></div>
-                                </div>
-                            </a>
-                        </div>
-                </div>
-                {% endfor %}
+                {% if recipe %}
+
+                    {% for recipe in recipes %}
+                    <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+                                    <img class="card-img-top" src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}" />
+                                    <div class="card-body">
+                                        <p class="card-text">{{recipe.recipe_name}}</p>
+                                        <div class="d-flex justify-content-between align-items-center"></div>
+                                    </div>
+                                </a>
+                            </div>
+                    </div>
+                    {% endfor %}
+                
+                {% else %}
+                    <div class="col-md-12">
+                        <strong class="text-center">This chef does not currently have any recipes.</strong>
+                    </div>
+                {% endif %}
 
             </div>
         </div>
-        
+    
+    {% else %}
+    <div class="col-md-12">
+        <strong class="text-center">This chef does not exist.</strong>
+    </div>
     {% endif %}
 {% endblock %}
