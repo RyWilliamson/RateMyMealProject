@@ -93,7 +93,7 @@ def add_recipe(request):
             
             page.save()
             #print (page.picture)
-            return HttpResponseRedirect(reverse('index'))
+            return HttpResponseRedirect(reverse('base'))
 
                
         else:
@@ -130,10 +130,6 @@ def trending(request):
     
     response = render(request, 'meal/trending.html', context=context_dict)
     return response
-
-# This is the view representing the index page.
-def index(request):
-	return render(request, 'meal/index.html', {})
 
 # This is the view representing the user sign up page.
 def signUp(request):
@@ -223,13 +219,13 @@ def user_login(request):
     else:
         return render(request, 'meal/login.html',{
             'login_message' : 'Please Enter Your Username and Password correctly',})
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('base'))
 
 # This view allows the user to logout.
 @login_required
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
+    return HttpResponseRedirect(reverse('base'))
 
 # This view is used for allowing a user to like a recipe.
 @login_required
