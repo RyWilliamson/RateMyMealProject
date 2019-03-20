@@ -140,13 +140,14 @@ def base(request):
     context_dict = {}
 
     # Queries the database to get the 6 most recent chefs
-    professionals = Professional.objects.all()
-    chefs = UserProfile.objects.filter(user__in = professionals)
-    chefs = chefs.order_by('-created')[:6]
+    try:
+        professionals = Professional.objects.all()
+        chefs = UserProfile.objects.filter(user__in = professionals)
+        chefs = chefs.order_by('-created')[:6]
 
-    context_dict['chefs'] = chefs
-
-    
+        context_dict['chefs'] = chefs
+    except Professional.DoesNotExist:
+        context_dict['chefs'] = None
     
     return render(request, 'meal/base.html', context_dict)
 
