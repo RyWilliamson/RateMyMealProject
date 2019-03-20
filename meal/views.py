@@ -155,10 +155,13 @@ def trending(request):
     request.session.set_test_cookie()
 
     # Queries the database to get the recipes corresponding to the two most liked and viewed recipes.
-    recipe_likes = Recipe.objects.order_by('-likes')[:2]
-    recipe_views = Recipe.objects.order_by('-views')[:2]
+    try:
+        recipe_likes = Recipe.objects.order_by('-likes')[:2]
+        recipe_views = Recipe.objects.order_by('-views')[:2]
 
-    context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+        context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
+    except Recipe.DoesNotExist:
+        context_dict = {"recipe_likes" : None, "recipe_views" : None}
     
     response = render(request, 'meal/trending.html', context=context_dict)
     return response

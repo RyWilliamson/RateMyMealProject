@@ -6,35 +6,38 @@
 {% endblock %}
 
 {% block body_block %}
-	<h1>Trending</h1>
-    {%if recipe_views%}
+    <h1>Trending</h1>
+    
+    {% if recipe_views and recipe_likes %}
 
-	<div id="contentBox" style="margin:0px auto; width:70%">
-	<div id="column1" style="float:left; margin:0; width:50%;">
-		<h3>Most Viewed</h3>
-		<!-- New line -->
-        {%for recipe in recipe_views%}
-        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
-		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT= {{recipe.recipe_name}} >
-		<h4>{{recipe.recipe_name}}</h4><br>
-        
-        {%endfor%}
-		<!-- New line -->
-       
-	
-    </div>
-{%endif%}
-{%if recipe_likes%}
-    <div id="column2" style="float:left; margin:0;width:50%;">
-		<h3>Most Liked</h3>
-		<!-- New line -->
-        {%for recipe in recipe_likes%}
-        <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
-		<IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT={{recipe.image}} >
-        <h4>{{recipe.recipe_name}}</h4><br>
-        <br />
-        {%endfor%}
-    <!-- New line -->
+        <div id="contentBox" style="margin:0px auto; width:70%">
+        <div id="column1" style="float:left; margin:0; width:50%;">
+            <h3>Most Viewed</h3>
+            
+            {% for recipe in recipe_views %}
+                <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+                <IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT= {{recipe.recipe_name}} >
+                <h4>{{recipe.recipe_name}}</h4><br>
+                </a>
+            
+            {% endfor %}
+            
+        </div>
 
-{%endif%}
+        <div id="column2" style="float:left; margin:0;width:50%;">
+            <h3>Most Liked</h3>
+            
+            {% for recipe in recipe_likes %}
+                <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+                <IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT={{recipe.image}} >
+                <h4>{{recipe.recipe_name}}</h4><br>
+                </a>
+                <br />
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <strong>There are no recipes present.</strong>
+    {% endif %}
+
 {% endblock %}
