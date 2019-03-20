@@ -237,20 +237,29 @@ select {
 	<h1> Rate My Meal </h1>
 	<div class="container">
     <div class="row">
-	
-			{% for chef in chefs %}
-				<div class="col-md-4">
-					<div class="card mb-4 box-shadow">
-						<a href="{% url 'show_chef' chef.user.slug %}">
-							<img class="card-img-top" src="{{ MEDIA_URL }}{{chef.picture}}" alt="{{ chef.user.username }}" />
-							<div class="card-body">
-								<p class="card-text">{{chef.user.username}}</p>
-								<div class="d-flex justify-content-between align-items-center"></div>
-							</div>
-						</a>
+			
+			{% if chefs %}
+
+				{% for chef in chefs %}
+					<div class="col-md-4">
+						<div class="card mb-4 box-shadow">
+							<a href="{% url 'show_chef' chef.user.slug %}">
+								<img class="card-img-top" src="{{ MEDIA_URL }}{{chef.picture}}" alt="{{ chef.user.username }}" />
+								<div class="card-body">
+									<p class="card-text">{{chef.user.username}}</p>
+									<div class="d-flex justify-content-between align-items-center"></div>
+								</div>
+							</a>
+						</div>
 					</div>
-    		</div>
-			{% endfor %}
+				{% endfor %}
+			
+			{% else %}
+				<div class="col-md-12">
+					<strong>There are no professional chefs.</strong>
+				</div>
+			{% endif %}
+
 		</div>
 	</div>
 {% endblock %}

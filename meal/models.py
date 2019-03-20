@@ -6,6 +6,7 @@ from django.utils import timezone
 import os
 import json
 
+# This class is the base class for representing user data.
 class Chef(AbstractUser):
     username = models.CharField(max_length=128, null= True, unique=True)
     email = models.CharField(max_length=128, null= True)
@@ -18,6 +19,7 @@ class Chef(AbstractUser):
 
     USERNAME_FIELD = 'username'
 
+# This class links user data to their profile.
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
     created = models.DateTimeField(default = timezone.now)
@@ -25,19 +27,22 @@ class UserProfile(models.Model):
    
     def __str__(self):
         return self.user.username
-    
+
+# This is the class for representing a professional chef, it inherits from Chef.
 class Professional(Chef):
     class Meta:
         permissions = ( 
             ( "read_chef", "Can read Chef" ),
         )
 
+# This is the class for representing a homecook chef, it inherits from Chef.
 class Casual(Chef):
     class Meta:
         permissions = ( 
             
         )
 
+# This is the class for representing a category.
 class Category(models.Model):
     name = models.CharField(max_length = 128, unique = True)
     views = models.IntegerField(default = 0)
@@ -54,9 +59,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+# This is a helper function for setting the filepath for recipe images.
 def _get_upload_path(self, filename):
     return os.path.join("recipe_images/" + self._get_category_slug() + "/" + filename )
 
+# This is the class for representing a recipe.
 class Recipe(models.Model):
     category = models.ForeignKey(Category)
     chef = models.ForeignKey(UserProfile, null = True)
@@ -75,20 +82,13 @@ class Recipe(models.Model):
     def __str__(self):
         return self.recipe_name
 
+    # This function returns a list, which is decoded from the JSON stored in the database.
     def get_ingredients(self):
         return json.decoder.JSONDecoder().decode(self.recipe_ingredients)
 
+    # This function is used to convert a list into JSON format for storage.
     def set_ingredients(self, ingredients):
         self.recipe_ingredients = json.dumps(ingredients)
 
     def _get_category_slug(self):
         return self.category.slug
-
-class RecipeProfile(models.Model):
-    image = models.ImageField(upload_to='profile_images', blank=True)
-    recipe = models.OneToOneField(Recipe)
-    
-
-    def __str__(self):
-        return self.recipe.recipe_name
-

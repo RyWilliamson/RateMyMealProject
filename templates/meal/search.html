@@ -9,16 +9,23 @@
 	<h1>Search</h1>
 	<h2>{{ query }}</h2>
 	<br/>
-	{% if results %}
-		{% for result in results %}
-			<p><a href="../category/{{result.category.slug}}/{{result.slug}}">{{result.recipe_name}}</a></p>
-		{% endfor %}
-	{% endif %}
-	
-	{% if catResults %}
-		{% for res in catResults %}
-			<p><a href="../category/{{res.slug}}">{{res.name}}</a></p>
-		{% endfor %}
+
+	{% if results or catResults %}
+
+		{% if results %}
+			{% for result in results %}
+				<p><a href="../category/{{result.category.slug}}/{{result.slug}}">{{result.recipe_name}}</a></p>
+			{% endfor %}
+		{% endif %}
+		
+		{% if catResults %}
+			{% for res in catResults %}
+				<p><a href="../category/{{res.slug}}">{{res.name}}</a></p>
+			{% endfor %}
+		{% endif %}
+
+	{% else %}
+		<strong>There are no results.</strong>
 	{% endif %}
 	
 {% endblock %}
