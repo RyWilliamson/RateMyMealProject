@@ -67,11 +67,15 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
 def show_chef(request, chef_name_slug):
     context_dict = {}
 
-    professional = [Professional.objects.get(slug = chef_name_slug)]
-    chef = UserProfile.objects.get(user__in = professional)
-    recipes = Recipe.objects.filter(chef = chef)
-    context_dict['chef'] = chef
-    context_dict['recipes'] = recipes
+    try:
+        professional = [Professional.objects.get(slug = chef_name_slug)]
+        chef = UserProfile.objects.get(user__in = professional)
+        recipes = Recipe.objects.filter(chef = chef)
+        context_dict['chef'] = chef
+        context_dict['recipes'] = recipes
+    except Professional.DoesNotExist:
+        context_dict['chef'] = None
+        context_dict['recipes'] = None
 
     return render(request, 'meal/chef.html', context_dict)
 	
