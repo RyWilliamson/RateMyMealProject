@@ -18,7 +18,11 @@ from django.http import HttpResponse
 # This is the view representing the all categories page.
 def categories(request):
     context_dict = {}
+
+    # Queries data base for all categories
     categories = Category.objects.all()
+
+    # Splits the categories list into three separate lists for presentation.
     chunks = [categories[i::3] for i in range(0, 3)]
     context_dict['column1'] = chunks[0]
     context_dict['column2'] = chunks[1]
@@ -31,9 +35,11 @@ def show_category(request, category_name_slug):
     context_dict = {}
 
     try:
+        # Queries database for all recipes of the representative category.
         category = Category.objects.get(slug=category_name_slug)
         recipe = Recipe.objects.filter(category=category)
 
+        # Splits the recipe list into three separate lists for presentation.
         chunks = [recipe[i::3] for i in range(0, 3)]
         context_dict['column1'] = chunks[0]
         context_dict['column2'] = chunks[1]
@@ -52,8 +58,10 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
     context_dict = {}
 
     try:
+        # Queries database for a single recipe, identified by parameters passed in.
         category = Category.objects.get(slug = category_name_slug)
         recipe = Recipe.objects.get(slug = recipe_name_slug)
+
         context_dict['recipe'] = recipe
         context_dict['ingredients'] = recipe.get_ingredients()
         context_dict['category'] = category
@@ -64,13 +72,16 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         
     return render(request, 'meal/recipe.html', context_dict)
 
+# This is the view for the page representing chegs.
 def show_chef(request, chef_name_slug):
     context_dict = {}
 
     try:
+        # Queries the database to get the chef and the chefs recipes.
         professional = [Professional.objects.get(slug = chef_name_slug)]
         chef = UserProfile.objects.get(user__in = professional)
         recipes = Recipe.objects.filter(chef = chef)
+
         context_dict['chef'] = chef
         context_dict['recipes'] = recipes
     except Professional.DoesNotExist:
@@ -83,6 +94,7 @@ def show_chef(request, chef_name_slug):
 def add_recipe(request):
     context_dict = {}
     if request.method == 'POST':
+
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
 
@@ -92,16 +104,12 @@ def add_recipe(request):
             
             if 'image' in request.FILES:
                 page.picture = request.FILES['image']
-                print ("yeehaw")
-
             
             page.save()
-            #print (page.picture)
             return HttpResponseRedirect(reverse('base'))
 
                
         else:
-            #print (page.picture)
             print (form.errors)
     else:
         form = RecipeForm()
@@ -117,9 +125,11 @@ def about(request):
 def base(request):
     context_dict = {}
 
+    # Queries the database to get the 6 most recent chefs
     professionals = Professional.objects.all()
     chefs = UserProfile.objects.filter(user__in = professionals)
     chefs = chefs.order_by('-created')[:6]
+
     context_dict['chefs'] = chefs
     
     return render(request, 'meal/base.html', context_dict)
@@ -127,6 +137,8 @@ def base(request):
 # This is the view representing the trending page.
 def trending(request):
     request.session.set_test_cookie()
+
+    # Queries the database to get the recipes corresponding to the two most liked and viewed recipes.
     recipe_likes = Recipe.objects.order_by('-likes')[:2]
     recipe_views = Recipe.objects.order_by('-views')[:2]
 
@@ -250,6 +262,9 @@ def like_recipe(request):
 # This is the view for the search page.
 def search(request):
 	query =  request.GET.get('q')
+
+    # Queries database for recipes and categories that contains query.
 	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
 	categoryResults = Category.objects.filter(name__icontains=query)
+
 	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
