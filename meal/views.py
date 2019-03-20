@@ -157,8 +157,8 @@ def trending(request):
 
     # Queries the database to get the recipes corresponding to the two most liked and viewed recipes.
     try:
-        recipe_likes = Recipe.objects.order_by('-likes')[:2]
-        recipe_views = Recipe.objects.order_by('-views')[:2]
+        recipe_likes = Recipe.objects.order_by('-likes')[:6]
+        recipe_views = Recipe.objects.order_by('-views')[:6]
 
         context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
     except Recipe.DoesNotExist:
