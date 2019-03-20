@@ -61,8 +61,18 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         context_dict['recipe'] = None
         context_dict['ingredients'] = None
         context_dict['category'] = None
+
+    visitor_cookie_handler(request)
+    
+    views1=Recipe.objects.get(id=recipe.id)
+    views1.views=views1.views+1
+    views1.save()
+    context_dict['views'] = views1.views
+    
         
-    return render(request, 'meal/recipe.html', context_dict)
+    response = render(request, 'meal/recipe.html', context_dict)
+    #response.set_cookie('views',recipe.views)
+    return response
 
 def show_chef(request, chef_name_slug):
     context_dict = {}
@@ -88,16 +98,13 @@ def add_recipe(request):
             
             if 'image' in request.FILES:
                 page.picture = request.FILES['image']
-                print ("yeehaw")
 
             
             page.save()
-            #print (page.picture)
             return HttpResponseRedirect(reverse('base'))
 
                
         else:
-            #print (page.picture)
             print (form.errors)
     else:
         form = RecipeForm()
@@ -117,6 +124,8 @@ def base(request):
     chefs = UserProfile.objects.filter(user__in = professionals)
     chefs = chefs.order_by('-created')[:6]
     context_dict['chefs'] = chefs
+
+    
     
     return render(request, 'meal/base.html', context_dict)
 
@@ -135,7 +144,7 @@ def trending(request):
 def signUp(request):
 	return render(request, 'meal/signup.html', {})
 
-# This is the view representing the register page for the home chefs.
+# This is the view representing the register page for the casual chefs.
 def registerRegular(request):
     registered = False
 
@@ -249,3 +258,31 @@ def search(request):
 	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
 	categoryResults = Category.objects.filter(name__icontains=query)
 	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
+
+def visitor_cookie_handler(request):
+
+    views = int(get_server_side_cookie(request, 'views', '1'))
+    last_visit_cookie = get_server_side_cookie(request,'last_visit',
+    str(datetime.now()))
+
+    last_visit_time = datetime.strptime(last_visit_cookie[:-7],
+    '%Y-%m-%d %H:%M:%S')
+    
+    if (datetime.now() - last_visit_time).days > -1:
+        views = views + 1
+        
+        request.session['last_visit'] = str(datetime.now())
+
+    else:
+    # set the last visit cookie
+        request.session['last_visit'] = last_visit_cookie
+# Update/set the visits cookie
+    request.session['views'] = views
+
+
+
+def get_server_side_cookie(request, cookie, default_val=None):
+    val = request.session.get(cookie)
+    if not val:
+        val = default_val
+    return val
