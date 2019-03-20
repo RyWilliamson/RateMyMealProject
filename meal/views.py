@@ -19,14 +19,18 @@ from django.http import HttpResponse
 def categories(request):
     context_dict = {}
 
-    # Queries data base for all categories
-    categories = Category.objects.all()
+    try:
+        # Queries data base for all categories
+        categories = Category.objects.all()
 
-    # Splits the categories list into three separate lists for presentation.
-    chunks = [categories[i::3] for i in range(0, 3)]
-    context_dict['column1'] = chunks[0]
-    context_dict['column2'] = chunks[1]
-    context_dict['column3'] = chunks[2]
+        # Splits the categories list into three separate lists for presentation.
+        chunks = [categories[i::3] for i in range(0, 3)]
+        context_dict['categories'] = categories
+        context_dict['column1'] = chunks[0]
+        context_dict['column2'] = chunks[1]
+        context_dict['column3'] = chunks[2]
+    except Category.DoesNotExist:
+        context_dict['categories'] = None
 
     return render(request, 'meal/categories.html', context_dict)
 
