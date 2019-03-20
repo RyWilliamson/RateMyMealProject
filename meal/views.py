@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from meal.models import Category, Recipe, UserProfile, Professional, Like, Chef
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm, RecipeImageForm
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 

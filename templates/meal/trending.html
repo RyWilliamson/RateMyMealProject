@@ -14,26 +14,40 @@
         <div id="column1" style="float:left; margin:0; width:50%;">
             <h3>Most Viewed</h3>
             
-            {% for recipe in recipe_views %}
-                <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
-                <IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT= {{recipe.recipe_name}} >
-                <h4>{{recipe.recipe_name}}</h4><br>
-                </a>
+			<div class="col-md-4">
+				{% for recipe in recipe_views %}
+					<div class="card mb-4 box-shadow">
+						<a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+						<img class="card-img-top" src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.recipe_name }}">
+						<div class="card-body">
+							<p class="card-text">{{ recipe.recipe_name }}</p>
+						<div class="d-flex justify-content-between align-items-center"></div>
+						</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
+			
             
-            {% endfor %}
             
         </div>
 
         <div id="column2" style="float:left; margin:0;width:50%;">
             <h3>Most Liked</h3>
             
-            {% for recipe in recipe_likes %}
-                <a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
-                <IMG SRC="{{ MEDIA_URL }}{{recipe.image}}" ALT={{recipe.image}} >
-                <h4>{{recipe.recipe_name}}</h4><br>
-                </a>
-                <br />
-            {% endfor %}
+			<div class="col-md-4">
+				{% for recipe in recipe_likes %}
+					<div class="card mb-4 box-shadow">
+						<a href="{% url 'show_recipe' recipe.category.slug recipe.slug %}">
+						<img class="card-img-top" src="{{ MEDIA_URL }}{{recipe.image}}" alt="{{ recipe.image }}">
+						<div class="card-body">
+							<p class="card-text">{{ recipe.recipe_name }}</p>
+						<div class="d-flex justify-content-between align-items-center"></div>
+						</div>
+						</a>
+					</div>
+				{% endfor %}
+			</div>
         </div>
 
     {% else %}
