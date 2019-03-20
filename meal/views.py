@@ -114,10 +114,6 @@ def add_recipe(request):
             
             if 'image' in request.FILES:
                 page.picture = request.FILES['image']
-<<<<<<< HEAD
-=======
-
->>>>>>> 59afdd31894ba0c18f8ee844932c624e756704c1
             
             page.save()
             return HttpResponseRedirect(reverse('base'))
@@ -282,10 +278,6 @@ def search(request):
     # Queries database for recipes and categories that contains query.
 	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
 	categoryResults = Category.objects.filter(name__icontains=query)
-<<<<<<< HEAD
-
-	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
-=======
 	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
 
 def visitor_cookie_handler(request):
@@ -315,4 +307,3 @@ def get_server_side_cookie(request, cookie, default_val=None):
     if not val:
         val = default_val
     return val
->>>>>>> 59afdd31894ba0c18f8ee844932c624e756704c1
