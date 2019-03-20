@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.template import RequestContext
-from meal.models import Category, Recipe
+from meal.models import Category, Recipe, Like, Chef
 from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm,RecipeImageForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -219,17 +219,59 @@ def user_logout(request):
 @login_required
 def like_recipe(request):
     context = RequestContext(request)
-    cat_id = None
+    rec_id = None
     if request.method == 'GET':
-        cat_id = request.GET['recipe_id']
+        rec_id = request.GET['recipe_id']
+        user_id = request.GET['user_id']
         likes = 0
-        if cat_id:
-            cat = Recipe.objects.get(id=int(cat_id))
-            if cat:
-                likes = cat.likes + 1
-                cat.likes = likes
-                cat.save()
+        if rec_id and user_id:
+            rec = Recipe.objects.get(id=int(rec_id))
+            exists = Like.new(user_id, rec_id)
+            if rec and not exists:
+                likes = rec.likes + 1
+                rec.likes = likes
+                rec.save()
+            else:
+                likes = rec.likes
     return HttpResponse(likes)
+
+# This view is used for allowing a user to unlike a recipe.
+@login_required
+def unlike_recipe(request):
+    context = RequestContext(request)
+    rec_id = None
+    if request.method == 'GET':
+        rec_id = request.GET['recipe_id']
+        user_id = request.GET['user_id']
+        likes = 0
+        if rec_id and user_id:
+            rec = Recipe.objects.get(id=int(rec_id))
+            exists = Like.new(user_id, rec_id)
+            if rec and exists:
+                likes = rec.likes - 1
+                rec.likes = likes
+                rec.save()
+                Like.objects.filter(chef=Chef.objects.filter(id=user_id)[0],
+                                     recipe_id=rec_id).delete()
+            else:
+                likes = rec.likes
+    return HttpResponse(likes)
+
+# This view is used to check if a user has liked a recipe
+@login_required
+def like_exists(request):
+    context = RequestContext(request)
+    rec_id = request.GET['recipe_id']
+    user_id = request.GET['user_id']
+    exists = 0
+    if rec_id and user_id:
+        try:
+            like = Like.objects.get(chef=Chef.objects.filter(id=user_id)[0],
+                                                       recipe_id=rec_id)
+        except Like.DoesNotExist:
+            exists = 1
+    return HttpResponse(exists)
+
 
 # This is the view for the search page.
 def search(request):

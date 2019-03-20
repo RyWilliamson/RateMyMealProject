@@ -85,3 +85,14 @@ class RecipeProfile(models.Model):
     def __str__(self):
         return self.recipe.recipe_name
 
+
+class Like(models.Model):
+    chef = models.ForeignKey(Chef)
+    recipe = models.ForeignKey(Recipe)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def new(user_id, recipe_id):
+        new_like, created = Like.objects.get_or_create(chef=Chef.objects.filter(id=user_id)[0],
+                                                       recipe_id=recipe_id)
+        return not created
+            
