@@ -10,26 +10,50 @@
 	<center>Hi! Our names are Catriona, Ryan, Chris and Jamie and we've created the website Rate My Meal for food enthusiasts everywhere to share their favourite foods and rate others.</br>
 	Create an account to comment on peoples' food and to post your very own recipes.</br>
 	Find out about real qualified chefs and use their recipes at home!</center>
+
+	<div class="container">
+    <div class="row">
 	
-	<div id="column1" style="float:left; margin:0; width:25%;">
-		<!-- New line -->
-		<IMG SRC="{% static 'images/cat.JPG' %}" ALT="Catriona Murphy" >
-		<h4>Catriona Murphy</h4><br>
-    </div>
-	<div id="column2" style="float:left; margin:0; width:25%;">
-		<!-- New line -->
-		<IMG SRC="{% static 'images/chris.jpg' %}" ALT="Chris Kelly" >
-		<h4>Chris Kelly</h4><br>
-    </div>
-	<div id="column3" style="float:left; margin:0; width:25%;">
-		<!-- New line -->
-		<IMG SRC="{% static 'images/jamie.jpg' %}" ALT="Jamie Moore" >
-		<h4>Jamie Moore</h4><br>
-    </div>
-	<div id="column4" style="float:left; margin:0; width:25%;">
-		<!-- New line -->
-		<IMG SRC="{% static 'images/ryan.jpg' %}" ALT="Ryan Williamson" >
-		<h4>Ryan Williamson</h4><br>
-    </div>
+	<div class="col-md-4">
+		<div class="card mb-4 box-shadow">
+			<img class="card-img-top" src="{% static 'images/cat.JPG' %}" alt="Catriona Murphy">
+			<div class="card-body">
+				<p class="card-text">Catriona Murphy</p>
+				<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
+		</div>
+	</div>
 	
+	<div class="col-md-4">
+		<div class="card mb-4 box-shadow">
+			<img class="card-img-top" src="{% static 'images/ryan.JPG' %}" alt="Ryan Williamson">
+			<div class="card-body">
+				<p class="card-text">Ryan Williamson</p>
+				<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<div class="card mb-4 box-shadow">
+			<img class="card-img-top" src="{% static 'images/jamie.JPG' %}" alt="Jamie Moore">
+			<div class="card-body">
+				<p class="card-text">Jamie Moore</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<div class="card mb-4 box-shadow">
+			<img class="card-img-top" src="{% static 'images/chris.JPG' %}" alt="Chris Kelly">
+			<div class="card-body">
+				<p class="card-text">Chris Kelly</p>
+			<div class="d-flex justify-content-between align-items-center"></div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	</div>
 {% endblock %}

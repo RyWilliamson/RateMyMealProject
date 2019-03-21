@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template import RequestContext
 from meal.models import Category, Recipe, UserProfile, Professional, Like, Chef
-from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm, RecipeImageForm
+from meal.forms import UserFormRegular,UserFormChef, UserProfileForm, RecipeForm
 from django.contrib.auth import authenticate, login,logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse 
@@ -157,8 +157,8 @@ def trending(request):
 
     # Queries the database to get the recipes corresponding to the two most liked and viewed recipes.
     try:
-        recipe_likes = Recipe.objects.order_by('-likes')[:2]
-        recipe_views = Recipe.objects.order_by('-views')[:2]
+        recipe_likes = Recipe.objects.order_by('-likes')[:3]
+        recipe_views = Recipe.objects.order_by('-views')[:3]
 
         context_dict = {"recipe_likes" : recipe_likes, "recipe_views":recipe_views}
     except Recipe.DoesNotExist:
