@@ -1,7 +1,10 @@
 from django.test import TestCase
 from meal.models import Category
 from django.core.urlresolvers import reverse
-from meal.models import Category,Recipe
+from meal.models import Category, Recipe, Like, UserProfile, Chef
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
+from selenium.webdriver.firefox.webdriver import WebDriver
+
 
 def add_cat(name,views,likes):
 	c =  Category.objects.get_or_create(name=name, views = views, likes=likes)[0]
@@ -17,7 +20,47 @@ def add_recipe(cat, recipe_name, views=0, likes=0, recipe_ingredients="", recipe
 	p.save()
 	return p
 
+def add_chef(username, email="", password="", profile_picture=""):
+	c = Chef.objects.get_or_create(username = username, email = email, password = password)[0]
+	c.save()
+	p = UserProfile.objects.get_or_create(user = c, picture = profile_picture)[0]
+	p.save()
+	return c
 
+def add_like(recipe_id, user_id):
+        r = Like.objects.get_or_create(chef=Chef.objects.filter(id=user_id)[0],
+                                       recipe_id=recipe_id)
+        r.save()
+        return r
+
+
+class LikeMethodTests(TestCase):
+        @classmethod
+        def setUpClass(cls):
+                super().setUpClass()
+                cls.selenium = WebDriver()
+                cls.selenium.implicitly_wait(10)
+
+        @classmethod
+        def tearDownClass(cls):
+                cls.selenium.quit()
+                super().tearDownClass()
+
+        def test_like_adds_correctly(self):
+                test1 = add_cat('test1', 0, 0)
+                test2 = add_recipe(test1, 'test2')
+                pre_likes = test1.likes
+
+                pre_likes = test2.likes
+                
+                self.selenium.get('http://127.0.0.1:8000/meal/category/' + test1.slug +
+                                  '/' + test2.slug + '/')
+                like_button = self.selenium.find_element_by_id("like")
+                like_button.click()
+
+                post_likes = Recipe.objects.get(slug='test2')
+                #print(str(pre_likes) + "\t" + str(post_likes))
+                self.assertEqual(pre_likes, post_likes-1)
 
 class CategoryMethodTests(TestCase):
     def test_ensures_views_are_positive(self):
