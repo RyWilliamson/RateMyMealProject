@@ -217,7 +217,7 @@ def registerChef(request):
             user.set_password(user.password)
             user.save()
             user.user_permissions.add(permission)
-            profile = profile_formChef.save(commit=False)
+            profile = profile_form.save(commit=False)
             profile.user=user
             
             if 'picture' in request.FILES:
@@ -226,7 +226,7 @@ def registerChef(request):
             registered = True
             return redirect_to_login('meal/login.html')
         else:
-            print(user_formChef.errors + "\n" + profile_form.errors + "\n")
+            print(user_formChef.errors, profile_form.errors)
     else:
         user_formChef = UserFormChef()
         profile_form = UserProfileForm()
