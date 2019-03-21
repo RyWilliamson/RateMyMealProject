@@ -14,6 +14,4 @@ class SignupView(TestCase):
 
 	def test_new_user(self):
 		response = self.client.post(reverse('registerRegular'),self.newUser)
-		print(response)
-		form = response.context['profile_form']
-		self.assetTrue(form.is_valid())
+		self.assertTrue(response.status_code, 302)
