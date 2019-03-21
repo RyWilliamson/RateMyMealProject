@@ -54,14 +54,33 @@ class CategoryViewTests(TestCase):
 
 class RecipeMethodTests(TestCase):
     def test_ensures_views_are_positive(self):
-        add_cat('test',1,1)
+        add_cat('test2',1,1)
 
         response = self.client.get(reverse('categories'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "test")
+        self.assertContains(response, "test2")
+        test = Category.objects.get(slug="test2")
 
-        add_recipe(cat='test2', recipe_name='test1', views=0, likes=0, recipe_ingredients="", recipe_directions="")
-        #self.assertEqual((cat.views>=0),True)
+        add_recipe(test, recipe_name='test1', views=1, likes=1, recipe_ingredients="", recipe_directions="")
+        test1 = Recipe.objects.get(slug='test1')
+        self.assertEqual((test1.views>=0),True)
+
+class AboutBaseSignUpViews(TestCase):
+    def test_ensures_base_works(self):
+        response = self.client.get(reverse('base'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_ensures_about_works(self):
+        response = self.client.get(reverse('about'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_ensures_SignUp_works(self):
+        response = self.client.get(reverse('signup'))
+        self.assertEqual(response.status_code, 200)
+        
+
+
+        
 
 
 
