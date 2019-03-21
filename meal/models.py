@@ -23,7 +23,7 @@ class Chef(AbstractUser):
 class UserProfile(models.Model):
     user = models.OneToOneField(Chef)
     created = models.DateTimeField(default = timezone.now)
-    picture = models.ImageField(upload_to='profile_image', blank=False)
+    picture = models.ImageField(upload_to='profile_image', blank=True)
    
     def __str__(self):
         return self.user.username
