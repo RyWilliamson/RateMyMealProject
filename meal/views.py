@@ -176,11 +176,11 @@ def registerRegular(request):
     registered = False
 
     if request.method == 'POST':
-        user_form = UserFormRegular(data=request.POST)
+        user_formRegular = UserFormRegular(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
 
         if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
+            user = user_formRegular.save()
             user.set_password(user.password)
             user.save()
             profile = profile_form.save(commit=False)
@@ -192,7 +192,7 @@ def registerRegular(request):
             registered = True
             return redirect_to_login('meal/login.html')
         else:
-            print(user_form.errors,profile_form.errors)
+            print(user_form.errors + "\n" + profile_form.errors + "\n")
     else:
         user_form = UserFormRegular()
         profile_form = UserProfileForm()
@@ -227,7 +227,7 @@ def registerChef(request):
             registered = True
             return redirect_to_login('meal/login.html')
         else:
-            print(user_formChef.errors,profile_form.errors)
+            print(user_formChef.errors + "\n" + profile_form.errors + "\n")
     else:
         user_formChef = UserFormChef()
         profile_form = UserProfileForm()
