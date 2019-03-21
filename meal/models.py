@@ -90,7 +90,7 @@ class Recipe(models.Model):
     def set_ingredients(self, ingredients):
         self.recipe_ingredients = json.dumps(ingredients)
 
-    def _get_category_slug():
+    def _get_category_slug(self):
         return self.category.slug
 
 
