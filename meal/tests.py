@@ -1,4 +1,4 @@
-from django.test import TestCase
+from django.test import TestCase, Client
 from meal.models import Category
 from django.core.urlresolvers import reverse
 from meal.models import Category, Recipe, Like, UserProfile, Chef
@@ -120,21 +120,27 @@ class AboutBaseSignUpViews(TestCase):
     def test_ensures_SignUp_works(self):
         response = self.client.get(reverse('signup'))
         self.assertEqual(response.status_code, 200)
+
+class SignupView(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.newUser = {'username':"cat", 'email':"cat@gmail.com", 'password':"hello"}          
         
+    def test_new_user(self):
+        response = self.client.post(reverse('registerRegular'),self.newUser)
+        self.assertTrue(response.status_code, 302)
 
+    def test_new_user_login(self):
+        response = self.client.post(reverse('registerRegular'),self.newUser)
+        self.assertTrue(response.status_code, 302)
+        response2 = self.client.post(reverse('login'),self.newUser)
+        self.assertTrue(response2.status_code, 302)
 
-        
-
-
-
-
-  
-
-        
-    
-
-
-    
-
-
-
+    def test_user_logout(self):
+        response = self.client.post(reverse('registerRegular'),self.newUser)
+        self.assertTrue(response.status_code, 302)
+        response2 = self.client.post(reverse('login'),self.newUser)
+        self.assertTrue(response2.status_code, 302)
+        response3 = self.client.post(reverse('logout'),self.newUser)
+        self.assertTrue(response3.status_code, 302)
+                
