@@ -31,7 +31,7 @@ SECRET_KEY = 'svwe=bti2b-x*)8&c%h#vwm+3(eivb$rdd)ylpe2lhsazga40d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://RateMyMeal.pythonanywhere.com']
 
 
 # Application definition
