@@ -34,34 +34,6 @@ def add_like(recipe_id, user_id):
         return r
 
 
-class LikeMethodTests(TestCase):
-        @classmethod
-        def setUpClass(cls):
-                super().setUpClass()
-                cls.selenium = WebDriver()
-                cls.selenium.implicitly_wait(10)
-
-        @classmethod
-        def tearDownClass(cls):
-                cls.selenium.quit()
-                super().tearDownClass()
-
-        def test_like_adds_correctly(self):
-                test1 = add_cat('test1', 0, 0)
-                test2 = add_recipe(test1, 'test2')
-                pre_likes = test1.likes
-
-                pre_likes = test2.likes
-                
-                self.selenium.get('http://127.0.0.1:8000/meal/category/' + test1.slug +
-                                  '/' + test2.slug + '/')
-                like_button = self.selenium.find_element_by_id("like")
-                like_button.click()
-
-                post_likes = Recipe.objects.get(slug='test2')
-                #print(str(pre_likes) + "\t" + str(post_likes))
-                self.assertEqual(pre_likes, post_likes-1)
-
 class CategoryMethodTests(TestCase):
     def test_ensures_views_are_positive(self):
         cat = Category(name='test',views=1,likes=0)

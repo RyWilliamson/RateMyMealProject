@@ -175,11 +175,11 @@ def registerRegular(request):
     registered = False
 
     if request.method == 'POST':
-        user_formRegular = UserFormRegular(data=request.POST)
+        user_form = UserFormRegular(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
 
-        if user_formRegular.is_valid() and profile_form.is_valid():
-            user = user_formRegular.save()
+        if user_form.is_valid() and profile_form.is_valid():
+            user = user_form.save()
             user.set_password(user.password)
             user.save()
             profile = profile_form.save(commit=False)
@@ -191,7 +191,7 @@ def registerRegular(request):
             registered = True
             return redirect_to_login('meal/login.html')
         else:
-            print(user_form.errors + "\n" + profile_form.errors + "\n")
+            print(user_form.errors,profile_form.errors)
     else:
         user_form = UserFormRegular()
         profile_form = UserProfileForm()
@@ -207,13 +207,13 @@ def registerChef(request):
     registered = False
 
     if request.method == 'POST':
-        user_formChef = UserFormChef(data=request.POST)
+        user_form = UserFormChef(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
 
-        if user_formChef.is_valid() and profile_form.is_valid():
+        if user_form.is_valid() and profile_form.is_valid():
             permission = Permission.objects.get(name='Can read Chef')
             
-            user = user_formChef.save()
+            user = user_form.save()
             user.set_password(user.password)
             user.save()
             user.user_permissions.add(permission)
@@ -226,7 +226,7 @@ def registerChef(request):
             registered = True
             return redirect_to_login('meal/login.html')
         else:
-            print(user_formChef.errors, profile_form.errors)
+            print(user_form.errors, profile_form.errors)
     else:
         user_formChef = UserFormChef()
         profile_form = UserProfileForm()
