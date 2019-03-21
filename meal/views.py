@@ -10,7 +10,6 @@ from datetime import datetime
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.views import redirect_to_login
 from django.contrib.auth.models import Permission
-from meal.webhose_search import run_query
 from django.db.models import Q
 
 from django.http import HttpResponse
@@ -324,11 +323,6 @@ def like_exists(request):
 # This is the view for the search page.
 def search(request):
     
-#	query =  request.GET.get('q')
-#	recipeResults = Recipe.objects.filter(recipe_name__icontains=query)
-#	categoryResults = Category.objects.filter(name__icontains=query)
-#	return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
-
     query =  request.GET.get('q')
 
     # Queries database for recipes and categories that contains query.

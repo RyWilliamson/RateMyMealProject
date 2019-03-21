@@ -7,16 +7,20 @@
 
 {% block head_block %}
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<!--<script src="{% static 'js/rango-ajax.js' %}"></script>-->
 	<script type="text/javascript">
 		$(document).ready(function() {
+			var recipeid;
+			var old_likes;
+			var button;
+			old_likes = {{ recipe.likes }};
+			button = document.getElementById("like");
+			recipeid = button.getAttribute("recid");
+			$.get('/meal/like_exists/', {user_id: {{request.user.id}}, recipe_id: recipeid}, function(data){
+				if (data == 0) {
+					button.innerHTML = 'Unlike';
+				}
+			});
 			$('#like').click(function(){
-				var recipeid;
-				var old_likes;
-				var button;
-				old_likes = {{ recipe.likes }};
-				recipeid = $(this).attr("recid");
-				button = document.getElementById("like");
 				$.get('/meal/like_exists/', {user_id: {{request.user.id}}, recipe_id: recipeid}, function(data){
 					if (data == 0) {
 						$.get('/meal/unlike/', {user_id: {{request.user.id}}, recipe_id: recipeid}, function(data){
