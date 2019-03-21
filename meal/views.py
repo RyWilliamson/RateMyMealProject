@@ -73,8 +73,6 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         context_dict['ingredients'] = None
         context_dict['category'] = None
 
-    visitor_cookie_handler(request)
-    
     views1=Recipe.objects.get(id=recipe.id)
     views1.views=views1.views+1
     views1.save()
@@ -337,32 +335,3 @@ def search(request):
         categoryResults = None
         
     return render(request,"meal/search.html",{"query":query,"results":recipeResults, "catResults":categoryResults})
-
-def visitor_cookie_handler(request):
-
-    views = int(get_server_side_cookie(request, 'views', '1'))
-    last_visit_cookie = get_server_side_cookie(request,'last_visit',
-    str(datetime.now()))
-
-    last_visit_time = datetime.strptime(last_visit_cookie[:-7],
-    '%Y-%m-%d %H:%M:%S')
-    
-    if (datetime.now() - last_visit_time).days > -1:
-        views = views + 1
-        
-        request.session['last_visit'] = str(datetime.now())
-
-    else:
-    # set the last visit cookie
-        request.session['last_visit'] = last_visit_cookie
-# Update/set the visits cookie
-    request.session['views'] = views
-
-
-
-def get_server_side_cookie(request, cookie, default_val=None):
-    val = request.session.get(cookie)
-    if not val:
-        val = default_val
-    return val
-
