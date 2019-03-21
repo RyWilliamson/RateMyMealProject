@@ -62,17 +62,3 @@ class RecipeMethodTests(TestCase):
 
         add_recipe(cat='test2', recipe_name='test1', views=0, likes=0, recipe_ingredients="", recipe_directions="")
         #self.assertEqual((cat.views>=0),True)
-
-
-
-
-  
-
-        
-    
-
-
-    
-
-
-
