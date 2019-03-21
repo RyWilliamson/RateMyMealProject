@@ -111,6 +111,7 @@ def add_recipe(request):
 
             page = form.save(commit=False)
             page.set_ingredients(page.recipe_ingredients.replace('\r', '').split("\n"))
+            page.chef = UserProfile.objects.get(user = request.user)
             page.views = 0
             
             if 'image' in request.FILES:
