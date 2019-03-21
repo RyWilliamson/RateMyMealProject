@@ -179,7 +179,7 @@ def registerRegular(request):
         user_formRegular = UserFormRegular(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
 
-        if user_form.is_valid() and profile_form.is_valid():
+        if user_formRegular.is_valid() and profile_form.is_valid():
             user = user_formRegular.save()
             user.set_password(user.password)
             user.save()
@@ -218,7 +218,7 @@ def registerChef(request):
             user.set_password(user.password)
             user.save()
             user.user_permissions.add(permission)
-            profile = profile_form.save(commit=False)
+            profile = profile_formChef.save(commit=False)
             profile.user=user
             
             if 'picture' in request.FILES:
