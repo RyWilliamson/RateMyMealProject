@@ -68,15 +68,16 @@ def show_recipe(request, category_name_slug, recipe_name_slug):
         context_dict['recipe'] = recipe
         context_dict['ingredients'] = recipe.get_ingredients()
         context_dict['category'] = category
+
+        views1=Recipe.objects.get(id=recipe.id)
+        views1.views=views1.views + 1
+        views1.save()
+        context_dict['views'] = views1.views
     except Recipe.DoesNotExist:
         context_dict['recipe'] = None
         context_dict['ingredients'] = None
         context_dict['category'] = None
-
-    views1=Recipe.objects.get(id=recipe.id)
-    views1.views=views1.views+1
-    views1.save()
-    context_dict['views'] = views1.views
+        context_dict['views'] = None
     
         
     response = render(request, 'meal/recipe.html', context_dict)
