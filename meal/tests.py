@@ -80,6 +80,20 @@ class RecipeMethodTests(TestCase):
         test1 = Recipe.objects.get(slug='test1')
         self.assertEqual((test1.views>=0),True)
 
+    def test_ensures_trending_works(self):
+        add_cat('test2', 1, 1)
+
+        response = self.client.get(reverse('categories'))
+        test = Category.objects.get(slug="test2")
+
+        add_recipe(test, recipe_name="test1", views = 1000, likes = 1, recipe_ingredients = "", recipe_directions = "")
+        add_recipe(test, recipe_name="test3", views = 1, likes = 1000, recipe_ingredients = "", recipe_directions = "")
+        test1 = Recipe.objects.get(slug = 'test1')
+        response = self.client.get(reverse('trending'))
+
+        self.assertContains(response, 'test1')
+        self.assertContains(response, 'test3')
+
 class AboutBaseSignUpViews(TestCase):
     def test_ensures_base_works(self):
         response = self.client.get(reverse('base'))
